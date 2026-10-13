@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Kontakt och bokning – Kvarn Barbershop Linköping</title>
+  <meta name="description" content="Boka tid hos Kvarn Barbershop i Linköping. Adress, telefon, öppettider, karta och kontaktformulär.">
+  <meta name="theme-color" content="#100f0e">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23100f0e'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23c9a063' stroke-width='2.5'/%3E%3Cpath d='M23 23l18 18M41 23L23 41' stroke='%23c9a063' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
+
+  <div class="demo-bar">
+    Demosida av <a href="/">Bureau Nord</a>
+    <span class="demo-bar__sep" aria-hidden="true">·</span>
+    <a class="demo-bar__tag" href="/#priser">Premium-paketet</a>
+    <span class="demo-bar__sep" aria-hidden="true">·</span>
+    Salongen är påhittad
+  </div>
+
+  <header class="header">
+    <div class="wrap header__inner">
+      <a class="logo" href="index.html" aria-label="Kvarn Barbershop – startsida"><span class="logo__mark" aria-hidden="true"></span><span class="logo__name">Kvarn<small>Barbershop</small></span></a>
+      <nav class="nav" aria-label="Huvudmeny">
+        <a href="index.html">Start</a>
+        <a href="tjanster.html">Tjänster & priser</a>
+        <a href="galleri.html">Galleri</a>
+        <a href="om-oss.html">Om oss & barberarna</a>
+        <a href="kontakt.html" aria-current="page">Kontakt</a>
+      </nav>
+      <a class="btn btn--small header__book" href="kontakt.html#boka">Boka tid</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobilmeny" aria-label="Öppna menyn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobilmeny" aria-label="Mobilmeny">
+    <ul>
+      <li><a href="index.html" data-num="01">Start</a></li>
+      <li><a href="tjanster.html" data-num="02">Tjänster & priser</a></li>
+      <li><a href="galleri.html" data-num="03">Galleri</a></li>
+      <li><a href="om-oss.html" data-num="04">Om oss & barberarna</a></li>
+      <li><a href="kontakt.html" data-num="05" aria-current="page">Kontakt</a></li>
+    </ul>
+    <p class="mobile-menu__info">Kvarngatan 7, Linköping<br>013-35 79 11</p>
+  </nav>
+
+  <main id="innehall">
+    <section class="page-hero">
+      <span class="hero__glow" aria-hidden="true"></span>
+      <div class="wrap">
+        <p class="eyebrow reveal">Kontakt</p>
+        <h1 class="reveal">Boka din tid</h1>
+        <p class="lead reveal">Skicka en förfrågan via formuläret, ring eller mejla. Vi återkommer så snart vi kan med en tid som passar.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:48px" id="boka">
+      <div class="wrap contact-grid">
+        <form class="form reveal" id="kontaktformular" novalidate aria-label="Kontaktformulär">
+          <div class="form__fields">
+            <div class="field">
+              <label for="namn">Namn</label>
+              <input id="namn" name="namn" type="text" autocomplete="name" required>
+              <span class="field__error">Skriv ditt namn.</span>
+            </div>
+            <div class="field">
+              <label for="mejl">Mejl</label>
+              <input id="mejl" name="mejl" type="email" autocomplete="email" required>
+              <span class="field__error">Skriv en giltig mejladress.</span>
+            </div>
+            <div class="field">
+              <label for="telefon">Telefon</label>
+              <input id="telefon" name="telefon" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="meddelande">Meddelande</label>
+              <textarea id="meddelande" name="meddelande" required placeholder="Vilken tjänst vill du boka och när passar det?"></textarea>
+              <span class="field__error">Skriv ett kort meddelande.</span>
+            </div>
+            <button class="btn" type="submit">Skicka förfrågan</button>
+            <p class="form__note">Demoformulär. Inget skickas.</p>
+          </div>
+          <div class="form-success" role="status" aria-live="polite">
+            <div class="form-success__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h2>Tack!</h2>
+            <p>Det här är en demo, så inget skickades.</p>
+          </div>
+        </form>
+
+        <div class="info">
+          <div class="info__block reveal">
+            <h2>Besök oss</h2>
+            <p>Kvarngatan 7<br>582 21 Linköping</p>
+          </div>
+          <div class="info__block reveal">
+            <h2>Ring eller mejla</h2>
+            <p><a href="tel:+4613357911">013-35 79 11</a><br><a href="mailto:hej@kvarnbarbershop.exempel.se">hej@kvarnbarbershop.exempel.se</a></p>
+          </div>
+          <div class="info__block reveal">
+            <h2>Öppettider</h2>
+            <dl class="hours">
+              <div><dt>Måndag – fredag</dt><dd>09–19</dd></div>
+              <div><dt>Lördag</dt><dd>10–16</dd></div>
+              <div><dt>Söndag</dt><dd>Stängt</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="map-embed reveal">
+          <iframe src="https://www.google.com/maps?q=Link%C3%B6ping&amp;output=embed" title="Karta över Linköping centrum" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <div>
+          <a class="logo" href="index.html"><span class="logo__mark" aria-hidden="true"></span><span class="logo__name">Kvarn<small>Barbershop</small></span></a>
+          <p style="margin-top:16px;max-width:22rem">Barbershop i centrala Linköping. Klipp, fades, skägg och klassisk rakning.</p>
+        </div>
+        <div>
+          <h2>Sidor</h2>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="tjanster.html">Tjänster & priser</a></li>
+            <li><a href="galleri.html">Galleri</a></li>
+            <li><a href="om-oss.html">Om oss & barberarna</a></li>
+            <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Besök</h2>
+          <p>Kvarngatan 7<br>582 21 Linköping</p>
+        </div>
+        <div>
+          <h2>Kontakt</h2>
+          <p><a href="tel:+4613357911">013-35 79 11</a><br><a href="mailto:hej@kvarnbarbershop.exempel.se">hej@kvarnbarbershop.exempel.se</a></p>
+        </div>
+      </div>
+      <p class="footer__bottom">Demosida skapad av <a href="/">Bureau Nord</a> som exempel på Premium-paketet. Salongen, adressen och kontaktuppgifterna är påhittade.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-book">
+    <a class="btn" href="kontakt.html#boka">Boka tid</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

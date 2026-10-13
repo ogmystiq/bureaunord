@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Galleri – Kvarn Barbershop Linköping</title>
+  <meta name="description" content="Bilder från Kvarn Barbershop: verktyg, läder, trä, mässing och detaljer från salongen i Linköping.">
+  <meta name="theme-color" content="#100f0e">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23100f0e'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23c9a063' stroke-width='2.5'/%3E%3Cpath d='M23 23l18 18M41 23L23 41' stroke='%23c9a063' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
+
+  <div class="demo-bar">
+    Demosida av <a href="/">Bureau Nord</a>
+    <span class="demo-bar__sep" aria-hidden="true">·</span>
+    <a class="demo-bar__tag" href="/#priser">Premium-paketet</a>
+    <span class="demo-bar__sep" aria-hidden="true">·</span>
+    Salongen är påhittad
+  </div>
+
+  <header class="header">
+    <div class="wrap header__inner">
+      <a class="logo" href="index.html" aria-label="Kvarn Barbershop – startsida"><span class="logo__mark" aria-hidden="true"></span><span class="logo__name">Kvarn<small>Barbershop</small></span></a>
+      <nav class="nav" aria-label="Huvudmeny">
+        <a href="index.html">Start</a>
+        <a href="tjanster.html">Tjänster & priser</a>
+        <a href="galleri.html" aria-current="page">Galleri</a>
+        <a href="om-oss.html">Om oss & barberarna</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <a class="btn btn--small header__book" href="kontakt.html#boka">Boka tid</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobilmeny" aria-label="Öppna menyn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobilmeny" aria-label="Mobilmeny">
+    <ul>
+      <li><a href="index.html" data-num="01">Start</a></li>
+      <li><a href="tjanster.html" data-num="02">Tjänster & priser</a></li>
+      <li><a href="galleri.html" data-num="03" aria-current="page">Galleri</a></li>
+      <li><a href="om-oss.html" data-num="04">Om oss & barberarna</a></li>
+      <li><a href="kontakt.html" data-num="05">Kontakt</a></li>
+    </ul>
+    <p class="mobile-menu__info">Kvarngatan 7, Linköping<br>013-35 79 11</p>
+  </nav>
+
+  <main id="innehall">
+    <section class="page-hero">
+      <span class="hero__glow" aria-hidden="true"></span>
+      <div class="wrap">
+        <p class="eyebrow reveal">Galleri</p>
+        <h1 class="reveal">Salongen i bild</h1>
+        <p class="lead reveal">Verktygen, materialen och detaljerna som gör Kvarn. Klicka på en bild för att se den större.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:48px">
+      <div class="wrap">
+        <div class="filters reveal" role="group" aria-label="Filtrera bilder">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Alla</button>
+          <button class="filter" type="button" data-filter="verktyg" aria-pressed="false">Verktyg</button>
+          <button class="filter" type="button" data-filter="salong" aria-pressed="false">Salongen</button>
+          <button class="filter" type="button" data-filter="material" aria-pressed="false">Material</button>
+          <button class="filter" type="button" data-filter="klipp" aria-pressed="false">Klipp</button>
+        </div>
+        <div class="gallery">
+          <button class="shot shot--wide reveal" type="button" data-cat="verktyg" data-title="Rakkniven" data-desc="Rakkniv med mörkt skaft mot trä." aria-label="Visa bild: Rakkniven. Rakkniv med mörkt skaft mot trä.">
+            <div class="art art--wood" role="img" aria-label="Rakkniv med mörkt skaft mot trä."><span class="shape shape--razor"></span></div>
+            <span class="shot__label">Rakkniven</span>
+          </button>
+          <button class="shot reveal" type="button" data-cat="salong" data-title="Läderstolen" data-desc="Klassisk barberarstol i brunt läder." aria-label="Visa bild: Läderstolen. Klassisk barberarstol i brunt läder.">
+            <div class="art art--coal" role="img" aria-label="Klassisk barberarstol i brunt läder."><span class="shape shape--chair"></span></div>
+            <span class="shot__label">Läderstolen</span>
+          </button>
+          <button class="shot reveal" type="button" data-cat="material" data-title="Mässing" data-desc="Borstad mässing från salongens detaljer." aria-label="Visa bild: Mässing. Borstad mässing från salongens detaljer.">
+            <div class="art art--brass" role="img" aria-label="Borstad mässing från salongens detaljer."></div>
+            <span class="shot__label">Mässing</span>
+          </button>
+          <button class="shot reveal" type="button" data-cat="klipp" data-title="Skinfade" data-desc="Mönster som visar en mjuk övergång." aria-label="Visa bild: Skinfade. Mönster som visar en mjuk övergång.">
+            <div class="art art--fade" role="img" aria-label="Mönster som visar en mjuk övergång."></div>
+            <span class="shot__label">Skinfade</span>
+          </button>
+          <button class="shot reveal" type="button" data-cat="verktyg" data-title="Kammen" data-desc="Fintandad kam i mörkt trä." aria-label="Visa bild: Kammen. Fintandad kam i mörkt trä.">
+            <div class="art art--leather" role="img" aria-label="Fintandad kam i mörkt trä."><span class="shape shape--comb"></span></div>
+            <span class="shot__label">Kammen</span>
+          </button>
+          <button class="shot reveal" type="button" data-cat="verktyg" data-title="Raklödder" data-desc="Rakborste med mässingsring." aria-label="Visa bild: Raklödder. Rakborste med mässingsring.">
+            <div class="art art--marble" role="img" aria-label="Rakborste med mässingsring."><span class="shape shape--brush"></span></div>
+            <span class="shot__label">Raklödder</span>
+          </button>
+          <button class="shot reveal" type="button" data-cat="salong" data-title="Skäggolja" data-desc="Flaska med skäggolja i bärnstensglas." aria-label="Visa bild: Skäggolja. Flaska med skäggolja i bärnstensglas.">
+            <div class="art art--coal" role="img" aria-label="Flaska med skäggolja i bärnstensglas."><span class="shape shape--bottle"></span></div>
+            <span class="shot__label">Skäggolja</span>
+          </button>
+          <button class="shot reveal" type="button" data-cat="material" data-title="Golvet" data-desc="Kakel i varmt vitt vid tvättstationen." aria-label="Visa bild: Golvet. Kakel i varmt vitt vid tvättstationen.">
+            <div class="art art--tiles" role="img" aria-label="Kakel i varmt vitt vid tvättstationen."></div>
+            <span class="shot__label">Golvet</span>
+          </button>
+          <button class="shot reveal" type="button" data-cat="material" data-title="Läder" data-desc="Sömmar i läder från stolarna." aria-label="Visa bild: Läder. Sömmar i läder från stolarna.">
+            <div class="art art--leather" role="img" aria-label="Sömmar i läder från stolarna."></div>
+            <span class="shot__label">Läder</span>
+          </button>
+          <button class="shot shot--wide reveal" type="button" data-cat="salong" data-title="Spegeln" data-desc="Rund spegel med mässingsram." aria-label="Visa bild: Spegeln. Rund spegel med mässingsram.">
+            <div class="art art--wood" role="img" aria-label="Rund spegel med mässingsram."><span class="shape shape--ring"></span></div>
+            <span class="shot__label">Spegeln</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+      <button class="lightbox__btn lightbox__close" type="button" aria-label="Stäng">&times;</button>
+      <button class="lightbox__btn lightbox__prev" type="button" aria-label="Föregående bild">&larr;</button>
+      <div class="lightbox__frame">
+        <div class="lightbox__art art" id="lightbox-art" aria-hidden="true"></div>
+        <div class="lightbox__caption">
+          <div>
+            <h2 id="lightbox-title"></h2>
+            <p id="lightbox-desc"></p>
+          </div>
+          <p class="lightbox__count" id="lightbox-count"></p>
+        </div>
+      </div>
+      <button class="lightbox__btn lightbox__next" type="button" aria-label="Nästa bild">&rarr;</button>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <div>
+          <a class="logo" href="index.html"><span class="logo__mark" aria-hidden="true"></span><span class="logo__name">Kvarn<small>Barbershop</small></span></a>
+          <p style="margin-top:16px;max-width:22rem">Barbershop i centrala Linköping. Klipp, fades, skägg och klassisk rakning.</p>
+        </div>
+        <div>
+          <h2>Sidor</h2>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="tjanster.html">Tjänster & priser</a></li>
+            <li><a href="galleri.html" aria-current="page">Galleri</a></li>
+            <li><a href="om-oss.html">Om oss & barberarna</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Besök</h2>
+          <p>Kvarngatan 7<br>582 21 Linköping</p>
+        </div>
+        <div>
+          <h2>Kontakt</h2>
+          <p><a href="tel:+4613357911">013-35 79 11</a><br><a href="mailto:hej@kvarnbarbershop.exempel.se">hej@kvarnbarbershop.exempel.se</a></p>
+        </div>
+      </div>
+      <p class="footer__bottom">Demosida skapad av <a href="/">Bureau Nord</a> som exempel på Premium-paketet. Salongen, adressen och kontaktuppgifterna är påhittade.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-book">
+    <a class="btn" href="kontakt.html#boka">Boka tid</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
