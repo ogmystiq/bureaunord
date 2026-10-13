@@ -101,21 +101,54 @@
           </div>
         </div>
 
-        <!-- Telefon ritad helt i CSS: antyder hur en salongssida ser ut i mobilen -->
-        <div class="hero__visual reveal" aria-hidden="true">
-          <div class="phone">
-            <div class="phone__screen">
-              <div class="phone__bar"><span></span><span></span></div>
-              <div class="phone__hero">
-                <span class="phone__kicker"></span>
-                <span class="phone__title"></span>
-                <span class="phone__title phone__title--short"></span>
-                <span class="phone__cta">Boka tid</span>
-              </div>
-              <div class="phone__grid"><span></span><span></span><span></span></div>
-              <div class="phone__rows"><span></span><span></span></div>
-              <div class="phone__nav"><span></span><span></span><span></span><span></span></div>
-            </div>
+        <!--
+          Telefon ritad i CSS som visar våra tre demosidor, en i taget.
+          Skärmarna byts automatiskt (script.js) och går att välja med etiketterna under.
+          Klick på telefonen öppnar demon som syns just då, i ny flik.
+        -->
+        <div class="hero__visual reveal">
+          <div class="phone-wrap" id="phone-showcase">
+            <span class="phone-glow phone-glow--frisor is-active" aria-hidden="true"></span>
+            <span class="phone-glow phone-glow--nagel" aria-hidden="true"></span>
+            <span class="phone-glow phone-glow--barber" aria-hidden="true"></span>
+            <a class="phone" id="phone-link" href="/demo/frisor/" target="_blank" rel="noopener" aria-label="Öppna demosidan för Salong Ljung, Bas-paketet (öppnas i ny flik)">
+              <span class="phone__screen">
+                <span class="ps ps--frisor is-active" aria-hidden="true">
+                  <span class="ps__nav"><span class="ps__brand">Salong Ljung</span><span class="ps__menu"></span></span>
+                  <span class="ps__eyebrow">Frisörsalong i Linköping</span>
+                  <span class="ps__title">Hår som känns som du.</span>
+                  <span class="ps__lines"><i></i><i></i></span>
+                  <span class="ps__btn">Boka tid</span>
+                  <span class="ps__art"><i class="ps__arch ps__arch--a"></i><i class="ps__arch ps__arch--b"></i><i class="ps__sun"></i></span>
+                  <span class="ps__sticky">Boka tid</span>
+                </span>
+                <span class="ps ps--nagel" aria-hidden="true">
+                  <span class="ps__nav"><span class="ps__brand"><i class="ps__gem"></i>Opal Nails</span><span class="ps__menu"></span></span>
+                  <span class="ps__eyebrow">Nagelstudio i Linköping</span>
+                  <span class="ps__title">Naglar med <b>lyster</b> och omsorg.</span>
+                  <span class="ps__lines"><i></i><i></i></span>
+                  <span class="ps__btn">Boka tid</span>
+                  <span class="ps__art"><i class="ps__orb"></i><i class="ps__hand"><i></i><i></i><i></i><i></i><i></i></i></span>
+                  <span class="ps__sticky">Boka tid</span>
+                </span>
+                <span class="ps ps--barber" aria-hidden="true">
+                  <span class="ps__nav"><span class="ps__brand"><i class="ps__mark"></i>Kvarn</span><span class="ps__menu"></span></span>
+                  <span class="ps__eyebrow">Barbershop i Linköping</span>
+                  <span class="ps__title">Skarpa linjer. <b>Lugnt tempo.</b></span>
+                  <span class="ps__lines"><i></i><i></i></span>
+                  <span class="ps__btn">Boka tid</span>
+                  <span class="ps__art"><i></i><i></i><i></i></span>
+                  <span class="ps__sticky">Boka tid</span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="phone-tabs" role="group" aria-label="Välj demosida i telefonen">
+            <button class="phone-tab is-active" type="button" data-index="0" aria-pressed="true">Frisör</button>
+            <span class="phone-tabs__sep" aria-hidden="true">·</span>
+            <button class="phone-tab" type="button" data-index="1" aria-pressed="false">Nagel</button>
+            <span class="phone-tabs__sep" aria-hidden="true">·</span>
+            <button class="phone-tab" type="button" data-index="2" aria-pressed="false">Barber</button>
           </div>
         </div>
       </div>

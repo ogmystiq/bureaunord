@@ -39,6 +39,59 @@
     });
   }
 
+  /* Telefonen i hero: bläddrar mellan våra tre demosidor */
+  var showcase = document.getElementById("phone-showcase");
+  if (showcase) {
+    var demos = [
+      { key: "frisor", href: "/demo/frisor/", label: "Öppna demosidan för Salong Ljung, Bas-paketet (öppnas i ny flik)" },
+      { key: "nagel", href: "/demo/nagel/", label: "Öppna demosidan för Opal Nails, Premium-paketet (öppnas i ny flik)" },
+      { key: "barber", href: "/demo/barber/", label: "Öppna demosidan för Kvarn Barbershop, Premium-paketet (öppnas i ny flik)" }
+    ];
+    var phoneLink = document.getElementById("phone-link");
+    var screens = showcase.querySelectorAll(".ps");
+    var glows = showcase.querySelectorAll(".phone-glow");
+    var tabs = document.querySelectorAll(".phone-tab");
+    var current = 0, timer = null, hovering = false, inView = true;
+
+    function showDemo(i) {
+      current = (i + demos.length) % demos.length;
+      for (var k = 0; k < demos.length; k++) {
+        var on = k === current;
+        screens[k].classList.toggle("is-active", on);
+        glows[k].classList.toggle("is-active", on);
+        tabs[k].classList.toggle("is-active", on);
+        tabs[k].setAttribute("aria-pressed", on ? "true" : "false");
+      }
+      phoneLink.href = demos[current].href;
+      phoneLink.setAttribute("aria-label", demos[current].label);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() {
+      stop();
+      if (reduceMotion || hovering || !inView || document.hidden) return;
+      timer = setInterval(function () { showDemo(current + 1); }, 4000);
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        showDemo(parseInt(tab.getAttribute("data-index"), 10));
+        start();
+      });
+    });
+    showcase.addEventListener("mouseenter", function () { hovering = true; stop(); });
+    showcase.addEventListener("mouseleave", function () { hovering = false; start(); });
+    showcase.addEventListener("focusin", function () { hovering = true; stop(); });
+    showcase.addEventListener("focusout", function () { hovering = false; start(); });
+    document.addEventListener("visibilitychange", start);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        start();
+      }).observe(showcase);
+    }
+    start();
+  }
+
   /* Demokort utan länk ska inte hoppa till toppen */
   document.querySelectorAll("[data-coming-soon]").forEach(function (el) {
     el.addEventListener("click", function (e) { e.preventDefault(); });
