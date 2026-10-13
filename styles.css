@@ -500,8 +500,6 @@ h3 { font-size: 1.4rem; font-weight: 500; font-variation-settings: "opsz" 48; li
   border-color: var(--line-strong);
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
 }
-.demo[data-coming-soon] { cursor: default; }
-.demo[data-coming-soon]:hover { transform: none; box-shadow: none; }
 
 .demo__window {
   border-radius: 12px;
@@ -560,6 +558,84 @@ h3 { font-size: 1.4rem; font-weight: 500; font-variation-settings: "opsz" 48; li
   border-radius: 999px;
   white-space: nowrap;
 }
+
+/* Demokort: etikett och förhandsvisning i demosidans färger */
+.demo { position: relative; }
+.demo__badge {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  z-index: 2;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(57, 209, 180, 0.4);
+  background: rgba(10, 12, 16, 0.72);
+  color: var(--aurora-1);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.demo .demo__status { color: var(--text); border-color: var(--line-strong); transition: border-color 0.3s var(--ease), color 0.3s var(--ease); }
+.demo:hover .demo__status { color: var(--aurora-1); border-color: rgba(57, 209, 180, 0.5); }
+
+.pv {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 16px;
+  gap: 8px;
+  background: none;
+}
+.pv > span { position: relative; z-index: 1; }
+.pv__brand { font-size: 0.62rem; letter-spacing: 0.08em; }
+.pv__title { max-width: 62%; margin-top: 10px; font-size: 1.05rem; line-height: 1.05; }
+.pv__btn {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 5px 11px;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.pv--frisor { background: #f4ede4; color: #2b2420; }
+.pv--frisor .pv__brand { font-family: "Cormorant Garamond", Georgia, serif; font-size: 0.85rem; letter-spacing: 0.01em; }
+.pv--frisor .pv__title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.35rem; font-weight: 500; }
+.pv--frisor .pv__btn { border-radius: 999px; background: #2b2420; color: #fbf7f1; }
+.pv .pv__arch { position: absolute; z-index: 0; bottom: 0; border-radius: 999px 999px 8px 8px; }
+.pv__arch--a { right: 34%; width: 24%; height: 62%; background: linear-gradient(160deg, #efe3d3, #c9a988); box-shadow: 0 14px 24px -14px rgba(43, 36, 32, 0.6); }
+.pv__arch--b { right: 10%; width: 24%; height: 78%; background: linear-gradient(170deg, #d9c7b0, #b8916b); }
+
+.pv--nagel { background: radial-gradient(70% 70% at 90% 10%, #ecd5d1, transparent 70%), #f6f0ec; color: #2a1b23; }
+.pv--nagel .pv__brand { font-family: Didot, "Bodoni MT", "Times New Roman", serif; font-size: 0.82rem; }
+.pv--nagel .pv__title { font-family: Didot, "Bodoni MT", "Times New Roman", serif; font-size: 1.25rem; }
+.pv--nagel .pv__btn { border-radius: 999px; background: #4a2338; color: #fcf9f6; text-transform: uppercase; }
+.pv .pv__orb {
+  position: absolute; z-index: 0;
+  right: -8%; top: 14%;
+  width: 46%; aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #fbf6f2, #efdcd8 35%, #e6e3f1 60%, #f6ebe2);
+  box-shadow: inset -8px -10px 20px rgba(184, 138, 146, 0.35), 0 16px 26px -16px rgba(74, 35, 56, 0.5);
+}
+.pv .pv__nails { position: absolute; right: 12%; bottom: 12%; display: flex; align-items: flex-end; gap: 5px; }
+.pv__nails i { display: block; width: 11px; height: 19px; border-radius: 50% 50% 44% 44% / 62% 62% 38% 38%; background: linear-gradient(180deg, #f0cfcb, #d39b98); box-shadow: 0 4px 8px -4px rgba(74, 35, 56, 0.6); }
+.pv__nails i:nth-child(2) { height: 23px; background: linear-gradient(180deg, #7a3b5c, #3b1a2c); }
+.pv__nails i:nth-child(3) { height: 24px; background: linear-gradient(135deg, #f4f1f6, #c8c2d6 40%, #fbfaff 55%, #b7b0c8); }
+.pv__nails i:nth-child(4) { height: 20px; }
+
+.pv--barber { background: radial-gradient(70% 70% at 100% 0%, rgba(201, 160, 99, 0.22), transparent 70%), #100f0e; color: #f0ebe3; }
+.pv--barber .pv__brand { font-family: "Arial Narrow", Impact, sans-serif; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.pv--barber .pv__title { font-family: Impact, "Arial Narrow", sans-serif; font-weight: 800; font-size: 1.3rem; line-height: 0.95; text-transform: uppercase; letter-spacing: 0.01em; }
+.pv--barber .pv__title b { font-weight: 800; color: #c9a063; }
+.pv--barber .pv__btn { border-radius: 3px; background: linear-gradient(135deg, #e4c78f, #c9a063 55%, #8e6d3c); color: #17120c; text-transform: uppercase; }
+.pv .pv__strip { position: absolute; z-index: 0; left: 0; right: 0; bottom: 0; height: 26%; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1px; }
+.pv__strip i:nth-child(1) { background: repeating-linear-gradient(92deg, rgba(0, 0, 0, 0.2) 0 1px, transparent 1px 5px), linear-gradient(90deg, #3b2718, #5b3d27 40%, #4a3120 70%, #6a4930); }
+.pv__strip i:nth-child(2) { background: radial-gradient(120% 90% at 30% 20%, #9a603c, #6e4128 55%, #3e2416); }
+.pv__strip i:nth-child(3) { background: linear-gradient(120deg, #6d5126, #c9a063 35%, #f2dba7 50%, #b88c4f 65%, #6d5126); }
 
 /* ---- Priser */
 .plans { display: grid; gap: 18px; }

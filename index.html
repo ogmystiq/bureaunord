@@ -251,58 +251,62 @@
         <div class="section__head">
           <p class="kicker reveal"><span class="kicker__num">04</span>Demosidor</p>
           <h2 class="reveal">Se hur det kan se ut.</h2>
-          <p class="lead reveal">Tre demosidor för olika typer av salonger är på väg och läggs upp här så snart de är klara.</p>
+          <p class="lead reveal">Tre exempel – ett i Bas-paketet och två i Premium – så du ser skillnaden. Salongerna är påhittade, din sida byggs helt efter er.</p>
         </div>
 
         <!--
-          Platshållare för demosidorna.
-          När en demosida är klar: lägg till href="https://adressen-till-demosidan" på kortets <a>,
-          ta bort data-coming-soon och ändra texten "Kommer snart" till "Öppna demo".
+          Demosidorna. Varje kort länkar till sin demo och öppnas i ny flik.
+          Förhandsvisningen är ritad med CSS i demosidans färger.
         -->
         <div class="demos">
-          <a class="demo reveal" data-coming-soon>
+          <a class="demo reveal" href="/demo/frisor/" target="_blank" rel="noopener" aria-label="Frisörsalong: se demosidan för Salong Ljung, Bas-paketet (öppnas i ny flik)">
+            <span class="demo__badge demo__badge--bas">Bas-paketet</span>
             <div class="demo__window" aria-hidden="true">
               <div class="demo__chrome"><i></i><i></i><i></i></div>
-              <div class="demo__screen">
-                <span class="demo__ph demo__ph--kicker"></span>
-                <span class="demo__ph demo__ph--title"></span>
-                <span class="demo__ph demo__ph--title demo__ph--short"></span>
-                <span class="demo__ph demo__ph--btn"></span>
+              <div class="demo__screen pv pv--frisor">
+                <span class="pv__brand">Salong Ljung</span>
+                <span class="pv__title">Hår som känns som du.</span>
+                <span class="pv__btn">Boka tid</span>
+                <span class="pv__arch pv__arch--a"></span>
+                <span class="pv__arch pv__arch--b"></span>
               </div>
             </div>
             <div class="demo__meta">
               <span class="demo__name">Frisörsalong</span>
-              <span class="demo__status">Kommer snart</span>
+              <span class="demo__status">Se demo <span aria-hidden="true">→</span></span>
             </div>
           </a>
-          <a class="demo reveal" data-coming-soon>
+          <a class="demo reveal" href="/demo/nagel/" target="_blank" rel="noopener" aria-label="Nagelsalong: se demosidan för Opal Nails, Premium-paketet (öppnas i ny flik)">
+            <span class="demo__badge">Premium-paketet</span>
             <div class="demo__window" aria-hidden="true">
               <div class="demo__chrome"><i></i><i></i><i></i></div>
-              <div class="demo__screen">
-                <span class="demo__ph demo__ph--kicker"></span>
-                <span class="demo__ph demo__ph--title"></span>
-                <span class="demo__ph demo__ph--title demo__ph--short"></span>
-                <span class="demo__ph demo__ph--btn"></span>
+              <div class="demo__screen pv pv--nagel">
+                <span class="pv__brand">Opal Nails</span>
+                <span class="pv__title">Naglar med lyster och omsorg.</span>
+                <span class="pv__btn">Boka tid</span>
+                <span class="pv__orb"></span>
+                <span class="pv__nails"><i></i><i></i><i></i><i></i></span>
               </div>
             </div>
             <div class="demo__meta">
               <span class="demo__name">Nagelsalong</span>
-              <span class="demo__status">Kommer snart</span>
+              <span class="demo__status">Se demo <span aria-hidden="true">→</span></span>
             </div>
           </a>
-          <a class="demo reveal" data-coming-soon>
+          <a class="demo reveal" href="/demo/barber/" target="_blank" rel="noopener" aria-label="Barbershop: se demosidan för Kvarn Barbershop, Premium-paketet (öppnas i ny flik)">
+            <span class="demo__badge">Premium-paketet</span>
             <div class="demo__window" aria-hidden="true">
               <div class="demo__chrome"><i></i><i></i><i></i></div>
-              <div class="demo__screen">
-                <span class="demo__ph demo__ph--kicker"></span>
-                <span class="demo__ph demo__ph--title"></span>
-                <span class="demo__ph demo__ph--title demo__ph--short"></span>
-                <span class="demo__ph demo__ph--btn"></span>
+              <div class="demo__screen pv pv--barber">
+                <span class="pv__brand">Kvarn</span>
+                <span class="pv__title">Skarpa linjer. <b>Lugnt tempo.</b></span>
+                <span class="pv__btn">Boka tid</span>
+                <span class="pv__strip"><i></i><i></i><i></i></span>
               </div>
             </div>
             <div class="demo__meta">
               <span class="demo__name">Barbershop</span>
-              <span class="demo__status">Kommer snart</span>
+              <span class="demo__status">Se demo <span aria-hidden="true">→</span></span>
             </div>
           </a>
         </div>
