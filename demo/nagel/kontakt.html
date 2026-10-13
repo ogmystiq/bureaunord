@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Kontakt och bokning – Opal Nails Linköping</title>
+  <meta name="description" content="Boka tid hos Opal Nails i Linköping. Adress, telefon, öppettider, karta och kontaktformulär.">
+  <meta name="theme-color" content="#f6f0ec">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fbf6f2'/%3E%3Cstop offset='.5' stop-color='%23e9cfd0'/%3E%3Cstop offset='1' stop-color='%23d9d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='url(%23g)' stroke='%234a2338' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
+
+  <div class="demo-bar">
+    Demosida av <a href="/">Bureau Nord</a>
+    <span class="demo-bar__sep" aria-hidden="true">·</span>
+    <a class="demo-bar__tag" href="/#priser">Premium-paketet</a>
+    <span class="demo-bar__sep" aria-hidden="true">·</span>
+    Salongen är påhittad
+  </div>
+
+  <header class="header">
+    <div class="wrap header__inner">
+      <a class="logo" href="index.html" aria-label="Opal Nails – startsida">
+        <span class="logo__gem" aria-hidden="true"></span>
+        <span class="logo__name">Opal Nails</span>
+      </a>
+      <nav class="nav" aria-label="Huvudmeny">
+        <a href="index.html">Start</a>
+          <a href="behandlingar.html">Behandlingar & priser</a>
+          <a href="galleri.html">Galleri</a>
+          <a href="om-oss.html">Om oss</a>
+          <a href="kontakt.html" aria-current="page">Kontakt</a>
+      </nav>
+      <a class="btn btn--small header__book" href="kontakt.html#boka">Boka tid</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobilmeny" aria-label="Öppna menyn">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobilmeny" aria-label="Mobilmeny">
+    <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="behandlingar.html">Behandlingar & priser</a></li>
+          <li><a href="galleri.html">Galleri</a></li>
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+    </ul>
+    <p class="mobile-menu__info">Opalgatan 4, Linköping<br>013-24 68 10</p>
+  </nav>
+
+  <main id="innehall">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow reveal">Kontakt</p>
+        <h1 class="reveal">Boka din tid</h1>
+        <p class="lead reveal">Skicka en förfrågan via formuläret, ring eller mejla. Vi återkommer så snart vi kan med en tid som passar.</p>
+      </div>
+    </section>
+
+    <section class="section section--cream" style="padding-top:48px" id="boka">
+      <div class="wrap contact-grid">
+        <form class="form reveal" id="kontaktformular" novalidate aria-label="Kontaktformulär">
+          <div class="form__fields">
+            <div class="field">
+              <label for="namn">Namn</label>
+              <input id="namn" name="namn" type="text" autocomplete="name" required>
+              <span class="field__error">Skriv ditt namn.</span>
+            </div>
+            <div class="field">
+              <label for="mejl">Mejl</label>
+              <input id="mejl" name="mejl" type="email" autocomplete="email" required>
+              <span class="field__error">Skriv en giltig mejladress.</span>
+            </div>
+            <div class="field">
+              <label for="telefon">Telefon</label>
+              <input id="telefon" name="telefon" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="meddelande">Meddelande</label>
+              <textarea id="meddelande" name="meddelande" required placeholder="Vilken behandling vill du boka och när passar det?"></textarea>
+              <span class="field__error">Skriv ett kort meddelande.</span>
+            </div>
+            <button class="btn" type="submit">Skicka förfrågan</button>
+            <p class="form__note">Demoformulär. Inget skickas.</p>
+          </div>
+          <div class="form-success" role="status" aria-live="polite">
+            <div class="form-success__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h3>Tack!</h3>
+            <p>Det här är en demo, så inget skickades.</p>
+          </div>
+        </form>
+
+        <div class="info">
+          <div class="info__block reveal">
+            <h3>Besök oss</h3>
+            <p>Opalgatan 4<br>582 22 Linköping</p>
+          </div>
+          <div class="info__block reveal">
+            <h3>Ring eller mejla</h3>
+            <p><a href="tel:+4613246810">013-24 68 10</a><br><a href="mailto:hej@opalnails.exempel.se">hej@opalnails.exempel.se</a></p>
+          </div>
+          <div class="info__block reveal">
+            <h3>Öppettider</h3>
+            <dl class="hours">
+              <div><dt>Måndag – fredag</dt><dd>10–19</dd></div>
+              <div><dt>Lördag</dt><dd>10–16</dd></div>
+              <div><dt>Söndag</dt><dd>Stängt</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;background:var(--cream)">
+      <div class="wrap">
+        <div class="map-embed reveal">
+          <iframe src="https://www.google.com/maps?q=Link%C3%B6ping&amp;output=embed" title="Karta över Linköping centrum" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <div>
+          <a class="logo" href="index.html"><span class="logo__gem" aria-hidden="true"></span><span class="logo__name">Opal Nails</span></a>
+          <p style="margin-top:14px;max-width:22rem">Nagelstudio i centrala Linköping. Gellack, förlängning, manikyr, pedikyr och nail art.</p>
+        </div>
+        <div>
+          <h2>Sidor</h2>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+          <li><a href="behandlingar.html">Behandlingar & priser</a></li>
+          <li><a href="galleri.html">Galleri</a></li>
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Besök</h2>
+          <p>Opalgatan 4<br>582 22 Linköping</p>
+        </div>
+        <div>
+          <h2>Kontakt</h2>
+          <p><a href="tel:+4613246810">013-24 68 10</a><br><a href="mailto:hej@opalnails.exempel.se">hej@opalnails.exempel.se</a></p>
+        </div>
+      </div>
+      <p class="footer__bottom">Demosida skapad av <a href="/">Bureau Nord</a> som exempel på Premium-paketet. Salongen, adressen och kontaktuppgifterna är påhittade.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-book">
+    <a class="btn" href="kontakt.html#boka">Boka tid</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
