@@ -17,7 +17,11 @@
 
   <!-- Diskret rad som visar att detta är en demosida -->
   <div class="demo-bar">
-    Demosida av <a href="/">Bureau Nord</a> – salongen är påhittad
+    Demosida av <a href="/">Bureau Nord</a>
+    <span class="demo-bar__sep" aria-hidden="true">·</span>
+    <a class="demo-bar__tag" href="/#priser">Bas-paketet</a>
+    <span class="demo-bar__sep" aria-hidden="true">·</span>
+    Salongen är påhittad
   </div>
 
   <header class="header">
@@ -27,7 +31,7 @@
         <a href="#behandlingar">Behandlingar</a>
         <a href="#om">Om oss</a>
         <a href="#frisorer">Frisörer</a>
-        <a href="#hitta">Hitta hit</a>
+        <a href="#hitta">Öppettider</a>
       </nav>
       <a class="btn btn--small" href="#boka">Boka tid</a>
     </div>
@@ -171,7 +175,7 @@
 
     <!-- ÖPPETTIDER + KARTA -->
     <section class="section section--tint" id="hitta">
-      <div class="wrap visit">
+      <div class="wrap visit visit--single">
         <div class="visit__hours reveal">
           <p class="eyebrow">Öppettider</p>
           <h2>Välkommen in</h2>
@@ -181,23 +185,6 @@
             <div><dt>Lördag</dt><dd>10–15</dd></div>
             <div><dt>Söndag</dt><dd>Stängt</dd></div>
           </dl>
-        </div>
-        <div class="map reveal" role="img" aria-label="Kartbild: Salong Ljung, Ljunggatan 8, Linköping">
-          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect width="400" height="300" fill="#ebe1d4"/>
-            <path d="M-20 210 C 80 180, 160 240, 420 170" stroke="#d9cbb8" stroke-width="22" fill="none"/>
-            <path d="M120 -20 L 170 320" stroke="#fbf7f1" stroke-width="14"/>
-            <path d="M-20 90 L 420 120" stroke="#fbf7f1" stroke-width="12"/>
-            <path d="M290 -20 L 250 320" stroke="#fbf7f1" stroke-width="10"/>
-            <path d="M-20 260 L 420 245" stroke="#fbf7f1" stroke-width="8"/>
-            <rect x="185" y="135" width="50" height="40" rx="4" fill="#e2d5c4"/>
-            <rect x="20" y="20" width="80" height="55" rx="6" fill="#dfe3d2"/>
-          </svg>
-          <div class="map__pin" aria-hidden="true"><span></span></div>
-          <div class="map__label">
-            <strong>Salong Ljung</strong>
-            Ljunggatan 8, Linköping
-          </div>
         </div>
       </div>
     </section>
@@ -225,6 +212,16 @@
         </div>
       </div>
     </section>
+
+    <!-- Ruta som visar att detta är Bas-paketet -->
+    <aside class="package-note">
+      <div class="wrap">
+        <p class="package-note__box reveal">
+          Det här är Bas-paketet. Vill du se mer?
+          <a href="/demo/nagel/">Se Premium-paketet <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </aside>
 
   </main>
 
