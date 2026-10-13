@@ -1,4 +1,4 @@
-/* Bureau Nord – små funktioner: intoning, sidhuvud, årtal och laddning av
+/* Northline Studio – små funktioner: intoning, sidhuvud, årtal och laddning av
    kontaktformuläret från Tally. Utan skriptet visas sidan ändå, men formuläret
    måste då öppnas via länken under formulärrutan. */
 (function () {

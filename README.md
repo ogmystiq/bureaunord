@@ -1,6 +1,6 @@
-# Bureau Nord
+# Northline Studio
 
-Hemsidan för Bureau Nord, publicerad via GitHub Pages på [bureaunord.se](https://bureaunord.se).
+Hemsidan för Northline Studio, publicerad via GitHub Pages på [northlinestudio.se](https://northlinestudio.se).
 
 ## Filerna i korthet
 
@@ -9,7 +9,7 @@ Hemsidan för Bureau Nord, publicerad via GitHub Pages på [bureaunord.se](https
 | `index.html` | Själva sidan: all text och alla sektioner. Vill du ändra en rubrik eller en mening är det här du gör det. |
 | `styles.css` | Utseendet: färger, typsnitt, avstånd och hur sidan anpassar sig till mobil och dator. Färgerna ligger överst i filen. |
 | `script.js` | Mjuk intoning när man scrollar, årtalet i sidfoten och laddning av kontaktformuläret från Tally. Om filen inte laddas visas sidan ändå, men formuläret måste då öppnas via länken under det. |
-| `CNAME` | Talar om för GitHub Pages att sidan ska visas på bureaunord.se. |
+| `CNAME` | Talar om för GitHub Pages att sidan ska visas på northlinestudio.se. |
 | `favicon.svg` | Den lilla ikonen i webbläsarfliken. |
 | `apple-touch-icon.png` | Ikonen om någon sparar sidan på hemskärmen i en iPhone. |
 | `og-image.png` | Bilden som visas när länken delas i till exempel Messenger, LinkedIn eller iMessage. |

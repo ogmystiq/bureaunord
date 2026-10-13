@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Bureau Nord – stilmall
+   Northline Studio – stilmall
    Mörk, nordisk och luftig. Mobilen först: grundstilarna gäller för små
    skärmar, och längst ner finns tillägg för större skärmar (@media).
    ========================================================================== */
@@ -227,17 +227,18 @@ h3 { font-size: 1.4rem; font-weight: 500; font-variation-settings: "opsz" 48; li
   align-items: center;
   gap: 12px;
 }
-.wordmark__mono {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--line-strong);
-  font-family: var(--serif);
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+.wordmark__mark {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
   color: var(--ice);
+}
+.site-header .btn--small { white-space: nowrap; }
+@media (max-width: 370px) {
+  .site-header .wordmark { gap: 8px; }
+  .site-header .wordmark__mark { width: 30px; height: 30px; }
+  .site-header .wordmark__name { font-size: 1.02rem; }
+  .site-header .btn--small { padding: 0 14px; font-size: 0.8rem; }
 }
 .wordmark__name {
   font-family: var(--serif);

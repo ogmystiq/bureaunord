@@ -1,4 +1,4 @@
-/* Kvarn Barbershop – demosida av Bureau Nord */
+/* Kvarn Barbershop – demosida av Northline Studio */
 (function () {
   document.documentElement.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

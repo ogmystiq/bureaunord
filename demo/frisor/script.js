@@ -1,4 +1,4 @@
-/* Salong Ljung – demosida av Bureau Nord */
+/* Salong Ljung – demosida av Northline Studio */
 (function () {
   document.documentElement.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

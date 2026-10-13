@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://bureaunord.se/sitemap.xml
+Sitemap: https://northlinestudio.se/sitemap.xml
