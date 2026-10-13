@@ -603,6 +603,26 @@ h3 { font-size: 1.4rem; font-weight: 500; font-variation-settings: "opsz" 48; li
   font-size: 1rem;
   color: var(--text);
 }
+.plan__badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(57, 209, 180, 0.4);
+  background: rgba(57, 209, 180, 0.08);
+  color: var(--aurora-1);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.plan__terms {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--faint);
+}
 .plan__name {
   font-size: 0.72rem;
   font-weight: 500;
