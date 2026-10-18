@@ -6,7 +6,11 @@
   document.documentElement.classList.add("js");
 
   /* ---------- Läs och städa parametrarna ---------- */
+  /* Uppgifterna kommer antingen från 404.html (korta länkar /skiss/<slug>,
+     via window.SKISS_DATA) eller från ?n=&s=&t= i länken (reserv). */
+  var given = window.SKISS_DATA || null;
   var params = new URLSearchParams(window.location.search);
+  function pick(key, short) { return given ? given[key] : params.get(short); }
   function clean(value, max) {
     if (!value) return "";
     // Ta bort kontrolltecken, slå ihop mellanslag och klipp efter max tecken (räknar åäö och emoji rätt)
@@ -14,9 +18,9 @@
     var chars = Array.from(s);
     return chars.length > max ? chars.slice(0, max).join("").trim() : s;
   }
-  var name = clean(params.get("n"), 60) || "Er salong";
-  var city = clean(params.get("s"), 60);
-  var type = clean(params.get("t"), 20).toLowerCase();
+  var name = clean(pick("namn","n"), 60) || "Er salong";
+  var city = clean(pick("stad","s"), 60);
+  var type = clean(pick("typ","t"), 20).toLowerCase();
 
   /* ---------- Branschdata (exempeltexter och exempelpriser) ---------- */
   var DATA = {
