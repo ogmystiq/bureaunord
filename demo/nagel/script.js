@@ -1,8 +1,6 @@
 /* Opal Nails – demosida av Northline Studio */
 (function () {
   document.documentElement.classList.add("js");
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   /* Linje under sidhuvudet */
   var header = document.querySelector(".header");
   function onScroll() { header.classList.toggle("is-scrolled", window.scrollY > 10); }
@@ -23,66 +21,32 @@
     if (e.key === "Escape" && document.body.classList.contains("menu-open")) { setMenu(false); toggle.focus(); }
   });
 
-  /* Scrollanimationer */
-  var items = document.querySelectorAll(".reveal");
-  if (reduce || !("IntersectionObserver" in window)) {
-    items.forEach(function (el) { el.classList.add("is-visible"); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
-    var delay = 0, last = null;
-    items.forEach(function (el) {
-      var row = Math.round(el.getBoundingClientRect().top / 40);
-      delay = row === last ? Math.min(delay + 0.07, 0.35) : 0;
-      last = row;
-      el.style.transitionDelay = delay + "s";
-      io.observe(el);
-    });
-  }
-
-  /* Galleri: filter och lightbox */
-  var designs = Array.prototype.slice.call(document.querySelectorAll(".gallery .design"));
-  if (designs.length) {
-    var filters = document.querySelectorAll(".filter");
-    filters.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var f = btn.getAttribute("data-filter");
-        filters.forEach(function (b) {
-          var on = b === btn;
-          b.classList.toggle("is-active", on);
-          b.setAttribute("aria-pressed", on ? "true" : "false");
-        });
-        designs.forEach(function (d) {
-          d.classList.toggle("is-hidden", f !== "all" && d.getAttribute("data-cat") !== f);
-        });
-      });
-    });
-
+  /* Galleri: lightbox med fotona */
+  var shots = Array.prototype.slice.call(document.querySelectorAll(".shot__btn"));
+  if (shots.length) {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var box = document.getElementById("lightbox");
-    var art = document.getElementById("lightbox-art");
+    var big = document.getElementById("lightbox-img");
     var title = document.getElementById("lightbox-title");
     var desc = document.getElementById("lightbox-desc");
     var count = document.getElementById("lightbox-count");
     var current = 0, opener = null;
 
-    function visible() { return designs.filter(function (d) { return !d.classList.contains("is-hidden"); }); }
     function show(i) {
-      var list = visible();
-      current = (i + list.length) % list.length;
-      var d = list[current];
-      art.className = "design lightbox__art " + d.className.replace(/\b(design|reveal|is-visible)\b/g, "").trim();
-      art.innerHTML = Array.prototype.map.call(d.querySelectorAll(".nail"), function (n) { return n.outerHTML; }).join("");
-      title.textContent = d.getAttribute("data-title");
-      desc.textContent = d.getAttribute("data-desc");
-      count.textContent = (current + 1) + " / " + list.length;
+      current = (i + shots.length) % shots.length;
+      var shot = shots[current];
+      var src = shot.querySelector("img");
+      var cap = shot.parentNode.querySelector("figcaption");
+      big.src = src.currentSrc || src.src;
+      big.alt = src.alt;
+      title.textContent = cap.querySelector("strong").textContent;
+      desc.textContent = cap.textContent.replace(title.textContent, "").trim();
+      count.textContent = "Bild " + (current + 1) + " av " + shots.length;
     }
-    function open(d) {
-      opener = d;
+    function open(i) {
+      opener = shots[i];
       box.hidden = false;
-      show(visible().indexOf(d));
+      show(i);
       requestAnimationFrame(function () { box.classList.add("is-open"); });
       document.body.style.overflow = "hidden";
       box.querySelector(".lightbox__close").focus();
@@ -90,10 +54,10 @@
     function close() {
       box.classList.remove("is-open");
       document.body.style.overflow = "";
-      setTimeout(function () { box.hidden = true; }, reduce ? 0 : 350);
+      setTimeout(function () { box.hidden = true; }, reduce ? 0 : 300);
       if (opener) opener.focus();
     }
-    designs.forEach(function (d) { d.addEventListener("click", function () { open(d); }); });
+    shots.forEach(function (b, i) { b.addEventListener("click", function () { open(i); }); });
     box.querySelector(".lightbox__close").addEventListener("click", close);
     box.querySelector(".lightbox__prev").addEventListener("click", function () { show(current - 1); });
     box.querySelector(".lightbox__next").addEventListener("click", function () { show(current + 1); });
