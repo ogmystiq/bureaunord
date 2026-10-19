@@ -214,7 +214,7 @@ figcaption { margin-top: 10px; font-size: 0.9375rem; color: var(--muted); }
 
 /* Sidfot */
 .footer { background: var(--ink); color: #ddd5d8; padding: 56px 0 40px; font-size: 0.9375rem; }
-.footer__mast { font-family: var(--display); font-size: clamp(3.5rem, 16vw, 9rem); line-height: 0.9; color: #fff; letter-spacing: -0.04em; margin-bottom: 36px; }
+.footer__logo { font-family: var(--display); font-size: 1.75rem; color: #fff; margin-bottom: 28px; }
 .footer__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; }
 .footer h2 { font-family: var(--body); font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 6px; letter-spacing: 0; }
 .footer a { color: #fff; text-underline-offset: 3px; }

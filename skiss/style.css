@@ -67,6 +67,7 @@ h1, h2, h3 {
   hyphens: manual;
 }
 h2 { font-size: clamp(2.2rem, 7vw, 3.75rem); margin-bottom: 18px; }
+.fam-mode h2 { font-size: clamp(1.9rem, 5.6vw, 2.9rem); font-weight: 700; }
 .fam-black h2 { font-size: clamp(2rem, 7vw, 3.5rem); font-stretch: 125%; font-variation-settings: "wdth" 125; }
 p { max-width: 62ch; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
