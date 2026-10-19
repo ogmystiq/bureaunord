@@ -1,4 +1,4 @@
-/* Northline Studio – små funktioner: intoning, sidhuvud, årtal och laddning av
+/* Northline Studio – små funktioner: sidhuvud, demotelefonen, årtal och laddning av
    kontaktformuläret från Tally. Utan skriptet visas sidan ändå, men formuläret
    måste då öppnas via länken under formulärrutan. */
 (function () {
@@ -13,31 +13,6 @@
   }
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
-
-  /* Intoning av innehåll när det scrollas fram */
-  var items = document.querySelectorAll(".reveal");
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    items.forEach(function (el) { el.classList.add("is-visible"); });
-  } else {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
-
-    /* Element som ligger nära varandra tonas in med en liten fördröjning emellan */
-    var delay = 0, lastTop = null;
-    items.forEach(function (el) {
-      var top = Math.round(el.getBoundingClientRect().top / 40);
-      delay = (top === lastTop) ? delay + 0.08 : 0;
-      lastTop = top;
-      el.style.transitionDelay = delay + "s";
-      observer.observe(el);
-    });
-  }
 
   /* Telefonen i hero: bläddrar mellan våra tre demosidor */
   var showcase = document.getElementById("phone-showcase");
@@ -58,7 +33,7 @@
       for (var k = 0; k < demos.length; k++) {
         var on = k === current;
         screens[k].classList.toggle("is-active", on);
-        glows[k].classList.toggle("is-active", on);
+        if (glows[k]) glows[k].classList.toggle("is-active", on);
         tabs[k].classList.toggle("is-active", on);
         tabs[k].setAttribute("aria-pressed", on ? "true" : "false");
       }
