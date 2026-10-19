@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Sidan finns inte – Northline Studio</title>
-  <meta name="theme-color" content="#f3f3ef">
+  <meta name="theme-color" content="#0a0c10">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <style>
-    html, body { margin: 0; background: #f3f3ef; color: #111418; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .nl-screen { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 32px 20px; text-align: center; box-sizing: border-box; background: #f3f3ef; }
+    html, body { margin: 0; background: #0a0c10; color: #eef1f4; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .nl-screen { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 32px 20px; text-align: center; box-sizing: border-box; background: radial-gradient(60% 45% at 80% 0%, rgba(57, 209, 180, 0.16), transparent 70%), radial-gradient(50% 40% at 10% 100%, rgba(111, 124, 255, 0.14), transparent 70%), #0a0c10; }
     .nl-mark { width: 64px; height: 64px; }
     .nl-loading .nl-mark { animation: nl-pulse 1.6s ease-in-out infinite; }
     @keyframes nl-pulse { 50% { opacity: 0.45; transform: scale(0.96); } }
-    .nl-loading p { margin: 0; font-size: 0.85rem; color: #4b5058; }
-    .nl-bar { width: 140px; height: 2px; border-radius: 2px; background: #d9dbd5; overflow: hidden; }
-    .nl-bar::after { content: ""; display: block; width: 40%; height: 100%; background: #0f4c43; animation: nl-slide 1.2s ease-in-out infinite; }
+    .nl-loading p { margin: 0; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: #98a2ad; }
+    .nl-bar { width: 140px; height: 2px; border-radius: 2px; background: rgba(238, 241, 244, 0.1); overflow: hidden; }
+    .nl-bar::after { content: ""; display: block; width: 40%; height: 100%; background: linear-gradient(90deg, #39d1b4, #6f7cff); animation: nl-slide 1.2s ease-in-out infinite; }
     @keyframes nl-slide { from { transform: translateX(-100%); } to { transform: translateX(260%); } }
     .nl-404 h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(2.2rem, 8vw, 3.6rem); letter-spacing: -0.02em; line-height: 1.05; }
-    .nl-404 p { margin: 0; max-width: 26rem; color: #4b5058; line-height: 1.6; }
-    .nl-404 a.nl-btn { display: inline-flex; align-items: center; min-height: 50px; padding: 0 26px; border-radius: 4px; background: #0f4c43; color: #fff; font-weight: 600; text-decoration: none; }
-    .nl-404 a.nl-btn:hover { background: #0a3831; }
-    .nl-code { font-size: 0.9375rem; font-weight: 600; color: #0f4c43; }
+    .nl-404 p { margin: 0; max-width: 26rem; color: #98a2ad; line-height: 1.6; }
+    .nl-404 a.nl-btn { display: inline-flex; align-items: center; min-height: 50px; padding: 0 26px; border-radius: 999px; background: #d9e4ec; color: #0a0c10; font-weight: 600; text-decoration: none; }
+    .nl-404 a.nl-btn:hover { background: #fff; }
+    .nl-code { font-size: 0.75rem; letter-spacing: 0.2em; color: #39d1b4; }
     [hidden] { display: none !important; }
     @media (prefers-reduced-motion: reduce) { .nl-loading .nl-mark, .nl-bar::after { animation: none; } }
   </style>
@@ -29,14 +29,14 @@
 <body>
   <!-- Laddning (visas bara för skiss-länkar) -->
   <div class="nl-screen nl-loading" id="nl-loading" hidden role="status" aria-live="polite">
-    <svg class="nl-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1fa58c"/><stop offset="1" stop-color="#4b57e0"/></linearGradient></defs><circle cx="32" cy="32" r="27" fill="none" stroke="url(#g1)" stroke-width="2"/><path d="M2 43 H18.5 M45.5 43 H62" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/><path d="M22.5 43 V21 L41.5 43 V21" fill="none" stroke="#111418" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg class="nl-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#39d1b4"/><stop offset="1" stop-color="#6f7cff"/></linearGradient></defs><circle cx="32" cy="32" r="27" fill="none" stroke="url(#g1)" stroke-width="2"/><path d="M2 43 H18.5 M45.5 43 H62" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/><path d="M22.5 43 V21 L41.5 43 V21" fill="none" stroke="#eef1f4" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <p>Förbereder er skiss</p>
     <div class="nl-bar" aria-hidden="true"></div>
   </div>
 
   <!-- Vanlig 404 -->
   <main class="nl-screen nl-404" id="nl-404" hidden>
-    <svg class="nl-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g2" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1fa58c"/><stop offset="1" stop-color="#4b57e0"/></linearGradient></defs><circle cx="32" cy="32" r="27" fill="none" stroke="url(#g2)" stroke-width="2"/><path d="M2 43 H18.5 M45.5 43 H62" stroke="url(#g2)" stroke-width="2" stroke-linecap="round"/><path d="M22.5 43 V21 L41.5 43 V21" fill="none" stroke="#111418" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg class="nl-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g2" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#39d1b4"/><stop offset="1" stop-color="#6f7cff"/></linearGradient></defs><circle cx="32" cy="32" r="27" fill="none" stroke="url(#g2)" stroke-width="2"/><path d="M2 43 H18.5 M45.5 43 H62" stroke="url(#g2)" stroke-width="2" stroke-linecap="round"/><path d="M22.5 43 V21 L41.5 43 V21" fill="none" stroke="#eef1f4" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <span class="nl-code">404</span>
     <h1>Sidan finns inte</h1>
     <p>Länken kan vara felskriven eller så har sidan flyttats.</p>
