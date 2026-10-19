@@ -368,46 +368,28 @@ h3 { font-size: 1.4rem; font-weight: 500; font-variation-settings: "opsz" 48; li
   letter-spacing: 0.06em;
   box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.6);
 }
-
-/* Salong Ljung */
-.ps--frisor { background: #f4ede4; color: #2b2420; }
-.ps--frisor .ps__brand { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.05rem; font-weight: 600; }
-.ps--frisor .ps__eyebrow { color: #8f6a48; }
-.ps--frisor .ps__title { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 2rem; }
-.ps--frisor .ps__btn, .ps--frisor .ps__sticky { border-radius: 999px; background: #2b2420; color: #fbf7f1; }
-.ps__arch { position: absolute; bottom: 0; border-radius: 999px 999px 10px 10px; }
-.ps__arch--a { left: 14%; width: 42%; height: 78%; background: linear-gradient(160deg, #efe3d3, #dcc6aa 55%, #c9a988); box-shadow: 0 20px 30px -18px rgba(43, 36, 32, 0.5); z-index: 1; }
-.ps__arch--b { right: 10%; width: 42%; height: 94%; background: linear-gradient(170deg, #d9c7b0, #b8916b); }
-.ps__sun { position: absolute; right: 16%; bottom: 30%; z-index: 1; width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fbf1e2, #e7caa3 70%); }
-
-/* Opal Nails */
-.ps--nagel { background: radial-gradient(70% 40% at 100% 0%, rgba(217, 170, 166, 0.45), transparent 70%), #f6f0ec; color: #2a1b23; }
-.ps--nagel .ps__brand { font-family: Didot, "Bodoni MT", "Times New Roman", serif; font-size: 1rem; letter-spacing: 0.04em; }
-.ps__gem { width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(120deg, #fbf6f2, #efdcd8 35%, #e6e3f1 60%, #f6ebe2); box-shadow: inset 0 0 0 1px rgba(74, 35, 56, 0.2); }
-.ps--nagel .ps__eyebrow { color: #b88a92; }
-.ps--nagel .ps__title { font-family: Didot, "Bodoni MT", "Times New Roman", serif; font-size: 1.8rem; }
-.ps--nagel .ps__title b { background: linear-gradient(100deg, #4a2338, #b88a92 60%, #8e86c9); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.ps--nagel .ps__btn, .ps--nagel .ps__sticky { border-radius: 999px; background: #4a2338; color: #fcf9f6; text-transform: uppercase; }
-.ps__orb { position: absolute; right: -8%; top: 0; width: 62%; aspect-ratio: 1; border-radius: 50%; background: linear-gradient(120deg, #fbf6f2, #efdcd8 35%, #e6e3f1 60%, #f6ebe2); box-shadow: inset -8px -12px 26px rgba(184, 138, 146, 0.35), 0 20px 30px -20px rgba(74, 35, 56, 0.5); }
-.ps .ps__hand { position: absolute; left: 12%; bottom: 22%; display: flex; align-items: flex-end; gap: 5px; padding: 12px 12px 10px; border-radius: 999px 999px 14px 14px; background: rgba(252, 249, 246, 0.8); box-shadow: 0 16px 26px -16px rgba(74, 35, 56, 0.55); }
-.ps__hand i { width: 13px; height: 26px; border-radius: 50% 50% 44% 44% / 62% 62% 38% 38%; background: linear-gradient(180deg, #f0cfcb, #d39b98); }
-.ps__hand i:nth-child(2) { height: 32px; background: linear-gradient(120deg, #fbf6f2, #efdcd8 40%, #e6e3f1); }
-.ps__hand i:nth-child(3) { height: 35px; background: linear-gradient(180deg, #4a2338 0 26%, #f3dcd8 26%); }
-.ps__hand i:nth-child(4) { height: 31px; background: linear-gradient(135deg, #f4f1f6, #c8c2d6 40%, #fbfaff 55%, #b7b0c8); }
-.ps__hand i:nth-child(5) { height: 22px; width: 11px; }
-
-/* Kvarn Barbershop */
-.ps--barber { background: radial-gradient(70% 40% at 100% 0%, rgba(201, 160, 99, 0.25), transparent 70%), #100f0e; color: #f0ebe3; }
-.ps--barber .ps__brand { font-family: Impact, "Arial Narrow", sans-serif; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.ps__mark { width: 16px; height: 16px; border-radius: 50%; border: 1px solid #c9a063; background: linear-gradient(45deg, transparent 46%, #c9a063 46% 54%, transparent 54%), linear-gradient(-45deg, transparent 46%, #c9a063 46% 54%, transparent 54%); }
-.ps--barber .ps__eyebrow { color: #c9a063; }
-.ps--barber .ps__title { font-family: Impact, "Arial Narrow", sans-serif; font-size: 2.15rem; line-height: 0.95; text-transform: uppercase; letter-spacing: 0.01em; }
-.ps--barber .ps__title b { color: #c9a063; }
-.ps--barber .ps__btn, .ps--barber .ps__sticky { border-radius: 4px; background: linear-gradient(135deg, #e4c78f, #c9a063 55%, #8e6d3c); color: #17120c; text-transform: uppercase; }
-.ps--barber .ps__art { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 1px; margin-top: 22px; }
-.ps--barber .ps__art i:nth-child(1) { grid-row: span 2; background: repeating-linear-gradient(92deg, rgba(0, 0, 0, 0.2) 0 1px, transparent 1px 5px), linear-gradient(90deg, #3b2718, #5b3d27 40%, #4a3120 70%, #6a4930); }
-.ps--barber .ps__art i:nth-child(2) { background: radial-gradient(120% 90% at 30% 20%, #9a603c, #6e4128 55%, #3e2416); }
-.ps--barber .ps__art i:nth-child(3) { background: linear-gradient(120deg, #6d5126, #c9a063 35%, #f2dba7 50%, #b88c4f 65%, #6d5126); }
+/* Telefonens skärmar: samma foton och färger som demosidorna */
+.ps__photo { position: relative; z-index: 0; flex: 1; min-height: 0; margin: 16px -16px 0; width: calc(100% + 32px); max-width: none; object-fit: cover; }
+.ps--frisor { background: #f2eadf; color: #17120e; }
+.ps--frisor .ps__brand, .ps--frisor .ps__title { font-family: "Fraunces", Georgia, serif; font-weight: 500; }
+.ps--frisor .ps__brand { font-size: 1rem; }
+.ps--frisor .ps__title { font-size: 2.5rem; line-height: 0.98; letter-spacing: -0.035em; }
+.ps--frisor .ps__title b { font-weight: 400; font-style: italic; color: #9a3a21; }
+.ps--frisor .ps__btn, .ps--frisor .ps__sticky { border-radius: 4px; background: #17120e; color: #f2eadf; }
+.ps--nagel { background: #fbf1ee; color: #26101d; }
+.ps--nagel .ps__brand, .ps--nagel .ps__title { font-family: "Young Serif", Georgia, serif; font-weight: 400; }
+.ps--nagel .ps__brand { font-size: 1.05rem; }
+.ps--nagel .ps__title { font-size: 1.85rem; line-height: 1.04; letter-spacing: -0.01em; }
+.ps--nagel .ps__title b { font-weight: 400; color: #9c1c4b; }
+.ps--nagel .ps__btn, .ps--nagel .ps__sticky { border-radius: 6px; background: #26101d; color: #fbf1ee; }
+.ps--barber { background: #0e0d0c; color: #f3eee6; }
+.ps--barber .ps__brand, .ps--barber .ps__title { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; text-transform: uppercase; }
+.ps--barber .ps__brand { font-size: 1.05rem; letter-spacing: 0.1em; }
+.ps--barber .ps__title { font-size: 2.6rem; line-height: 0.9; }
+.ps--barber .ps__title b { display: block; font-weight: 700; color: #d6a65a; }
+.ps--barber .ps__btn, .ps--barber .ps__sticky { border-radius: 0; background: #d6a65a; color: #1a1307; text-transform: uppercase; }
+.ps--barber .ps__photo { filter: grayscale(1) contrast(1.05); }
+.ps__eyebrow { display: none; }
 
 /* Etiketterna under telefonen */
 .phone-tabs { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; }
@@ -690,41 +672,26 @@ h3 { font-size: 1.4rem; font-weight: 500; font-variation-settings: "opsz" 48; li
   letter-spacing: 0.06em;
 }
 
-.pv--frisor { background: #f4ede4; color: #2b2420; }
-.pv--frisor .pv__brand { font-family: "Cormorant Garamond", Georgia, serif; font-size: 0.85rem; letter-spacing: 0.01em; }
-.pv--frisor .pv__title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.35rem; font-weight: 500; }
-.pv--frisor .pv__btn { border-radius: 999px; background: #2b2420; color: #fbf7f1; }
-.pv .pv__arch { position: absolute; z-index: 0; bottom: 0; border-radius: 999px 999px 8px 8px; }
-.pv__arch--a { right: 34%; width: 24%; height: 62%; background: linear-gradient(160deg, #efe3d3, #c9a988); box-shadow: 0 14px 24px -14px rgba(43, 36, 32, 0.6); }
-.pv__arch--b { right: 10%; width: 24%; height: 78%; background: linear-gradient(170deg, #d9c7b0, #b8916b); }
-
-.pv--nagel { background: radial-gradient(70% 70% at 90% 10%, #ecd5d1, transparent 70%), #f6f0ec; color: #2a1b23; }
-.pv--nagel .pv__brand { font-family: Didot, "Bodoni MT", "Times New Roman", serif; font-size: 0.82rem; }
-.pv--nagel .pv__title { font-family: Didot, "Bodoni MT", "Times New Roman", serif; font-size: 1.25rem; }
-.pv--nagel .pv__btn { border-radius: 999px; background: #4a2338; color: #fcf9f6; text-transform: uppercase; }
-.pv .pv__orb {
-  position: absolute; z-index: 0;
-  right: -8%; top: 14%;
-  width: 46%; aspect-ratio: 1;
-  border-radius: 50%;
-  background: linear-gradient(120deg, #fbf6f2, #efdcd8 35%, #e6e3f1 60%, #f6ebe2);
-  box-shadow: inset -8px -10px 20px rgba(184, 138, 146, 0.35), 0 16px 26px -16px rgba(74, 35, 56, 0.5);
-}
-.pv .pv__nails { position: absolute; right: 12%; bottom: 12%; display: flex; align-items: flex-end; gap: 5px; }
-.pv__nails i { display: block; width: 11px; height: 19px; border-radius: 50% 50% 44% 44% / 62% 62% 38% 38%; background: linear-gradient(180deg, #f0cfcb, #d39b98); box-shadow: 0 4px 8px -4px rgba(74, 35, 56, 0.6); }
-.pv__nails i:nth-child(2) { height: 23px; background: linear-gradient(180deg, #7a3b5c, #3b1a2c); }
-.pv__nails i:nth-child(3) { height: 24px; background: linear-gradient(135deg, #f4f1f6, #c8c2d6 40%, #fbfaff 55%, #b7b0c8); }
-.pv__nails i:nth-child(4) { height: 20px; }
-
-.pv--barber { background: radial-gradient(70% 70% at 100% 0%, rgba(201, 160, 99, 0.22), transparent 70%), #100f0e; color: #f0ebe3; }
-.pv--barber .pv__brand { font-family: "Arial Narrow", Impact, sans-serif; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
-.pv--barber .pv__title { font-family: Impact, "Arial Narrow", sans-serif; font-weight: 800; font-size: 1.3rem; line-height: 0.95; text-transform: uppercase; letter-spacing: 0.01em; }
-.pv--barber .pv__title b { font-weight: 800; color: #c9a063; }
-.pv--barber .pv__btn { border-radius: 3px; background: linear-gradient(135deg, #e4c78f, #c9a063 55%, #8e6d3c); color: #17120c; text-transform: uppercase; }
-.pv .pv__strip { position: absolute; z-index: 0; left: 0; right: 0; bottom: 0; height: 26%; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1px; }
-.pv__strip i:nth-child(1) { background: repeating-linear-gradient(92deg, rgba(0, 0, 0, 0.2) 0 1px, transparent 1px 5px), linear-gradient(90deg, #3b2718, #5b3d27 40%, #4a3120 70%, #6a4930); }
-.pv__strip i:nth-child(2) { background: radial-gradient(120% 90% at 30% 20%, #9a603c, #6e4128 55%, #3e2416); }
-.pv__strip i:nth-child(3) { background: linear-gradient(120deg, #6d5126, #c9a063 35%, #f2dba7 50%, #b88c4f 65%, #6d5126); }
+/* Kortens förhandsvisning: samma foton och färger som demosidorna */
+.pv--frisor { background: #f2eadf; color: #17120e; }
+.pv--nagel { background: #fbf1ee; color: #26101d; }
+.pv--barber { background: #0e0d0c; color: #f3eee6; }
+.pv .pv__photo { position: absolute; z-index: 0; right: 0; bottom: 0; width: 52%; height: 100%; object-fit: cover; }
+.pv--barber .pv__photo { width: 100%; opacity: 0.55; }
+.pv--barber::after { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(90deg, rgba(14, 13, 12, 0.92) 25%, rgba(14, 13, 12, 0.35)); }
+.pv--frisor .pv__brand, .pv--frisor .pv__title { font-family: "Fraunces", Georgia, serif; font-weight: 500; }
+.pv--frisor .pv__title { font-size: 1.45rem; letter-spacing: -0.02em; }
+.pv--frisor .pv__title b { font-weight: 400; font-style: italic; color: #9a3a21; }
+.pv--frisor .pv__btn { border-radius: 4px; background: #17120e; color: #f2eadf; }
+.pv--nagel .pv__brand, .pv--nagel .pv__title { font-family: "Young Serif", Georgia, serif; font-weight: 400; }
+.pv--nagel .pv__title { font-size: 1.2rem; max-width: 52%; }
+.pv--nagel .pv__title b { font-weight: 400; color: #9c1c4b; }
+.pv--nagel .pv__btn { border-radius: 6px; background: #26101d; color: #fbf1ee; }
+.pv--barber .pv__brand, .pv--barber .pv__title { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; text-transform: uppercase; }
+.pv--barber .pv__brand { letter-spacing: 0.12em; font-size: 0.72rem; }
+.pv--barber .pv__title { font-size: 1.7rem; line-height: 0.92; max-width: 70%; }
+.pv--barber .pv__title b { color: #d6a65a; font-weight: 700; }
+.pv--barber .pv__btn { border-radius: 0; background: #d6a65a; color: #1a1307; text-transform: uppercase; }
 
 /* ---- Priser */
 .plans { display: grid; gap: 18px; }
