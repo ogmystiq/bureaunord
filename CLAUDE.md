@@ -30,6 +30,9 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 - Inga påhittade recensioner, betyg, citat, personer, adresser eller telefonnummer på demo-/skisssidor.
 - Text ska ha god kontrast (minst WCAG AA 4.5:1 för brödtext) – särskilt på ljusa teman.
 
+## Design
+- Designskillen ligger i `.claude/skills/frontend-design/`. Läs den och följ den innan du ändrar utseendet på någon sida.
+
 ## Skiss-länkarna (viktigt – går ut i säljmejl)
 - Varje salong får en länk som `https://northlinestudio.se/skiss/aajt-tattoo-linkoping`.
 - Adressen finns inte som fil → GitHub Pages visar `404.html`, som känner igen `/skiss/<slug>` och hämtar `https://mystiq.app.n8n.cloud/webhook/skiss?slug=<slug>` → `{hittad, namn, stad, typ}`. Sedan renderas skissen med `skiss/`-sidans kod.
