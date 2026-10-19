@@ -168,7 +168,7 @@ p { max-width: 62ch; }
 /* Bläck: brett namn över fotots nederkant */
 .fam-black .hero__content { position: absolute; left: 0; right: 0; bottom: 0; padding-bottom: 32px; }
 .fam-black .hero__name { font-size: clamp(2.4rem, 12vw, 9rem); font-stretch: 150%; font-variation-settings: "wdth" 150; line-height: 0.9; }
-.fam-black .hero__kind { color: var(--accent); font-weight: 600; }
+.fam-black .hero__kind { color: #fff; font-weight: 600; }
 .fam-black .hero__photo img { height: 80vh; }
 
 /* ---------- Sektioner ---------- */
@@ -264,7 +264,7 @@ p { max-width: 62ch; }
   .fam-klinik .hero__photo { max-width: 1440px; margin: 0 auto; padding: 0 var(--gutter); background: none; }
   .fam-klinik .hero__photo img { height: 70vh; aspect-ratio: auto; }
   .fam-klinik .hero__content { margin-top: -150px; }
-  .fam-klinik .hero__plate { padding: 44px 56px 8px 56px; margin-left: -56px; }
+  .fam-klinik .hero__plate { padding: 44px 56px 8px 56px; margin-left: -56px; max-width: 980px; }
   .fam-massing .hero__photo img { height: 78vh; }
   .fam-massing .hero__content { display: grid; grid-template-columns: 1fr 360px; align-items: end; gap: 0 48px; margin-top: -0.78em; }
   .fam-massing .hero__plate { display: contents; }
