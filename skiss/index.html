@@ -7,28 +7,28 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Er salong – skiss av Northline Studio</title>
   <meta name="description" content="En skiss från Northline Studio som visar hur er nya hemsida kan se ut.">
-  <meta name="theme-color" content="#f4ede4" id="theme-color">
+  <meta name="theme-color" content="#fbfbf9" id="theme-color">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
-<body class="theme-light">
+<body class="fam-ljus">
   <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
 
   <!-- Fast banner: visar att detta är en skiss -->
   <div class="sketch-bar" role="note">
-    Skiss från <a href="/">Northline Studio</a> till <span data-fill="name">Er salong</span> – ett förslag, inte en riktig sida
+    Skiss från <a href="/">Northline Studio</a> till <span data-fill="name">Er salong</span>. Ett förslag, inte en riktig sida.
   </div>
 
   <header class="header">
     <div class="wrap header__inner">
-      <a class="logo" href="#topp"><span class="logo__mark" aria-hidden="true"></span><span class="logo__name" data-fill="name">Er salong</span></a>
+      <a class="logo" href="#topp" data-fill="name">Er salong</a>
       <nav class="nav" aria-label="Meny">
-        <a href="#tjanster">Tjänster</a>
+        <a href="#tjanster">Priser</a>
         <a href="#om">Om oss</a>
         <a href="#oppettider">Öppettider</a>
-        <a href="#kontakt">Kontakt</a>
       </nav>
       <a class="btn btn--small header__book" href="#kontakt">Boka tid</a>
     </div>
@@ -36,73 +36,64 @@
 
   <main id="innehall">
     <section class="hero" id="topp">
-      <div class="wrap hero__inner">
-        <div class="hero__text">
-          <p class="eyebrow reveal" id="eyebrow">Salong</p>
-          <h1 class="hero__title reveal" data-fill="name">Er salong</h1>
-          <p class="hero__tagline reveal" id="tagline">Skönhet med omsorg i varje detalj.</p>
-          <p class="lead reveal" id="lead">Välkommen. Här ser era kunder direkt vad ni erbjuder och kan boka på några sekunder.</p>
-          <div class="hero__actions reveal">
+      <figure class="hero__photo">
+        <img id="hero-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" sizes="100vw" width="1600" height="1067" fetchpriority="high" alt="">
+      </figure>
+      <div class="wrap hero__content">
+        <div class="hero__plate">
+          <h1 class="hero__name" data-fill="name">Er salong</h1>
+          <p class="hero__kind" id="kind">Salong</p>
+          <p class="hero__lead" id="lead">Här ser era kunder direkt vad ni erbjuder och kan boka på några sekunder.</p>
+          <div class="hero__actions">
             <a class="btn" href="#kontakt">Boka tid</a>
-            <a class="link" href="#tjanster">Se tjänster och priser</a>
+            <a class="link" href="#tjanster">Se priser</a>
           </div>
-        </div>
-        <div class="hero__art reveal" aria-hidden="true">
-          <span class="art art--a"></span>
-          <span class="art art--b"></span>
-          <span class="art art--c"></span>
         </div>
       </div>
     </section>
 
-    <section class="section section--tint" id="tjanster">
-      <div class="wrap">
-        <div class="section__head">
-          <p class="eyebrow reveal">Tjänster och priser</p>
-          <h2 class="reveal">Det vi erbjuder</h2>
-          <p class="section__note reveal">Exempelpriser. Era egna tjänster och priser läggs in när sidan byggs.</p>
+    <section class="section" id="tjanster">
+      <div class="wrap services-wrap">
+        <div class="services-head">
+          <h2>Priser</h2>
+          <p class="note">Exempelpriser. Era egna tjänster och priser läggs in när sidan byggs.</p>
         </div>
         <ul class="services" id="services" role="list"></ul>
       </div>
     </section>
 
-    <section class="section" id="om">
+    <section class="section section--alt" id="om">
       <div class="wrap about">
-        <div class="about__art reveal" aria-hidden="true"><span></span><span></span></div>
-        <div>
-          <p class="eyebrow reveal">Om oss</p>
-          <h2 class="reveal">Välkommen till <span data-fill="name">Er salong</span></h2>
-          <p class="reveal" id="about-1">Här berättar ni om er själva, vad ni brinner för och vad kunderna kan förvänta sig när de kommer till er.</p>
-          <p class="reveal">Texten skriver vi tillsammans med er, så att den låter som just ni.</p>
+        <figure class="about__photo">
+          <img id="about-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" sizes="(min-width: 900px) 45vw, 100vw" width="1200" height="1500" loading="lazy" alt="">
+        </figure>
+        <div class="about__text">
+          <h2>Om oss</h2>
+          <p id="about-1">Välkommen till Er salong.</p>
+          <p id="about-2">Boka tid online, eller hör av er om ni har frågor.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section--tint" id="oppettider">
+    <section class="section" id="oppettider">
       <div class="wrap visit">
-        <div class="reveal">
-          <p class="eyebrow">Öppettider</p>
-          <h2>Välkommen in</h2>
-          <p class="section__note">Exempel. Era riktiga öppettider läggs in när sidan byggs.</p>
+        <div class="visit__col">
+          <h2>Öppettider</h2>
+          <dl class="hours">
+            <div><dt>Måndag–fredag</dt><dd>10–18</dd></div>
+            <div><dt>Lördag</dt><dd>10–15</dd></div>
+            <div><dt>Söndag</dt><dd>Stängt</dd></div>
+          </dl>
+          <p class="note">Exempel. Era riktiga öppettider läggs in när sidan byggs.</p>
         </div>
-        <dl class="hours reveal">
-          <div><dt>Måndag – fredag</dt><dd>10–18</dd></div>
-          <div><dt>Lördag</dt><dd>10–15</dd></div>
-          <div><dt>Söndag</dt><dd>Stängt</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <section class="section contact" id="kontakt">
-      <div class="wrap contact__inner">
-        <p class="eyebrow reveal">Kontakt och bokning</p>
-        <h2 class="reveal">Boka din tid</h2>
-        <p class="section__note reveal">Här kopplas ert bokningssystem in, till exempel Bokadirekt.</p>
-        <a class="btn btn--large reveal" href="#kontakt" data-demo>Boka tid online</a>
-        <div class="contact__grid reveal">
-          <div><p class="contact__label">Adress</p><p class="placeholder">Er adress</p><p class="placeholder" data-fill="city-line"></p></div>
-          <div><p class="contact__label">Telefon</p><p class="placeholder">Ert telefonnummer</p></div>
-          <div><p class="contact__label">Mejl</p><p class="placeholder">Er mejladress</p></div>
+        <div class="visit__col" id="kontakt">
+          <h2>Boka och hitta hit</h2>
+          <p><a class="btn" href="#kontakt" data-demo>Boka tid online</a></p>
+          <dl class="contact">
+            <div><dt>Adress</dt><dd><span class="placeholder">Er adress</span><span class="placeholder" data-fill="city-line"></span></dd></div>
+            <div><dt>Telefon</dt><dd class="placeholder">Ert telefonnummer</dd></div>
+            <div><dt>Mejl</dt><dd class="placeholder">Er mejladress</dd></div>
+          </dl>
         </div>
       </div>
     </section>
@@ -115,14 +106,14 @@
     </div>
   </footer>
 
-  <!-- Fast ruta längst ner -->
+  <!-- Diskret list längst ner: fast i mobilen, sista raden på datorn -->
   <aside class="offer" aria-label="Om skissen">
-    <p class="offer__text">Gillar du skissen? Svara på mejlet eller skriv till <a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a> så gör vi den till er riktiga sida.</p>
-    <a class="offer__btn" href="https://northlinestudio.se/#kontakt">Beställ</a>
+    <p class="offer__text">Gillar du skissen? <span class="offer__short">Svara bara på mejlet.</span><span class="offer__long">Svara på mejlet eller skriv till <a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a>.</span></p>
+    <a class="offer__btn" href="https://northlinestudio.se/#kontakt">Gör den till vår sida</a>
   </aside>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
