@@ -18,8 +18,8 @@
   var showcase = document.getElementById("phone-showcase");
   if (showcase) {
     var demos = [
-      { key: "frisor", href: "/demo/frisor/", label: "Öppna demosidan för Salong Ljung, Bas-paketet (öppnas i ny flik)" },
       { key: "nagel", href: "/demo/nagel/", label: "Öppna demosidan för Opal Nails, Premium-paketet (öppnas i ny flik)" },
+      { key: "frisor", href: "/demo/frisor/", label: "Öppna demosidan för Salong Ljung, Bas-paketet (öppnas i ny flik)" },
       { key: "barber", href: "/demo/barber/", label: "Öppna demosidan för Kvarn Barbershop, Premium-paketet (öppnas i ny flik)" }
     ];
     var phoneLink = document.getElementById("phone-link");
