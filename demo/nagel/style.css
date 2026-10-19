@@ -9,11 +9,12 @@
   --rose: #d9aaa6;
   --rose-soft: #ead2cd;
   --mauve: #b88a92;
+  --mauve-text: #86485c;
   --plum: #4a2338;
   --plum-2: #6b3550;
   --ink: #2a1b23;
-  --ink-soft: #6f5b64;
-  --line: rgba(74, 35, 56, 0.12);
+  --ink-soft: #55434b;
+  --line: rgba(74, 35, 56, 0.16);
   --sheen: linear-gradient(120deg, #fbf6f2 0%, #efdcd8 30%, #e6e3f1 55%, #f6ebe2 75%, #fbf6f2 100%);
 
   --serif: "Bodoni Moda", Didot, "Times New Roman", serif;
@@ -131,7 +132,7 @@ h3 { font-size: 1.45rem; }
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--mauve);
+  color: var(--mauve-text);
   margin-bottom: 16px;
 }
 .lead { font-size: 1.08rem; color: var(--ink-soft); max-width: 34rem; }
@@ -246,7 +247,7 @@ h3 { font-size: 1.45rem; }
 .hero { position: relative; overflow: hidden; padding: 48px 0 72px; }
 .hero__inner { display: grid; gap: 48px; align-items: center; }
 .hero h1 { margin-bottom: 22px; }
-.hero h1 em { font-style: normal; background: linear-gradient(100deg, var(--plum) 0%, var(--mauve) 60%, #8e86c9 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.hero h1 em { font-style: italic; color: var(--plum-2); }
 .hero .lead { margin-bottom: 30px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .hero__visual { position: relative; height: 420px; max-width: 460px; width: 100%; margin: 0 auto; }
@@ -255,7 +256,6 @@ h3 { font-size: 1.45rem; }
   border-radius: 50%;
   background: var(--sheen);
   background-size: 220% 220%;
-  animation: sheen 8s ease-in-out infinite alternate, float 9s ease-in-out infinite alternate;
   box-shadow: inset -12px -18px 40px rgba(184, 138, 146, 0.35), inset 10px 14px 30px rgba(255, 255, 255, 0.8), 0 40px 70px -40px rgba(74, 35, 56, 0.5);
 }
 .orb--a { width: 72%; aspect-ratio: 1; right: 0; top: 4%; }
@@ -369,7 +369,7 @@ h3 { font-size: 1.45rem; }
 .card .nail { width: 26px; height: 42px; margin-bottom: 22px; }
 .card h3 { margin-bottom: 8px; }
 .card p { color: var(--ink-soft); }
-.card__price { margin-top: 14px; font-size: 0.9rem; letter-spacing: 0.04em; color: var(--plum-2); }
+.card__price { margin-top: 14px; font-size: 0.9rem; letter-spacing: 0.04em; color: var(--plum); font-weight: 500; }
 
 /* Remsa med galleri-förhandsvisning */
 .strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -438,7 +438,7 @@ h3 { font-size: 1.45rem; }
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   color: var(--ink);
-  background: rgba(252, 249, 246, 0.82);
+  background: rgba(252, 249, 246, 0.95);
   padding: 3px 10px;
   border-radius: 999px;
 }
@@ -506,7 +506,7 @@ h3 { font-size: 1.45rem; }
 .split__art .orb--b { width: 40%; right: 4%; left: auto; bottom: 0; }
 .values { display: grid; gap: 16px; }
 .value { padding: 26px 24px; border-radius: var(--radius); background: var(--cream); border: 1px solid var(--line); }
-.value__num { font-family: var(--serif); font-size: 1.1rem; color: var(--mauve); margin-bottom: 14px; display: block; }
+.value__num { font-family: var(--serif); font-size: 1.1rem; color: var(--mauve-text); margin-bottom: 14px; display: block; }
 .value h3 { margin-bottom: 6px; }
 .value p { color: var(--ink-soft); }
 .team { display: grid; gap: 20px; }
@@ -526,7 +526,7 @@ h3 { font-size: 1.45rem; }
 .member__art--2 { background: linear-gradient(150deg, #ddd6ee, #8f86c0); }
 .member__art--3 { background: linear-gradient(150deg, #f0e2d6, #b99a85); }
 .member h3 { margin-bottom: 2px; }
-.member__role { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mauve); margin-bottom: 8px; }
+.member__role { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mauve-text); margin-bottom: 8px; }
 .member p:last-child { color: var(--ink-soft); }
 
 /* Kontakt */
@@ -610,13 +610,11 @@ h3 { font-size: 1.45rem; }
   content: "";
   position: absolute;
   inset: -40%;
-  background: conic-gradient(from 0deg, rgba(217, 170, 166, 0.25), rgba(142, 134, 201, 0.25), rgba(217, 170, 166, 0.25));
-  animation: spin 24s linear infinite;
-  filter: blur(40px);
+  background: radial-gradient(60% 80% at 85% 0%, rgba(217, 170, 166, 0.22), transparent 70%);
 }
 .cta-band .wrap { position: relative; }
 .cta-band h2 { margin-bottom: 14px; }
-.cta-band p { color: #e3d0d8; margin-bottom: 28px; }
+.cta-band p { color: #f0e2e8; margin-bottom: 28px; }
 .cta-band .btn { background: var(--cream); color: var(--plum); }
 @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -624,11 +622,11 @@ h3 { font-size: 1.45rem; }
 .footer { background: var(--ink); color: #d8c9cf; padding: 56px 0 40px; }
 .footer__inner { display: grid; gap: 28px; }
 .footer .logo__name { color: var(--cream); }
-.footer h2 { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #a8949d; margin-bottom: 10px; font-weight: 500; }
+.footer h2 { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #c3b2b9; margin-bottom: 10px; font-weight: 500; }
 .footer a { text-decoration: none; color: #eadde3; }
 .footer a:hover { color: #fff; }
 .footer ul li + li { margin-top: 4px; }
-.footer__bottom { margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.8rem; color: #a8949d; }
+.footer__bottom { margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.82rem; color: #c3b2b9; }
 .footer__bottom a { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Fast bokningsknapp i mobilen */

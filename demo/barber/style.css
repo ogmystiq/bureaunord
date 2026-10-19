@@ -14,8 +14,8 @@
   --leather-2: #8a5434;
   --wood: #4f3523;
   --text: #f0ebe3;
-  --muted: #a99d8f;
-  --faint: #847a6f;
+  --muted: #b8ada0;
+  --faint: #9a9084;
   --line: rgba(240, 235, 227, 0.09);
   --line-strong: rgba(240, 235, 227, 0.18);
 
@@ -68,13 +68,7 @@ h3 { font-size: 1.6rem; line-height: 1.05; }
 .skip-link { position: absolute; left: 12px; top: -100px; z-index: 300; padding: 10px 14px; background: var(--brass); color: var(--coal); }
 .skip-link:focus { top: 46px; }
 
-.brass-text {
-  background: linear-gradient(100deg, var(--brass-2) 0%, var(--brass) 45%, var(--brass-dark) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--brass);
-}
+.brass-text { color: var(--brass); }
 
 /* Demorad */
 .demo-bar {
@@ -118,7 +112,7 @@ h3 { font-size: 1.6rem; line-height: 1.05; }
   padding: 0 30px;
   border: 1px solid transparent;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--brass-2), var(--brass) 55%, var(--brass-dark));
+  background: var(--brass);
   color: #17120c;
   font-family: var(--sans);
   font-size: 0.86rem;
@@ -133,12 +127,9 @@ h3 { font-size: 1.6rem; line-height: 1.05; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
-  transform: translateX(-120%);
-  transition: transform 0.7s var(--ease);
+  background: none;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -18px rgba(201, 160, 99, 0.7); }
-.btn:hover::after { transform: translateX(120%); }
+.btn:hover { background: var(--brass-2); }
 .btn--ghost { background: transparent; color: var(--text); border-color: var(--line-strong); }
 .btn--ghost:hover { border-color: var(--brass); color: var(--brass-2); box-shadow: none; }
 .btn--small { min-height: 40px; padding: 0 18px; font-size: 0.74rem; }
@@ -294,7 +285,6 @@ h3 { font-size: 1.6rem; line-height: 1.05; }
   border-radius: 50%;
   background: radial-gradient(circle, rgba(201, 160, 99, 0.22), transparent 62%);
   pointer-events: none;
-  animation: glow 10s ease-in-out infinite alternate;
 }
 @keyframes glow { to { transform: translate(-6%, 8%) scale(1.06); } }
 
