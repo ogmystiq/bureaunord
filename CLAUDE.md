@@ -33,6 +33,10 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 ## Design
 - Designskillen ligger i `.claude/skills/frontend-design/`. Läs den och följ den innan du ändrar utseendet på någon sida.
 
+## Designskills
+- `.claude/skills/frontend-design/` (Anthropic) och `.claude/skills/no-ui-slop/` (UXKIN) laddas automatiskt i Claude Code i det här repot. Använd dem vid allt design- och layoutarbete.
+- Startsidan ska vara **mörk premium** (Jontes val). Demosidorna och skissen har egna stilar per bransch.
+
 ## Skiss-länkarna (viktigt – går ut i säljmejl)
 - Varje salong får en länk som `https://northlinestudio.se/skiss/aajt-tattoo-linkoping`.
 - Adressen finns inte som fil → GitHub Pages visar `404.html`, som känner igen `/skiss/<slug>` och hämtar `https://mystiq.app.n8n.cloud/webhook/skiss?slug=<slug>` → `{hittad, namn, stad, typ}`. Sedan renderas skissen med `skiss/`-sidans kod.
