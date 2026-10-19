@@ -108,20 +108,16 @@ p { max-width: 62ch; }
 .nav a:hover { color: var(--blue); }
 .header .btn { display: none; }
 
-/* Hero */
-.hero { padding: 28px 0 0; }
-.hero__top { display: grid; gap: 22px; padding-bottom: 28px; }
-.hero__title {
-  font-size: clamp(3.4rem, 15vw, 9.5rem);
-  font-weight: 500;
-  line-height: 0.92;
-  letter-spacing: -0.045em;
-}
-.hero__lead { font-size: 1.1875rem; line-height: 1.5; max-width: 30ch; }
-.hero__info { margin-top: 14px; color: var(--muted); font-size: 1rem; }
-.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 22px; }
-.hero__photo { overflow: hidden; }
-.hero__photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 40% 55%; }
+/* Hero: fotot och namnet hör ihop, info-rad direkt under */
+.hero__photo { position: relative; overflow: hidden; background: var(--linen); }
+.hero__photo img { width: 100%; height: 70svh; min-height: 420px; max-height: 760px; object-fit: cover; object-position: 50% 45%; }
+.hero__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20, 24, 22, 0) 40%, rgba(20, 24, 22, 0.72) 100%); }
+.hero__overlay { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding-bottom: 28px; color: #fff; }
+.hero__title { font-size: clamp(3.2rem, 14vw, 8.5rem); font-weight: 500; line-height: 0.92; letter-spacing: -0.045em; }
+.hero__lead { margin-top: 12px; font-size: 1.1875rem; line-height: 1.45; max-width: 34ch; color: #f2f3f1; }
+.hero__strip { display: grid; gap: 6px; padding-top: 22px; padding-bottom: 26px; border-bottom: 1px solid var(--line); }
+.hero__info { color: var(--ink); font-size: 1rem; }
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 16px; }
 
 /* En enda medveten laddningsanimation: fotot öppnas uppifrån */
 @media (prefers-reduced-motion: no-preference) {
@@ -242,10 +238,10 @@ p { max-width: 62ch; }
   .sticky-book { display: none; }
   .toast { bottom: 32px; }
 
-  .hero { padding-top: 48px; }
-  .hero__top { grid-template-columns: 1fr 340px; align-items: end; gap: 48px; padding-bottom: 44px; }
-  .hero__photo { max-width: 1440px; margin: 0 auto; padding: 0 var(--gutter); }
-  .hero__photo img { aspect-ratio: 16 / 7; }
+  .hero__photo img { height: 78vh; min-height: 560px; }
+  .hero__overlay { padding-bottom: 56px; }
+  .hero__strip { grid-template-columns: 1fr 1fr auto; align-items: center; gap: 32px; padding-top: 22px; padding-bottom: 22px; }
+  .hero__actions { margin-top: 0; justify-content: flex-end; }
 
   .section { padding: 112px 0; }
   .prices { grid-template-columns: 4fr 7fr; gap: 64px; align-items: start; }

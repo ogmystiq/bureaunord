@@ -17,7 +17,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
+html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
 body {
   background: var(--black);
   color: var(--bone);
@@ -35,7 +35,7 @@ img { display: block; max-width: 100%; height: auto; }
 main img { filter: grayscale(1) contrast(1.06); }
 figure { margin: 0; }
 h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 0.95; letter-spacing: 0; text-transform: uppercase; }
-h2 { font-size: clamp(2.6rem, 9vw, 4.75rem); margin-bottom: 22px; }
+h2 { font-size: clamp(2.2rem, 9vw, 4.75rem); margin-bottom: 22px; overflow-wrap: break-word; }
 h3 { font-size: 1.75rem; }
 p { max-width: 60ch; }
 :focus-visible { outline: 2px solid var(--brass-light); outline-offset: 3px; }
@@ -94,7 +94,7 @@ body.menu-open { overflow: hidden; }
 .hero__photo { position: relative; }
 .hero__photo img { width: 100%; height: 62vh; min-height: 380px; object-fit: cover; }
 .hero__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 14, 14, 0) 35%, rgba(14, 14, 14, 0.92) 100%); }
-.hero__content { position: relative; margin-top: -0.62em; font-size: clamp(7rem, 40vw, 21rem); }
+.hero__content { position: relative; margin-top: -0.62em; font-size: clamp(5rem, 34vw, 21rem); }
 .hero__name { font-size: 1em; line-height: 0.78; display: grid; }
 .hero__sub { font-size: 0.22em; line-height: 1; letter-spacing: 0.04em; color: var(--brass-light); margin-top: 0.35em; font-weight: 600; }
 .hero__side { font-size: 1.0625rem; margin-top: 26px; padding-bottom: 56px; }
@@ -131,7 +131,7 @@ body.menu-open { overflow: hidden; }
 
 /* Undersidor */
 .page-head { padding: 48px 0 40px; }
-.page-head h1 { font-size: clamp(3.6rem, 16vw, 9rem); line-height: 0.88; max-width: 12ch; }
+.page-head h1 { overflow-wrap: break-word; font-size: clamp(3rem, 15vw, 9rem); line-height: 0.88; max-width: 12ch; }
 .lead { margin-top: 22px; font-size: 1.1875rem; color: var(--muted); }
 .prices-page { display: grid; gap: 40px; }
 .prices-page__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
@@ -202,8 +202,9 @@ figcaption { margin-top: 10px; font-size: 0.9375rem; color: var(--muted); }
 
 /* Sidfot */
 .footer { background: var(--graphite); color: var(--muted); padding: 56px 0 40px; font-size: 0.9375rem; }
-.footer__mast { font-family: var(--display); font-weight: 800; font-size: clamp(5rem, 30vw, 16rem); line-height: 0.8; color: var(--bone); text-transform: uppercase; margin-bottom: 36px; }
-.footer__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+.footer__mast { font-family: var(--display); font-weight: 800; font-size: clamp(4rem, 26vw, 16rem); line-height: 0.8; color: var(--bone); text-transform: uppercase; margin-bottom: 36px; }
+.footer__inner { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+.footer a { overflow-wrap: anywhere; }
 .footer h2 { font-family: var(--body); font-size: 0.9375rem; font-weight: 700; color: var(--bone); margin-bottom: 6px; text-transform: none; line-height: 1.4; }
 .footer a { color: var(--bone); text-underline-offset: 3px; }
 .footer li a { text-decoration: none; }
@@ -228,8 +229,8 @@ figcaption { margin-top: 10px; font-size: 0.9375rem; color: var(--muted); }
   .menu-toggle, .mobile-menu, .sticky-book { display: none; }
 
   .hero__photo img { height: 78vh; min-height: 560px; max-height: 820px; }
-  .hero__content { position: absolute; left: 0; right: 0; bottom: 0; margin-top: 0; font-size: clamp(10rem, 22vw, 21rem); display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 56px; }
-  .hero__side { justify-self: end; max-width: 380px; padding-bottom: 0.2em; margin-top: 0; }
+  .hero__content { position: absolute; left: 0; right: 0; bottom: 0; margin-top: 0; font-size: clamp(9rem, 20vw, 21rem); display: grid; grid-template-columns: auto minmax(300px, 380px); justify-content: space-between; align-items: end; gap: 48px; }
+  .hero__side { padding-bottom: 0.2em; margin-top: 0; }
 
   .section { padding: 120px 0; }
   .section--tight { padding-top: 32px; }
