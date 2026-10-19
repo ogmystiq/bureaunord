@@ -6,40 +6,42 @@
 :root {
   --bar-h: 34px;
   --offer-h: 0px;
-  --wrap: 1240px;
+  --wrap: 1200px;
   --gutter: 20px;
+  --serif-fallback: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
 
 /* ---------- Familjernas färger och typsnitt ---------- */
 .fam-ljus {
-  --bg: #fbfbf9; --alt: #e9eae5; --ink: #1c1f1d; --muted: #545b57; --accent: #3f5e4f; --accent-ink: #ffffff; --line: #d3d6cf;
-  --heading: "Gloock", Georgia, serif; --body: "Albert Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  --h-weight: 400; --h-transform: none; --h-spacing: -0.01em;
+  --bg: #fbfbf9; --alt: #eeefea; --ink: #1c1f1d; --muted: #4f5652; --accent: #3f5e4f; --accent-ink: #ffffff; --line: #d3d6cf;
+  --heading: "Gloock", var(--serif-fallback); --body: "Albert Sans", var(--sans-fallback);
+  --h-weight: 400; --h-transform: none; --h-spacing: -0.01em; --name-size: clamp(3rem, 13vw, 8rem);
 }
 .fam-mode {
-  --bg: #ffffff; --alt: #f4e9ef; --ink: #17121a; --muted: #5b5160; --accent: #5b1f4f; --accent-ink: #ffffff; --line: #e6dbe2;
-  --heading: "Syne", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; --body: "Manrope", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  --h-weight: 800; --h-transform: none; --h-spacing: -0.03em;
+  --bg: #ffffff; --alt: #f6eef2; --ink: #17121a; --muted: #574d5c; --accent: #5b1f4f; --accent-ink: #ffffff; --line: #e6dbe2;
+  --heading: "Syne", var(--sans-fallback); --body: "Manrope", var(--sans-fallback);
+  --h-weight: 700; --h-transform: none; --h-spacing: -0.03em; --name-size: clamp(2.8rem, 12vw, 7.5rem);
 }
 .fam-klinik {
-  --bg: #f3f6f5; --alt: #dde7e4; --ink: #172120; --muted: #4c5a58; --accent: #2d6a65; --accent-ink: #ffffff; --line: #c9d6d3;
-  --heading: "Spectral", Georgia, serif; --body: "Work Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  --h-weight: 300; --h-transform: none; --h-spacing: -0.02em;
+  --bg: #f3f6f5; --alt: #e3ebe8; --ink: #172120; --muted: #47524f; --accent: #2d6a65; --accent-ink: #ffffff; --line: #c9d6d3;
+  --heading: "Spectral", var(--serif-fallback); --body: "Work Sans", var(--sans-fallback);
+  --h-weight: 300; --h-transform: none; --h-spacing: -0.02em; --name-size: clamp(3rem, 12vw, 7.5rem);
 }
 .fam-massing {
-  --bg: #0e0e0e; --alt: #1c1c1b; --ink: #ecebe7; --muted: #a7a49d; --accent: #b38b4d; --accent-ink: #0e0e0e; --line: rgba(236, 235, 231, 0.16);
-  --heading: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif; --body: "Libre Franklin", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  --h-weight: 800; --h-transform: uppercase; --h-spacing: 0;
+  --bg: #0e0e0e; --alt: #181817; --ink: #ecebe7; --muted: #aaa79f; --accent: #b38b4d; --accent-ink: #0e0e0e; --line: rgba(236, 235, 231, 0.16);
+  --heading: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", var(--sans-fallback); --body: "Libre Franklin", var(--sans-fallback);
+  --h-weight: 800; --h-transform: uppercase; --h-spacing: 0; --name-size: clamp(4rem, 22vw, 12rem);
 }
 .fam-black {
-  --bg: #121212; --alt: #1d1d1c; --ink: #f2f1ed; --muted: #b3b1aa; --accent: #d9482c; --accent-ink: #121212; --line: rgba(242, 241, 237, 0.18);
-  --heading: "Anybody", "Arial Black", Impact, sans-serif; --body: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-  --h-weight: 900; --h-transform: uppercase; --h-spacing: -0.01em;
+  --bg: #121212; --alt: #1b1b1a; --ink: #f2f1ed; --muted: #b5b3ac; --accent: #d9482c; --accent-ink: #121212; --line: rgba(242, 241, 237, 0.18);
+  --heading: "Anybody", "Arial Black", var(--sans-fallback); --body: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --h-weight: 900; --h-transform: uppercase; --h-spacing: -0.01em; --name-size: clamp(2.4rem, 11vw, 7.5rem);
 }
 
 /* ---------- Grund ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--bar-h) + 72px); -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--bar-h) + 70px); -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
   background: var(--bg);
   color: var(--ink);
@@ -47,29 +49,33 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-wrap: break-word;
   padding-top: var(--bar-h);
   padding-bottom: var(--offer-h);
 }
 .fam-black { font-size: 1rem; }
 a { color: inherit; }
-ul { list-style: none; }
+ul, ol { list-style: none; }
 img { display: block; max-width: 100%; height: auto; }
 figure { margin: 0; }
+[hidden] { display: none !important; }
 h1, h2, h3 {
   font-family: var(--heading);
   font-weight: var(--h-weight);
   text-transform: var(--h-transform);
   letter-spacing: var(--h-spacing);
-  line-height: 1;
-  overflow-wrap: break-word;
-  hyphens: manual;
+  line-height: 1.02;
 }
-h2 { font-size: clamp(2.2rem, 7vw, 3.75rem); margin-bottom: 18px; }
-.fam-mode h2 { font-size: clamp(1.9rem, 5.6vw, 2.9rem); font-weight: 700; }
-.fam-black h2 { font-size: clamp(2rem, 7vw, 3.5rem); font-stretch: 125%; font-variation-settings: "wdth" 125; }
-p { max-width: 62ch; }
+h2 { font-size: clamp(2rem, 6vw, 3.25rem); margin-bottom: 28px; max-width: 20ch; }
+.fam-mode h2 { font-size: clamp(1.9rem, 5.4vw, 2.9rem); }
+.fam-black h2 { font-size: clamp(1.8rem, 6vw, 3rem); font-stretch: 125%; font-variation-settings: "wdth" 125; }
+.fam-massing h2 { font-size: clamp(2.6rem, 9vw, 4.5rem); }
+h3 { font-size: 1.25rem; line-height: 1.2; margin-bottom: 8px; }
+.fam-ljus h3, .fam-klinik h3 { font-size: 1.5rem; }
+.fam-massing h3 { font-size: 1.75rem; }
+.fam-black h3 { font-size: 1.125rem; }
+p { max-width: 60ch; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .fam-massing :focus-visible, .fam-black :focus-visible { outline-color: var(--ink); }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
@@ -78,48 +84,59 @@ p { max-width: 62ch; }
 
 /* ---------- Skiss-banner (alltid överst) ---------- */
 .sketch-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 120;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 120;
   padding: 8px 14px;
-  background: #111418;
-  color: #e6eaee;
-  font: 0.8125rem/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #111418; color: #e6eaee;
+  font: 0.8125rem/1.4 var(--sans-fallback);
   text-align: center;
 }
 .sketch-bar a { color: #fff; text-underline-offset: 3px; }
 .sketch-bar span { font-weight: 600; color: #fff; }
 
-/* ---------- Knappar ---------- */
+/* ---------- Knappar och länkar ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 50px; padding: 0 26px; border: 0; border-radius: 2px;
   background: var(--accent); color: var(--accent-ink);
-  font: 600 1rem var(--body); text-decoration: none; cursor: pointer;
-  transition: filter 0.2s;
+  font: 600 1rem var(--body); text-decoration: none; white-space: nowrap; cursor: pointer;
 }
 .btn:hover { filter: brightness(1.1); }
 .btn--small { min-height: 42px; padding: 0 18px; font-size: 0.9375rem; }
-.link { font-weight: 600; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
-.link:hover { text-decoration-thickness: 2px; }
+.text-link { font-weight: 600; color: var(--accent); text-decoration: underline; text-underline-offset: 5px; }
+.fam-massing .text-link, .fam-black .text-link { color: var(--ink); text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
 
 /* ---------- Sidhuvud ---------- */
 .header { position: sticky; top: var(--bar-h); z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); }
-.header__inner { display: flex; align-items: center; gap: 20px; height: 62px; }
+.header__inner { display: flex; align-items: center; gap: 20px; height: 60px; }
 .logo { font-family: var(--heading); font-weight: var(--h-weight); text-transform: var(--h-transform); font-size: 1.25rem; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.fam-massing .logo { font-size: 1.625rem; }
 .nav { display: none; gap: 28px; margin-left: auto; }
 .nav a { font-size: 0.9375rem; font-weight: 500; text-decoration: none; }
 .nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
 .header__book { margin-left: auto; flex-shrink: 0; }
 
 /* ---------- Hero: fullbreddsfoto med namnet stort ---------- */
-.hero { position: relative; }
-.hero__photo { position: relative; background: var(--alt); }
-.hero__photo img { width: 100%; height: 72vh; min-height: 440px; max-height: 860px; object-fit: cover; }
-.hero__name { font-size: clamp(2.8rem, 13vw, 8.5rem); line-height: 0.95; }
-.hero__kind { margin-top: 14px; font-weight: 600; }
-.hero__lead { margin-top: 10px; font-size: 1.125rem; max-width: 38ch; }
+.hero { position: relative; isolation: isolate; display: flex; align-items: flex-end; min-height: min(calc(100svh - var(--bar-h) - 60px), 640px); background: #1a1a1a; overflow: hidden; }
+.hero__img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10, 10, 10, 0.05) 20%, rgba(10, 10, 10, 0.78) 100%); }
+.hero__content { width: 100%; padding-top: 120px; padding-bottom: 36px; color: #fff; }
+.hero__kind { font-weight: 600; font-size: 1rem; margin-bottom: 10px; }
+.hero__name { font-size: var(--name-size); line-height: 0.92; max-width: 14ch; }
+.hero__lead { margin-top: 14px; font-size: 1.125rem; max-width: 36ch; color: #f1f1ee; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 24px; }
+.btn--hero { background: #fff; color: #141414; }
+.fam-massing .btn--hero, .fam-black .btn--hero { background: var(--accent); color: var(--accent-ink); }
+.hero__link { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
+
+/* Familjernas hero-kompositioner */
+.fam-mode .hero__content { text-align: center; }
+.fam-mode .hero__name, .fam-mode .hero__lead { margin-left: auto; margin-right: auto; }
+.fam-mode .hero__actions { justify-content: center; }
+.fam-klinik .hero__name { font-weight: 300; }
+.fam-massing .hero__img { filter: grayscale(1) contrast(1.06); }
+.fam-massing .hero__name { line-height: 0.82; }
+.fam-massing .hero__kind { font-size: 1.0625rem; }
+.fam-black .hero__name { font-stretch: 150%; font-variation-settings: "wdth" 150; line-height: 0.9; max-width: none; }
 
 /* En enda laddningsanimation: namnet tonar fram */
 @media (prefers-reduced-motion: no-preference) {
@@ -127,170 +144,120 @@ p { max-width: 62ch; }
   @keyframes skiss-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 }
 
-/* Ljus: texten ligger nere till vänster på fotot, med mörk gradient */
-.fam-ljus .hero__photo::after,
-.fam-massing .hero__photo::after,
-.fam-black .hero__photo::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(10, 12, 11, 0) 30%, rgba(10, 12, 11, 0.78) 100%);
-}
-.fam-ljus .hero__content { position: absolute; left: 0; right: 0; bottom: 0; padding-bottom: 36px; color: #fff; }
-.fam-ljus .hero__lead { color: #f1f2ef; }
-.fam-ljus .hero .btn { background: #fff; color: var(--ink); }
-.fam-ljus .hero .link { color: #fff; }
-
-/* Mode: namnet på en plommonplatta som griper in i fotot */
-.fam-mode .hero__photo img { height: 64vh; }
-.fam-mode .hero__content { position: relative; margin-top: -88px; }
-.fam-mode .hero__plate { background: var(--accent); color: #fff; padding: 30px 24px 34px; max-width: 720px; }
-.fam-mode .hero__name { font-size: clamp(2.6rem, 12vw, 6.5rem); }
-.fam-mode .hero__lead { color: #f3e6ef; }
-.fam-mode .hero .btn { background: #fff; color: var(--accent); }
-.fam-mode .hero .link { color: #fff; }
-
-/* Klinik: lugnt foto i ram, namnet på ljus platta */
-.fam-klinik .hero { padding-top: 0; }
-.fam-klinik .hero__photo img { height: 56vh; min-height: 360px; }
-.fam-klinik .hero__content { position: relative; margin-top: -64px; }
-.fam-klinik .hero__plate { background: var(--bg); padding: 28px 22px 8px 0; max-width: 760px; }
-.fam-klinik .hero__name { font-weight: 300; font-size: clamp(2.6rem, 10vw, 6.5rem); }
-.fam-klinik .hero__kind { color: var(--accent); }
-.fam-klinik .hero__lead { color: var(--muted); }
-
-/* Mässing: gråskala och staplat smalt namn */
-.fam-massing .hero__photo img { filter: grayscale(1) contrast(1.06); }
-.fam-massing .hero__content { position: relative; margin-top: -0.9em; font-size: clamp(3.6rem, 19vw, 11rem); }
-.fam-massing .hero__name { font-size: 1em; line-height: 0.84; }
-.fam-massing .hero__kind, .fam-massing .hero__lead, .fam-massing .hero__actions { font-size: 1.0625rem; }
-.fam-massing .hero__kind { color: var(--accent); }
-.fam-massing .hero__lead { font-size: 1.125rem; }
-
-/* Bläck: brett namn över fotots nederkant */
-.fam-black .hero__content { position: absolute; left: 0; right: 0; bottom: 0; padding-bottom: 32px; }
-.fam-black .hero__name { font-size: clamp(2.4rem, 12vw, 9rem); font-stretch: 150%; font-variation-settings: "wdth" 150; line-height: 0.9; }
-.fam-black .hero__kind { color: #fff; font-weight: 600; }
-.fam-black .hero__photo img { height: 80vh; }
-
 /* ---------- Sektioner ---------- */
-.section { padding: 72px 0; }
+.section { padding: 64px 0; }
 .section--alt { background: var(--alt); }
-.note { color: var(--muted); font-size: 0.9375rem; }
 
-/* Priser */
-.services-wrap { display: grid; gap: 24px; }
-.service { display: grid; grid-template-columns: 1fr auto; gap: 2px 18px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+/* Intro */
+.intro__inner { display: grid; gap: 8px; }
+.intro__title { margin-bottom: 12px; }
+.intro__text p:first-child { font-size: 1.25rem; line-height: 1.5; }
+.intro__text p + p { margin-top: 12px; color: var(--muted); }
+
+/* Priser: alla rader samma grid */
 .services { border-top: 1px solid var(--ink); }
+.service { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .service__name { font-weight: 500; }
-.service__price { font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.service__desc { grid-column: 1 / -1; color: var(--muted); font-size: 0.9375rem; }
-.fam-mode .services { border-top: 2px solid var(--accent); }
-.fam-klinik .service__name { font-family: var(--heading); font-size: 1.375rem; font-weight: 400; }
-.fam-massing .services { border-top: 2px solid var(--accent); }
-.fam-massing .service__name { font-family: var(--heading); font-weight: 600; font-size: 1.75rem; text-transform: uppercase; line-height: 1.05; }
-.fam-massing .service__price { font-family: var(--heading); font-weight: 800; font-size: 2rem; }
-.fam-black .services { border-top: 1px solid var(--ink); }
+.service__price { font-weight: 600; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.service__desc { grid-column: 1 / -1; margin-top: 2px; color: var(--muted); font-size: 0.9375rem; }
+.fam-mode .services, .fam-massing .services { border-top: 2px solid var(--accent); }
+.fam-klinik .service__name, .fam-ljus .service__name { font-family: var(--heading); font-size: 1.375rem; font-weight: var(--h-weight); line-height: 1.2; }
+.fam-massing .service__name { font-family: var(--heading); font-weight: 600; font-size: 1.625rem; text-transform: uppercase; line-height: 1.05; }
+.fam-massing .service__price { font-family: var(--heading); font-weight: 800; font-size: 1.875rem; line-height: 1; }
 .fam-black .service__price { color: var(--accent); }
 
-/* Om oss */
-.about { display: grid; gap: 32px; align-items: center; }
-.about__photo { background: var(--bg); }
-.about__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.fam-massing .about__photo img { filter: grayscale(1) contrast(1.06); }
-.about__text p + p { margin-top: 16px; }
-.about__text p:first-of-type { font-size: 1.1875rem; }
+/* Galleri: fasta bildformat */
+.gallery-section { padding-top: 64px; padding-bottom: 64px; }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.gallery__item { overflow: hidden; background: var(--alt); }
+.gallery__item img { width: 100%; height: 100%; object-fit: cover; }
+.gallery__item--1 { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+.gallery__item--2, .gallery__item--3 { aspect-ratio: 4 / 5; }
+.fam-massing .gallery__item img { filter: grayscale(1) contrast(1.06); }
 
-/* Öppettider och kontakt */
-.visit { display: grid; gap: 48px; }
-.hours div, .contact div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); max-width: 440px; }
-.hours { margin-bottom: 14px; }
-.contact { margin-top: 24px; }
-.contact dt { font-weight: 600; }
-.contact dd { text-align: right; display: grid; }
-.placeholder { color: var(--muted); }
-.placeholder:empty { display: none; }
+/* Så går ett besök till */
+.steps { display: grid; gap: 28px; }
+.step { padding-top: 18px; border-top: 1px solid var(--ink); }
+.step p { color: var(--muted); }
+
+/* Hitta hit */
+.find { display: grid; gap: 36px; }
+.find__block + .find__block { margin-top: 28px; }
+.find__address { font-size: 1.25rem; line-height: 1.45; margin-bottom: 8px; }
+.find__phone { font-size: 1.25rem; font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); }
+.hours { max-width: 420px; }
+.hours div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.find__book { margin-top: 32px; }
+.find__map { aspect-ratio: 4 / 3; background: var(--alt); }
+.find__map iframe { display: block; width: 100%; height: 100%; border: 0; }
+.fam-massing .find__map iframe, .fam-black .find__map iframe { filter: grayscale(1) invert(0.9) contrast(0.9); }
 
 /* Sidfot */
-.footer { border-top: 1px solid var(--line); padding: 44px 0 40px; }
-.footer__name { font-family: var(--heading); font-weight: var(--h-weight); text-transform: var(--h-transform); font-size: clamp(2rem, 8vw, 3.5rem); line-height: 1; margin-bottom: 14px; }
-.footer__small { color: var(--muted); font-size: 0.9375rem; }
+.footer { border-top: 1px solid var(--line); padding: 40px 0 36px; }
+.footer__name { font-family: var(--heading); font-weight: var(--h-weight); text-transform: var(--h-transform); font-size: clamp(1.75rem, 6vw, 2.75rem); line-height: 1; margin-bottom: 8px; }
+.footer__place { color: var(--muted); }
+.footer__place:empty { display: none; }
+.footer__small { margin-top: 14px; color: var(--muted); font-size: 0.875rem; }
 
-/* ---------- Gillar du skissen? Diskret list längst ner ---------- */
+/* ---------- "Gillar du skissen?": liten list längst ner, efter hero ---------- */
 .offer {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 110;
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 8px 14px calc(8px + env(safe-area-inset-bottom));
   background: #111418; color: #e6eaee;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--sans-fallback);
+  transform: translateY(110%); transition: transform 0.3s;
 }
-.offer__text { flex: 1; font-size: 0.8125rem; line-height: 1.4; }
+.offer.is-visible { transform: none; }
+.offer__text { font-size: 0.8125rem; line-height: 1.35; }
 .offer__text a { color: #fff; text-underline-offset: 2px; }
 .offer__long { display: none; }
 .offer__btn {
-  flex-shrink: 0; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px;
-  background: #fff; color: #111418; border-radius: 2px; font-size: 0.875rem; font-weight: 600; text-decoration: none;
+  flex-shrink: 0; display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px;
+  background: #fff; color: #111418; border-radius: 2px; font-size: 0.8125rem; font-weight: 600; text-decoration: none;
 }
 .offer__btn:hover { background: #dfe5ea; }
 
 /* Demoruta */
 .toast {
-  position: fixed; left: 50%; bottom: calc(var(--offer-h) + 20px); z-index: 130;
+  position: fixed; left: 50%; bottom: calc(var(--offer-h) + 16px); z-index: 130;
   transform: translate(-50%, 12px); width: min(92vw, 420px);
   padding: 14px 18px; border-radius: 3px; background: #111418; color: #fff;
-  font-size: 0.9375rem; text-align: center; opacity: 0; pointer-events: none; transition: opacity 0.25s, transform 0.25s;
+  font: 0.9375rem/1.4 var(--sans-fallback); text-align: center; opacity: 0; pointer-events: none; transition: opacity 0.25s, transform 0.25s;
 }
 .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn, .toast { transition: none; }
+  .toast, .offer { transition: none; }
 }
 
-@media (max-width: 420px) {
-  .offer__btn { padding: 0 10px; font-size: 0.8125rem; }
+/* ---------- Surfplatta och dator ---------- */
+@media (min-width: 720px) {
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .gallery { grid-template-columns: 3fr 2fr; grid-template-rows: 1fr 1fr; gap: 14px; aspect-ratio: 16 / 9; max-height: 680px; width: 100%; }
+  .gallery__item--1 { grid-column: 1; grid-row: 1 / span 2; }
+  .gallery__item { aspect-ratio: auto !important; min-height: 0; }
+  .offer__long { display: inline; }
 }
 
-/* ---------- Dator ---------- */
 @media (min-width: 900px) {
   :root { --gutter: 40px; }
   .nav { display: flex; }
   .header__book { margin-left: 0; }
   .logo { font-size: 1.375rem; }
 
-  .fam-ljus .hero__content { padding-bottom: 64px; }
-  .fam-ljus .hero__photo img { height: 86vh; }
-  .fam-mode .hero__content { margin-top: -180px; }
-  .fam-mode .hero__plate { padding: 48px 56px 52px; margin-left: auto; margin-right: 6%; }
-  .fam-mode .hero__photo img { height: 78vh; }
-  .fam-klinik .hero__photo { max-width: 1440px; margin: 0 auto; padding: 0 var(--gutter); background: none; }
-  .fam-klinik .hero__photo img { height: 70vh; aspect-ratio: auto; }
-  .fam-klinik .hero__content { margin-top: -150px; }
-  .fam-klinik .hero__plate { padding: 44px 56px 8px 56px; margin-left: -56px; max-width: 980px; }
-  .fam-massing .hero__photo img { height: 78vh; }
-  .fam-massing .hero__content { display: grid; grid-template-columns: 1fr 360px; align-items: end; gap: 0 48px; margin-top: -0.78em; }
-  .fam-massing .hero__plate { display: contents; }
-  .fam-massing .hero__name { grid-row: 1 / span 3; }
-  .fam-black .hero__content { padding-bottom: 56px; }
-  .fam-black .hero__photo img { height: 88vh; }
+  .hero { min-height: min(calc(100vh - var(--bar-h) - 60px), 760px); }
+  .hero__content { padding-bottom: 64px; }
+  .fam-massing .hero__content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 360px); grid-template-rows: auto auto auto; column-gap: 48px; align-items: end; }
+  .fam-massing .hero__name { grid-column: 1; grid-row: 1 / span 3; max-width: none; }
+  .fam-massing .hero__kind, .fam-massing .hero__lead, .fam-massing .hero__actions { grid-column: 2; }
 
-  .section { padding: 112px 0; }
-  .services-wrap { grid-template-columns: 4fr 7fr; gap: 64px; align-items: start; }
-  .fam-ljus .services { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; border-top: 0; }
-  .fam-ljus .service:nth-child(-n+2) { border-top: 1px solid var(--ink); }
-  .fam-mode .services-wrap { grid-template-columns: 1fr; max-width: 820px; text-align: center; }
-  .fam-mode .services-head .note { margin: 0 auto; }
-  .fam-mode .service { text-align: left; }
-  .fam-black .services-wrap { grid-template-columns: 1fr; }
-  .fam-black .service { grid-template-columns: 1fr 2fr auto; }
-  .fam-black .service__desc { grid-column: 2; grid-row: 1; }
-
-  .about { grid-template-columns: 5fr 6fr; gap: 80px; }
-  .fam-mode .about, .fam-black .about { grid-template-columns: 6fr 5fr; }
-  .fam-mode .about__photo, .fam-black .about__photo { order: 2; }
-  .visit { grid-template-columns: 1fr 1fr; gap: 80px; }
-
-  /* På datorn ligger listen sist på sidan i stället för att sväva över innehållet */
-  .offer { position: static; justify-content: center; gap: 24px; padding: 16px var(--gutter); }
-  .offer__text { flex: 0 1 auto; font-size: 0.9375rem; }
-  .offer__long { display: inline; }
-  .offer__short { display: none; }
+  .section { padding: 96px 0; }
+  .intro__inner { grid-template-columns: 5fr 6fr; gap: 64px; align-items: start; }
+  .intro__title { margin-bottom: 0; }
+  .prices { display: grid; grid-template-columns: 4fr 7fr; gap: 64px; align-items: start; }
+  .prices h2 { margin-bottom: 0; }
+  .find--map { grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .find__map { aspect-ratio: auto; height: 100%; min-height: 440px; }
 }

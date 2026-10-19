@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body class="fam-ljus">
   <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
@@ -26,74 +26,81 @@
     <div class="wrap header__inner">
       <a class="logo" href="#topp" data-fill="name">Er salong</a>
       <nav class="nav" aria-label="Meny">
-        <a href="#tjanster">Priser</a>
-        <a href="#om">Om oss</a>
-        <a href="#oppettider">Öppettider</a>
+        <a href="#priser">Priser</a>
+        <a href="#bilder">Bilder</a>
+        <a href="#hitta">Hitta hit</a>
       </nav>
-      <a class="btn btn--small header__book" href="#kontakt">Boka tid</a>
+      <a class="btn btn--small header__book" href="#hitta" data-demo>Boka tid</a>
     </div>
   </header>
 
   <main id="innehall">
     <section class="hero" id="topp">
-      <figure class="hero__photo">
-        <img id="hero-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" sizes="100vw" width="1600" height="1067" fetchpriority="high" alt="">
-      </figure>
+      <img class="hero__img" id="hero-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" sizes="100vw" width="1600" height="1067" fetchpriority="high" alt="">
       <div class="wrap hero__content">
-        <div class="hero__plate">
-          <h1 class="hero__name" data-fill="name">Er salong</h1>
-          <p class="hero__kind" id="kind">Salong</p>
-          <p class="hero__lead" id="lead">Här ser era kunder direkt vad ni erbjuder och kan boka på några sekunder.</p>
-          <div class="hero__actions">
-            <a class="btn" href="#kontakt">Boka tid</a>
-            <a class="link" href="#tjanster">Se priser</a>
-          </div>
+        <p class="hero__kind" id="kind">Salong</p>
+        <h1 class="hero__name" data-fill="name">Er salong</h1>
+        <p class="hero__lead" id="lead">Boka tid online när det passar dig.</p>
+        <div class="hero__actions">
+          <a class="btn btn--hero" href="#hitta" data-demo>Boka tid</a>
+          <a class="hero__link" href="#priser">Se priser</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="tjanster">
-      <div class="wrap services-wrap">
-        <div class="services-head">
-          <h2>Priser</h2>
-          <p class="note">Exempelpriser. Era egna tjänster och priser läggs in när sidan byggs.</p>
+    <section class="section intro" id="om">
+      <div class="wrap intro__inner">
+        <h2 class="intro__title">Välkommen till <span data-fill="name">Er salong</span></h2>
+        <div class="intro__text">
+          <p id="intro-1">Hos oss får varje besök ta den tid det behöver.</p>
+          <p id="intro-2">Boka tid online, eller hör av er om ni har frågor.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="priser">
+      <div class="wrap prices">
+        <h2 id="prices-title">Behandlingar och priser</h2>
         <ul class="services" id="services" role="list"></ul>
       </div>
     </section>
 
-    <section class="section section--alt" id="om">
-      <div class="wrap about">
-        <figure class="about__photo">
-          <img id="about-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" sizes="(min-width: 900px) 45vw, 100vw" width="1200" height="1500" loading="lazy" alt="">
-        </figure>
-        <div class="about__text">
-          <h2>Om oss</h2>
-          <p id="about-1">Välkommen till Er salong.</p>
-          <p id="about-2">Boka tid online, eller hör av er om ni har frågor.</p>
-        </div>
+    <section class="section gallery-section" id="bilder" aria-label="Bilder">
+      <div class="wrap">
+        <div class="gallery" id="gallery"></div>
       </div>
     </section>
 
-    <section class="section" id="oppettider">
+    <section class="section section--alt" id="besok">
       <div class="wrap visit">
-        <div class="visit__col">
-          <h2>Öppettider</h2>
-          <dl class="hours">
-            <div><dt>Måndag–fredag</dt><dd>10–18</dd></div>
-            <div><dt>Lördag</dt><dd>10–15</dd></div>
-            <div><dt>Söndag</dt><dd>Stängt</dd></div>
-          </dl>
-          <p class="note">Exempel. Era riktiga öppettider läggs in när sidan byggs.</p>
+        <h2>Så går ett besök till</h2>
+        <ol class="steps" id="steps" role="list"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="hitta">
+      <div class="wrap find">
+        <div class="find__info">
+          <h2>Hitta hit</h2>
+          <div class="find__block" id="address-block" hidden>
+            <p class="find__address" id="address"></p>
+            <p><a class="text-link" id="maps-link" href="#hitta" target="_blank" rel="noopener">Visa vägen i Google Maps</a></p>
+          </div>
+          <div class="find__block" id="phone-block" hidden>
+            <p><a class="find__phone" id="phone" href="#hitta"></a></p>
+          </div>
+          <div class="find__block">
+            <h3>Öppettider</h3>
+            <dl class="hours">
+              <div><dt>Måndag–fredag</dt><dd>10–18</dd></div>
+              <div><dt>Lördag</dt><dd>10–15</dd></div>
+              <div><dt>Söndag</dt><dd>Stängt</dd></div>
+            </dl>
+          </div>
+          <p class="find__book"><a class="btn" href="#hitta" data-demo>Boka tid online</a></p>
         </div>
-        <div class="visit__col" id="kontakt">
-          <h2>Boka och hitta hit</h2>
-          <p><a class="btn" href="#kontakt" data-demo>Boka tid online</a></p>
-          <dl class="contact">
-            <div><dt>Adress</dt><dd><span class="placeholder">Er adress</span><span class="placeholder" data-fill="city-line"></span></dd></div>
-            <div><dt>Telefon</dt><dd class="placeholder">Ert telefonnummer</dd></div>
-            <div><dt>Mejl</dt><dd class="placeholder">Er mejladress</dd></div>
-          </dl>
+        <div class="find__map" id="map-wrap" hidden>
+          <iframe id="map" title="Karta" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
@@ -102,18 +109,19 @@
   <footer class="footer">
     <div class="wrap footer__inner">
       <p class="footer__name" data-fill="name">Er salong</p>
+      <p class="footer__place" id="footer-place"></p>
       <p class="footer__small">Skiss gjord av <a href="/">Northline Studio</a>. Innehållet är ett förslag och kan ändras helt efter era önskemål.</p>
     </div>
   </footer>
 
-  <!-- Diskret list längst ner: fast i mobilen, sista raden på datorn -->
-  <aside class="offer" aria-label="Om skissen">
-    <p class="offer__text">Gillar du skissen? <span class="offer__short">Svara bara på mejlet.</span><span class="offer__long">Svara på mejlet eller skriv till <a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a>.</span></p>
+  <!-- Liten list längst ner, visas när man scrollat förbi första skärmen -->
+  <aside class="offer" id="offer" aria-label="Om skissen">
+    <p class="offer__text">Gillar du skissen? <span class="offer__long">Svara på mejlet eller skriv till <a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a>.</span></p>
     <a class="offer__btn" href="https://northlinestudio.se/#kontakt">Gör den till vår sida</a>
   </aside>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
