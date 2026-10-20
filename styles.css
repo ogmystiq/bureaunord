@@ -95,8 +95,11 @@ p { max-width: 62ch; }
     radial-gradient(40% 35% at 95% 60%, rgba(111, 124, 255, 0.18), transparent 70%);
 }
 .hero__inner { display: grid; gap: 48px; }
-.hero__title { font-size: clamp(2.5rem, 10.5vw, 4.75rem); font-weight: 600; letter-spacing: -0.035em; line-height: 0.98; max-width: 17ch; }
+.hero__title { font-size: clamp(2.1rem, 8.7vw, 4.125rem); font-weight: 600; letter-spacing: -0.035em; line-height: 1; max-width: 21ch; }
 .hero__lead { margin-top: 22px; font-size: 1.1875rem; line-height: 1.55; color: var(--muted); max-width: 46ch; }
+.hero__facts { display: grid; gap: 10px; margin-top: 26px; color: var(--muted); }
+.hero__facts li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; }
+.hero__facts strong { color: var(--ink); font-family: var(--head); font-weight: 600; font-size: 1.1875rem; letter-spacing: -0.01em; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 30px; }
 .hero__note { margin-top: 18px; font-size: 0.9375rem; color: var(--muted); }
 .hero__visual { display: grid; justify-items: center; gap: 18px; }
@@ -170,7 +173,7 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
 
 /* ---- Demosidor */
 .showroom { position: relative; display: grid; justify-items: center; gap: 32px; }
-.laptop { display: block; width: 100%; max-width: 900px; }
+.laptop { display: block; width: 94%; max-width: 900px; }
 .laptop__screen {
   position: relative; display: block; aspect-ratio: 1440 / 900; overflow: hidden;
   border: 10px solid #1b1e24; border-bottom-width: 14px; border-radius: 14px 14px 0 0; background: #fff;
@@ -198,8 +201,8 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
 /* ---- Priser */
 .plans { display: grid; gap: 24px; }
 .plan { position: relative; display: flex; flex-direction: column; padding: 32px 26px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--white); }
-.plan--featured { border: 1px solid rgba(95, 212, 189, 0.55); box-shadow: 0 30px 80px -40px rgba(95, 212, 189, 0.35); }
-.plan__badge { position: absolute; top: -13px; left: 24px; padding: 3px 10px; border-radius: 3px; background: var(--glow); color: var(--on-accent); font-size: 0.8125rem; font-weight: 600; }
+.plan--featured { border: 1px solid rgba(95, 212, 189, 0.55); }
+.section--white .plan { background: var(--paper); }
 .plan__name { font-size: 2rem; }
 .plan__desc { margin-top: 8px; color: var(--muted); }
 .plan__price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-top: 26px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
@@ -212,14 +215,37 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
 .plan__terms { color: var(--glow); font-weight: 600; }
 .plan .btn { width: 100%; }
 
-/* ---- Kontakt: formuläret ligger direkt på sidan, ingen låda */
-.contact { padding: 80px 0 96px; }
+/* ---- Vem står bakom */
+.about { display: grid; gap: 28px; }
+.about__title { max-width: 16ch; }
+.about__lead { font-family: var(--head); font-weight: 500; font-size: clamp(1.25rem, 3vw, 1.5rem); line-height: 1.35; letter-spacing: -0.015em; max-width: 34ch; }
+.about__body > p + p { margin-top: 16px; color: var(--muted); }
+.about__facts { display: grid; gap: 0; margin-top: 32px; }
+.about__facts div { display: grid; gap: 2px; padding: 14px 0; border-top: 1px solid var(--line-strong); }
+.about__facts dt { color: var(--muted); }
+.about__facts dd { font-weight: 600; overflow-wrap: anywhere; }
+.about__facts a { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---- Vanliga frågor */
+.faq { display: grid; gap: 28px; }
+.faq__list { border-top: 1px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--line-strong); }
+.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 60px; padding: 14px 0; cursor: pointer; list-style: none; font-family: var(--head); font-weight: 600; font-size: 1.1875rem; letter-spacing: -0.01em; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; flex-shrink: 0; width: 12px; height: 12px; border-right: 2px solid var(--glow); border-bottom: 2px solid var(--glow); transform: translateY(-3px) rotate(45deg); transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.faq details[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+.faq summary:hover { color: #fff; }
+.faq details p { padding: 0 0 20px; color: var(--muted); }
+
+/* ---- Kontakt: ljus yta så att Tallys ljusa formulär smälter in */
+.contact { padding: 80px 0 96px; background: #e9eef2; color: #111418; }
+.contact :focus-visible { outline-color: #111418; }
+.contact .lead { color: #3f454d; }
 .contact__inner { display: grid; gap: 32px; }
-.contact__mail { margin-top: 22px; color: var(--muted); }
-.contact__mail a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
-.form-card { padding: 22px 20px 16px; border-radius: 10px; background: #e9eef2; color: #111418; }
-.form-card iframe { display: block; width: 100%; border: 0; min-height: 520px; }
-.contact__fallback { margin-top: 12px; font-size: 0.9375rem; color: #4b5058; }
+.contact__mail { margin-top: 22px; color: #3f454d; }
+.contact__mail a { color: #111418; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.form-wrap iframe { display: block; width: 100%; border: 0; min-height: 520px; }
+.contact__fallback { margin-top: 12px; font-size: 0.9375rem; color: #3f454d; }
 .contact__fallback a { color: #111418; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---- Fast knapp i mobilen */
@@ -260,6 +286,19 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
 .legal a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .grain { display: none; }
 
+/* Sektionerna glider in när de kommer i bild. Bara i webbläsare som stöder
+   scroll-styrda animationer; övriga visar allt direkt. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .section__head, .compare, .gains, .showroom, .demo-list, .steps, .about, .plans, .faq, .contact__inner {
+      animation: nl-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+    @keyframes nl-in { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn, .ps, .sticky-cta, .site-header { transition: none; }
@@ -278,7 +317,7 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
   .sticky-cta { display: none; }
 
   .hero { padding: 72px 0 112px; }
-  .hero__inner { grid-template-columns: 1.35fr 1fr; align-items: center; gap: 64px; }
+  .hero__inner { grid-template-columns: 1.5fr 1fr; align-items: center; gap: 48px; }
   .hero .phone { width: 320px; }
 
   .section { padding: 120px 0; }
@@ -294,10 +333,14 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
   .laptop__base { margin: 0 -6%; }
   .phone--side { position: absolute; right: 2%; bottom: 0; width: 230px; }
 
-  .plans { max-width: 960px; gap: 32px; }
+  .plans { gap: 32px; }
   .plan { padding: 40px 36px; }
 
   .contact__inner { grid-template-columns: 1fr 1.25fr; gap: 80px; align-items: start; }
+  .about { grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+  .about__facts div { grid-template-columns: 9.5rem 1fr; gap: 12px; }
+  .faq { grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+  .faq h2 { position: sticky; top: 110px; }
   .site-footer__inner { grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
   .legal { padding: 96px 0 120px; }
 }

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Grundläggande information för Google och webbläsaren -->
-  <title>Northline Studio – Premiumhemsidor för skönhet och välmående</title>
-  <meta name="description" content="Northline Studio bygger premiumhemsidor för frisörer, barberare, nagel- och lash-studios, hudterapeuter, massörer och tatuerare. Snabba, mobilanpassade och med tydlig bokning.">
+  <title>Hemsida för frisör och salong – Northline Studio</title>
+  <meta name="description" content="Hemsidor för frisörer, barberare, nagel-, frans- och hudvårdssalonger. Klar inom en vecka, från 2 995 kr + 199 kr/mån. Ingen bindningstid.">
   <link rel="canonical" href="https://northlinestudio.se/">
   <meta name="theme-color" content="#0b0d10">
   <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
   <meta property="og:site_name" content="Northline Studio">
   <meta property="og:locale" content="sv_SE">
   <meta property="og:url" content="https://northlinestudio.se/">
-  <meta property="og:title" content="Northline Studio – Premiumhemsidor för skönhet och välmående">
+  <meta property="og:title" content="Hemsida för frisör och salong – Northline Studio">
   <meta property="og:description" content="Hemsidor för salonger, kliniker och studios inom skönhet och välmående. Snabba, mobilanpassade och med tydlig bokning.">
   <meta property="og:image" content="https://northlinestudio.se/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 
   <!-- Samma sak för X/Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Northline Studio – Premiumhemsidor för skönhet och välmående">
+  <meta name="twitter:title" content="Hemsida för frisör och salong – Northline Studio">
   <meta name="twitter:description" content="Hemsidor för salonger, kliniker och studios inom skönhet och välmående. Snabba, mobilanpassade och med tydlig bokning.">
   <meta name="twitter:image" content="https://northlinestudio.se/og-image.png">
 
@@ -38,21 +38,106 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="styles.css?v=202610202000">
+  <link rel="stylesheet" href="styles.css?v=202610202300">
 
   <!-- Strukturerad data: hjälper Google förstå att detta är ett företag -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Northline Studio",
-    "url": "https://northlinestudio.se/",
-    "logo": "https://northlinestudio.se/apple-touch-icon.png",
-    "image": "https://northlinestudio.se/og-image.png",
-    "email": "kontakt@northlinestudio.se",
-    "description": "Webbyrå som bygger premiumhemsidor åt frisörer, barberare, nagelsalonger, lash- och brynstudios, hudterapeuter, massörer, fotvårdare och tatuerare i Sverige.",
-    "areaServed": "SE",
-    "knowsLanguage": "sv"
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://northlinestudio.se/#foretag",
+        "name": "Northline Studio",
+        "url": "https://northlinestudio.se/",
+        "logo": "https://northlinestudio.se/apple-touch-icon.png",
+        "image": "https://northlinestudio.se/og-image.png",
+        "email": "kontakt@northlinestudio.se",
+        "description": "Webbyrå för skönhet och välmående. Bygger hemsidor åt frisörer, barberare, nagelsalonger, frans- och brynstudios, hudterapeuter, massörer, fotvårdare och tatuerare i Sverige.",
+        "founder": { "@type": "Person", "name": "Jonathan Heimdahl" },
+        "areaServed": { "@type": "Country", "name": "Sverige" },
+        "knowsLanguage": "sv",
+        "priceRange": "2 995–4 995 kr",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Hemsidor för salonger",
+          "itemListElement": [
+            { "@type": "Offer", "name": "Bas", "description": "En sida med presentation, tjänster, priser, bokningsknapp och kontaktuppgifter. Hosting, domän och support 199 kr/mån, ingen bindningstid.", "price": "2995", "priceCurrency": "SEK" },
+            { "@type": "Offer", "name": "Premium", "description": "Upp till fem sidor med galleri, kontaktformulär, Google Maps, SEO-grundoptimering och animationer. Hosting, domän och support 199 kr/mån, ingen bindningstid.", "price": "4995", "priceCurrency": "SEK" }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://northlinestudio.se/#webbplats",
+        "url": "https://northlinestudio.se/",
+        "name": "Northline Studio",
+        "inLanguage": "sv-SE",
+        "publisher": { "@id": "https://northlinestudio.se/#foretag" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://northlinestudio.se/#fragor",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad kostar en hemsida för en salong?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bas kostar 2 995 kr och är en sida. Premium kostar 4 995 kr och har upp till fem sidor. Båda är engångspriser, och sedan betalar du 199 kr/mån för hosting, domän och support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Måste jag betala för demon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej. Vi bygger en demo av din hemsida utan kostnad. Du betalar först när du sett den och vill gå vidare."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur lång tid tar det?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "När du godkänt demon är hemsidan live inom en vecka, kopplad till din domän."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Fungerar det med mitt bokningssystem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Bokningsknappen leder till det bokningssystem du redan använder, till exempel Bokadirekt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vad ingår i 199 kr/mån?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hosting, domän och löpande support. Det finns ingen bindningstid."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vad är skillnaden mellan Bas och Premium?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bas är en sida med presentation, tjänster och priser, bokningsknapp och kontaktuppgifter. Premium har upp till fem sidor, bildgalleri, kontaktformulär, Google Maps, SEO-grundoptimering och en unik design med animationer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vad behöver jag göra själv?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Berätta om verksamheten: vad ni gör, priser och var ni finns. Tekniken sköter vi."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -67,10 +152,10 @@
         <span class="wordmark__name">Northline Studio</span>
       </a>
       <nav class="site-nav" aria-label="Huvudmeny">
-        <a href="#fore-efter">Före och efter</a>
         <a href="#demosidor">Demosidor</a>
         <a href="#sa-gar-det-till">Så går det till</a>
         <a href="#priser">Priser</a>
+        <a href="#fragor">Frågor</a>
       </nav>
       <a class="btn btn--small" href="#kontakt">Beställ demo</a>
     </div>
@@ -82,17 +167,21 @@
     <section class="hero">
       <div class="wrap hero__inner">
         <div class="hero__text">
-          <h1 class="hero__title">Hemsidor för salonger som vill se lika bra ut på nätet som i stolen.</h1>
+          <h1 class="hero__title">Hemsidor för frisörer och salonger</h1>
           <p class="hero__lead">
-            Vi bygger hemsidor åt frisörer, barberare, nagel- och fransstudios,
-            hudterapeuter, massörer och tatuerare. Snabba i mobilen, med priser
-            och bokning direkt på första skärmen.
+            Snygga i mobilen, med priser och bokning direkt på första skärmen.
+            För frisörer, barberare, nagel-, frans- och hudvårdsstudios, massörer och tatuerare.
           </p>
+          <ul class="hero__facts" role="list">
+            <li><strong>Från 2&nbsp;995&nbsp;kr</strong> engångspris</li>
+            <li><strong>Klar inom en vecka</strong> efter ditt ja</li>
+            <li><strong>Ingen bindningstid</strong> på 199&nbsp;kr/mån</li>
+          </ul>
           <div class="hero__actions">
             <a class="btn" href="#kontakt">Beställ gratis demo</a>
-            <a class="textlink" href="#priser">Se priser</a>
+            <a class="textlink" href="#priser">Se vad som ingår</a>
           </div>
-          <p class="hero__note">Du ser din demo innan du betalar något. Från 2&nbsp;995 kr.</p>
+          <p class="hero__note">Du ser din demo innan du betalar något.</p>
         </div>
 
         <!--
@@ -240,8 +329,24 @@
       </div>
     </section>
 
+    <!-- VEM STÅR BAKOM -->
+    <section class="section" id="om-oss">
+      <div class="wrap about">
+        <h2 class="about__title">En person, från demo till färdig sida.</h2>
+        <div class="about__body">
+          <p class="about__lead">Northline Studio drivs av mig, Jonathan Heimdahl. Jag bygger bara hemsidor för skönhet och välmående.</p>
+          <p>Du pratar med samma person hela vägen: när vi går igenom demon, när sidan går live och när något behöver ändras efteråt. Inga säljare, inga mellanhänder.</p>
+          <dl class="about__facts">
+            <div><dt>Du pratar med</dt><dd>Jonathan Heimdahl, grundare</dd></div>
+            <div><dt>Mejl</dt><dd><a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a></dd></div>
+            <div><dt>Svar</dt><dd>Inom ett dygn</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
     <!-- PRISER -->
-    <section class="section" id="priser">
+    <section class="section section--white" id="priser">
       <div class="wrap">
         <div class="section__head">
           <h2>Enkla priser. Två paket.</h2>
@@ -266,7 +371,6 @@
           </article>
 
           <article class="plan plan--featured">
-            <p class="plan__badge">Populärast</p>
             <h3 class="plan__name">Premium</h3>
             <p class="plan__desc">För dig som vill synas mer och ha fler sidor.</p>
             <p class="plan__price"><span class="plan__amount">4&nbsp;995 kr</span><span class="plan__once">Engångspris</span></p>
@@ -286,8 +390,45 @@
       </div>
     </section>
 
+    <!-- VANLIGA FRÅGOR -->
+    <section class="section" id="fragor">
+      <div class="wrap faq">
+        <h2>Vanliga frågor</h2>
+        <div class="faq__list">
+          <details>
+            <summary>Vad kostar en hemsida för en salong?</summary>
+            <p>Bas kostar 2&nbsp;995 kr och är en sida. Premium kostar 4&nbsp;995 kr och har upp till fem sidor. Båda är engångspriser, och sedan betalar du 199 kr/mån för hosting, domän och support.</p>
+          </details>
+          <details>
+            <summary>Måste jag betala för demon?</summary>
+            <p>Nej. Vi bygger en demo av din hemsida utan kostnad. Du betalar först när du sett den och vill gå vidare.</p>
+          </details>
+          <details>
+            <summary>Hur lång tid tar det?</summary>
+            <p>När du godkänt demon är hemsidan live inom en vecka, kopplad till din domän.</p>
+          </details>
+          <details>
+            <summary>Fungerar det med mitt bokningssystem?</summary>
+            <p>Ja. Bokningsknappen leder till det bokningssystem du redan använder, till exempel Bokadirekt.</p>
+          </details>
+          <details>
+            <summary>Vad ingår i 199 kr/mån?</summary>
+            <p>Hosting, domän och löpande support. Det finns ingen bindningstid.</p>
+          </details>
+          <details>
+            <summary>Vad är skillnaden mellan Bas och Premium?</summary>
+            <p>Bas är en sida med presentation, tjänster och priser, bokningsknapp och kontaktuppgifter. Premium har upp till fem sidor, bildgalleri, kontaktformulär, Google Maps, SEO-grundoptimering och en unik design med animationer.</p>
+          </details>
+          <details>
+            <summary>Vad behöver jag göra själv?</summary>
+            <p>Berätta om verksamheten: vad ni gör, priser och var ni finns. Tekniken sköter vi.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- KONTAKT -->
-    <section class="contact section--white" id="kontakt">
+    <section class="contact" id="kontakt">
       <div class="wrap contact__inner">
         <div class="contact__head">
           <h2>Beställ din gratis demo.</h2>
@@ -300,7 +441,7 @@
           Vill du byta formulär: ändra koden QKgN4X på alla tre ställen nedan
           (de två formulärrutorna och länken "Öppna det i ett nytt fönster").
         -->
-        <div class="form-card">
+        <div class="form-wrap">
           <iframe
             data-tally-src="https://tally.so/embed/QKgN4X?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
             loading="lazy"
@@ -342,6 +483,7 @@
         <p class="site-footer__heading">Snabblänkar</p>
         <a href="#demosidor">Demosidor</a>
         <a href="#priser">Priser</a>
+        <a href="#fragor">Vanliga frågor</a>
         <a href="#kontakt">Beställ demo</a>
       </nav>
       <div class="site-footer__links">
@@ -352,6 +494,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=202610202000"></script>
+  <script src="script.js?v=202610202300"></script>
 </body>
 </html>
