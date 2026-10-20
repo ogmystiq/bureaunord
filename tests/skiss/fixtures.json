@@ -559,5 +559,21 @@
    ],
    "bokningslank": "javascript:alert(4)"
   }
+ },
+ "test-empty": {
+  "hittad": true,
+  "namn": "Tom Salong",
+  "stad": "Umeå",
+  "typ": "frisor",
+  "adress": "",
+  "telefon": "",
+  "innehall": {
+   "tagline": "",
+   "om": "",
+   "tjanster": [],
+   "fordelar": [],
+   "oppettider": [],
+   "bokningslank": ""
+  }
  }
 }

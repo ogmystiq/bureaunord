@@ -77,6 +77,10 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
       notesHidden: [...document.querySelectorAll('.note')].every(n => !vis(n)),
       noteCount: document.querySelectorAll('.note').length,
       fromSite: vis(document.getElementById('from-site')),
+      priceCta: vis(document.getElementById('price-cta')),
+      emptySections: [...document.querySelectorAll('main > section')].filter(sec => vis(sec) && !sec.innerText.trim() && !sec.querySelector('img')).map(sec => sec.id),
+      quickNote: !!document.querySelector('#snabbinfo .note:not([hidden])'),
+      findNote: !!document.querySelector('#hitta .note:not([hidden])'),
     };
   });
   const label = LABEL_OVERRIDE[slug] || TYPES[d.typ] || 'Salong';
@@ -97,6 +101,11 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
   }
   ok(slug, w, s.book.length >= 2, 'för få boka-knappar');
   ok(slug, w, !s.faqEmpty, 'fråga utan svar');
+  ok(slug, w, s.emptySections.length === 0, 'tomma sektioner: ' + s.emptySections.join(','));
+  ok(slug, w, !s.priceCta || hasBook, 'prisrad pekar inte på en bokning');
+  ok(slug, w, s.quickNote === !!(d.adress || validTel), 'anteckning om snabbinfo fel');
+  ok(slug, w, s.findNote === !!(d.adress && !/[<>]/.test(d.adress)) || slug === 'test-hostile', 'anteckning om karta fel');
+  const ownText = c && (c.tagline || c.om || c.tjanster.some(t => t.namn) || c.fordelar.length);
   if (c) {
     const tag = c.tagline && !/[<>]/.test(c.tagline) ? c.tagline : null;
     if (tag) ok(slug, w, s.tagline === tag, 'tagline "' + s.tagline + '"');
@@ -106,8 +115,8 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
     ok(slug, w, s.trust === (c.fordelar.length > 0), 'trygghet synlig=' + s.trust);
     if (c.fordelar.length) ok(slug, w, s.trustItems === Math.min(4, c.fordelar.length), 'fördelar ' + s.trustItems);
     ok(slug, w, s.hours === Math.min(7, c.oppettider.length), 'tider ' + s.hours);
-    ok(slug, w, s.fromSite, 'raden "Texterna kommer från er nuvarande sida" saknas');
-    ok(slug, w, !s.steps, '"Så går ett besök till" ska inte visas med innehåll');
+    ok(slug, w, s.fromSite === !!ownText, 'raden "Texterna kommer från er nuvarande sida" fel');
+    ok(slug, w, s.steps === !ownText, '"Så går ett besök till" fel');
   } else {
     ok(slug, w, s.hours === 0, 'påhittade öppettider');
     ok(slug, w, s.priceNote, 'exempelpris-raden saknas');

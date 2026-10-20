@@ -327,7 +327,8 @@ p { max-width: 60ch; }
   .fam-mode .services--long::before, .fam-massing .services--long::before { border-top: 2px solid var(--accent); }
   .quick__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .quick__list li { border-bottom: 0; padding: 22px 24px 22px 0; }
-  .quick__list li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+  .quick__list li { padding-left: 24px; border-left: 1px solid var(--line); }
+  .quick__list li.is-first { padding-left: 0; border-left: 0; }
   .about__inner { grid-template-columns: 5fr 6fr; gap: 80px; }
   .fam-mode .about__photo, .fam-black .about__photo { order: 2; }
   .fam-mode .about__inner, .fam-black .about__inner { grid-template-columns: 6fr 5fr; }

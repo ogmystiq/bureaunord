@@ -173,13 +173,15 @@
   }
 
   /* Fel bransch i datan: en frisör som fått typ nagel/lash/bryn visas som frisör */
+  /* Eget innehåll räknas bara om det finns text från dem (inte bara tider eller en länk) */
+  var ownText = !!(C && (C.tagline || C.om || C.tjanster.length || C.fordelar.length));
   var dKey = Object.prototype.hasOwnProperty.call(DATA, type) ? type : "";
   if (C && /^(nagel|lash|bryn)$/.test(dKey) && /frisör|hårvård|klippning|frisyr/i.test(C.tagline + " " + C.om)) dKey = "frisor";
   var d = dKey ? DATA[dKey] : FALLBACK;
   var fam = FAMILIES[d.fam];
 
   /* ---------- Familj och typsnitt ---------- */
-  document.body.className = "fam-" + d.fam + (C ? " has-content" : "");
+  document.body.className = "fam-" + d.fam + (ownText ? " has-content" : "");
   var font = document.createElement("link");
   font.rel = "stylesheet";
   font.href = "https://fonts.googleapis.com/css2?" + fam.fonts + "&display=swap";
@@ -222,7 +224,7 @@
   document.querySelectorAll('[data-fill="name"]').forEach(function (e) { setText(e, name); });
   setText($("kind"), place);
   setText($("hero-tagline"), C && C.tagline ? C.tagline : d.lead);
-  setText($("prices-title"), C ? (d.pricesTitle === "Priser" ? "Tatueringar" : d.pricesTitle || "Behandlingar") : d.pricesTitle || "Behandlingar och priser");
+  setText($("prices-title"), ownText && C.tjanster.length ? (d.pricesTitle === "Priser" ? "Tatueringar" : d.pricesTitle || "Behandlingar") : d.pricesTitle || "Behandlingar och priser");
   if (C && C.om) {
     setText($("about-text"), C.om);
     show($("about-2"), false);
@@ -230,7 +232,7 @@
     setText($("about-text"), d.intro);
     setText($("about-2"), city ? "Du hittar oss i " + city + ". Boka tid direkt här på sidan, eller hör av dig om du har frågor." : "Boka tid direkt här på sidan, eller hör av dig om du har frågor.");
   }
-  show($("from-site"), !!C);
+  show($("from-site"), ownText);
   show($("note-about"), !!(C && C.om));
   setText($("note-seo"), "Byggd för Google: “" + place + "” i rubrik och kod");
   setText($("footer-place"), [address || city, phone].filter(Boolean).join(", "));
@@ -263,7 +265,7 @@
   });
   list.classList.toggle("services--long", services.length > 5);
   show($("price-note"), !own_services);
-  show($("price-cta"), !!own_services && !own_services.some(function (s) { return s.pris; }));
+  show($("price-cta"), book.ext && !!own_services && !own_services.some(function (s) { return s.pris; }));
 
   /* ---------- Trygghet: bara deras egna fakta ---------- */
   if (C && C.fordelar.length) {
@@ -273,7 +275,7 @@
   }
 
   /* ---------- Så går ett besök till (bara utan eget innehåll, texten är generisk) ---------- */
-  if (!C) {
+  if (!ownText) {
     var steps = $("steps");
     (d.steps || STEPS_DEFAULT).forEach(function (s) {
       var li = el("li", "step");
@@ -307,10 +309,13 @@
     show($(id), true);
   }
   faq("faq-address", address ? "Du hittar oss på " + address + ". Längre ner på sidan finns en karta med vägbeskrivning." : "");
-  faq("faq-book", book.ext ? "Boka direkt online med knappen Boka tid. Där ser du lediga tider och priser." + (phone ? " Du kan också ringa oss på " + phone + "." : "")
+  faq("faq-book", book.ext ? "Boka direkt online med knappen Boka tid." + (phone ? " Du kan också ringa oss på " + phone + "." : "")
     : phone ? "Ring oss på " + phone + " så hittar vi en tid som passar." : "");
   faq("faq-hours", hours.length ? hours.map(function (o) { return o.dag + " " + o.tid; }).join(", ") + "." : "");
   if ($("faq").querySelectorAll("details:not([hidden])").length === 0) show($("faq"), false);
+  if ($("faq").hidden && $("tider").querySelector(".info__hours").hidden) show($("tider"), false);
+  document.querySelector("#snabbinfo .note").hidden = !(address || phone);
+  document.querySelector("#hitta .note").hidden = !address;
 
   /* ---------- Adress, karta och telefon (döljs helt om de saknas) ---------- */
   if (address) {
@@ -335,9 +340,14 @@
     show($("q-phone"), true);
   }
 
+  var firstQuick = document.querySelector(".quick__list li:not([hidden])");
+  if (firstQuick) firstQuick.classList.add("is-first");
+
   /* ---------- SEO: titel, beskrivning och schema.org ---------- */
   document.title = name + " – " + place;
-  var desc = C && (C.tagline || C.om) ? [C.tagline, (C.om.match(/^[^.!?]+[.!?]/) || [""])[0]].filter(Boolean).join(". ").replace(/\.\./g, ".") : d.lead;
+  function sentence(t) { t = t.trim(); return t && !/[.!?…]$/.test(t) ? t + "." : t; }
+  var firstOm = C && C.om ? (C.om.match(/^[^.!?]+[.!?]/) || [C.om])[0] : "";
+  var desc = C && (C.tagline || C.om) ? [sentence(C.tagline || ""), sentence(firstOm)].filter(Boolean).join(" ") : d.lead;
   desc = Array.from(desc);
   $("meta-description").setAttribute("content", (desc.length > 155 ? desc.slice(0, 154).join("") + "…" : desc.join("")));
   var LD_TYPE = { frisor: "HairSalon", barberare: "HairSalon", nagel: "NailSalon", lash: "BeautySalon", bryn: "BeautySalon", skonhet: "BeautySalon", tatuering: "TattooParlor", hudvard: "HealthAndBeautyBusiness", fotvard: "HealthAndBeautyBusiness", massage: "HealthAndBeautyBusiness" };
@@ -349,6 +359,7 @@
   var DAYS = { "mån": "Monday", "tis": "Tuesday", "ons": "Wednesday", "tor": "Thursday", "fre": "Friday", "lör": "Saturday", "sön": "Sunday" };
   var ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   function dayList(s) {
+    if (!/^(mån|tis|ons|tor|fre|lör|sön)[a-zåäö]*(\s*[–-]\s*(mån|tis|ons|tor|fre|lör|sön)[a-zåäö]*)?$/i.test(s.trim())) return [];
     var parts = s.toLowerCase().split(/\s*[–-]\s*/).map(function (x) { return DAYS[x.slice(0, 3)]; });
     if (parts.length === 1) return parts[0] ? [parts[0]] : [];
     if (parts.length === 2 && parts[0] && parts[1]) return ORDER.slice(ORDER.indexOf(parts[0]), ORDER.indexOf(parts[1]) + 1);
@@ -363,6 +374,20 @@
   });
   if (spec.length) ld.openingHoursSpecification = spec;
   $("ld").textContent = JSON.stringify(ld);
+
+  /* ---------- Ingen bokningslänk och inget telefonnummer: visa vad som kopplas in ---------- */
+  if (!book.ext && !phone) {
+    var toast = $("toast"), timer;
+    document.querySelectorAll("[data-book]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.preventDefault();
+        toast.textContent = "Det här är en skiss. Här kopplas ert bokningssystem in, till exempel Bokadirekt.";
+        toast.classList.add("is-visible");
+        clearTimeout(timer);
+        timer = setTimeout(function () { toast.classList.remove("is-visible"); }, 3400);
+      });
+    });
+  }
 
   /* ---------- "Vad vi har tänkt på": anteckningar av som standard ---------- */
   var toggle = $("notes-toggle");
