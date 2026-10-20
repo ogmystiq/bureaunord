@@ -1,0 +1,563 @@
+{
+ "skinclinic-nkpg-norrkoping": {
+  "hittad": true,
+  "namn": "Skinclinic NKPG",
+  "stad": "Norrköping",
+  "typ": "hudvard",
+  "adress": "Källvindsgatan 1, 602 40 Norrköping",
+  "telefon": "076-020 23 91",
+  "innehall": {
+   "tagline": "Estetiska injektioner och avancerad hudvård i Norrköping",
+   "om": "Vi är en klinik i centrala Norrköping som erbjuder estetiska injektionsbehandlingar och avancerad hudvård.",
+   "tjanster": [
+    {
+     "namn": "BOTOX",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "FILLERS",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "PRP/PRF",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "HYALASE",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "HUDVÅRD",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Hudföryngring",
+     "pris": "",
+     "info": ""
+    }
+   ],
+   "fordelar": [
+    "Centrala Norrköping",
+    "Estetiska injektionsbehandlingar",
+    "Avancerad hudvård",
+    "Öppet efter tidsbokning"
+   ],
+   "oppettider": [],
+   "bokningslank": "https://www.bokadirekt.se/places/skinclinic-nkpg-28213"
+  }
+ },
+ "art-of-hair-norrkoping": {
+  "hittad": true,
+  "namn": "Art Of Hair",
+  "stad": "Norrköping",
+  "typ": "bryn",
+  "adress": "Trädgårdsgatan 4A, 602 24 Norrköping",
+  "telefon": "011-120512",
+  "innehall": {
+   "tagline": "Professionell hårvård mitt i Norrköping city",
+   "om": "Vi ligger mitt i hjärtat av Norrköping city, i en vacker jugendbyggnad från 1908. Hos oss får du professionell hårvård av kreativa frisörer med lång erfarenhet och gesällbrev. Vi erbjuder skräddarsydda tjänster.",
+   "tjanster": [
+    {
+     "namn": "Drömhårskonsultation",
+     "pris": "",
+     "info": "För håravfall, skört hår, hårbottenproblem eller fett hår"
+    },
+    {
+     "namn": "Färg",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Extensions",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Lockiga hår",
+     "pris": "",
+     "info": ""
+    }
+   ],
+   "fordelar": [
+    "Frisörer med gesällbrev",
+    "Sophie Lindquist: över 30 års erfarenhet",
+    "Sofie Schwartz: 20 års erfarenhet",
+    "Byggnad från 1908 i jugendstil"
+   ],
+   "oppettider": [
+    {
+     "dag": "Mån",
+     "tid": "Stängt"
+    },
+    {
+     "dag": "Tis",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Ons",
+     "tid": "9–16"
+    },
+    {
+     "dag": "Tor",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Fre",
+     "tid": "9–16"
+    },
+    {
+     "dag": "Lör",
+     "tid": "Efter överenskommelse"
+    }
+   ],
+   "bokningslank": "https://bokning.voady.se/artofhair"
+  }
+ },
+ "hudvis-linkoping": {
+  "hittad": true,
+  "namn": "Hudvis",
+  "stad": "Linköping",
+  "typ": "hudvard",
+  "adress": "Göran Dyks gata 5, 582 24 Linköping",
+  "telefon": "013-13 21 21",
+  "innehall": {
+   "tagline": "Modern hälsoklinik för hud och hälsa i Linköping",
+   "om": "Vi är en modern hälsoklinik där din hud och hälsa står i fokus. Vårt mål är att ge dig en fulländad upplevelse med resultat utöver det vanliga. Hudvis står för kvalitet, hållbarhet och engagemang.",
+   "tjanster": [
+    {
+     "namn": "Konsultation",
+     "pris": "",
+     "info": "Unikt anpassat behandlingsupplägg utifrån dina förutsättningar, behov och mål"
+    },
+    {
+     "namn": "Ansiktsbehandlingar",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Microneedling/Dermapen 4",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Dermapen Cryo - Zapper",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Diatermi - borttagning av kärl",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "PRX - T33",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Kemisk peeling",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Hårborttagning",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Massage",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Yoga",
+     "pris": "",
+     "info": "Yoga i en personlig och omfamnande miljö, med flera samarbetande instruktörer"
+    }
+   ],
+   "fordelar": [
+    "Samarbete med hudläkare och näringsterapeut",
+    "Ser till orsak snarare än symptom",
+    "Unikt anpassade behandlingsupplägg",
+    "Hållbara och långsiktiga resultat"
+   ],
+   "oppettider": [],
+   "bokningslank": "https://www.bokadirekt.se/places/hudvis-41000"
+  }
+ },
+ "faceboost-klinik-linkoping": {
+  "hittad": true,
+  "namn": "Faceboost Klinik",
+  "stad": "Linköping",
+  "typ": "hudvard",
+  "adress": "Drottninggatan 43 P, 582 27 Linköping",
+  "telefon": "072-20 89 432",
+  "innehall": {
+   "tagline": "Medicinsk & estetisk hudvård i centrala Linköping",
+   "om": "Vi är en medicinsk och estetisk hudvårdsklinik i centrala Linköping. Vi erbjuder filler- och botoxinjektioner samt IPL- och laserbehandlingar. Alla injektions- och laserbehandlingar utförs av legitimerade läkare.",
+   "tjanster": [
+    {
+     "namn": "IPL Laserbehandlingar",
+     "pris": "",
+     "info": "Pigmentfläckar, ytliga kärl/rodnad, rosacea, acne, ärr, bristningar"
+    },
+    {
+     "namn": "FRAX 1550 Laserbehandlingar",
+     "pris": "",
+     "info": "Acneärr, ärr, bristningar, uppstramning av hud"
+    },
+    {
+     "namn": "Botox",
+     "pris": "",
+     "info": "För att släta ut rynkor och fåror"
+    },
+    {
+     "namn": "Fillers",
+     "pris": "",
+     "info": "Fylla läppar och förbättra ansiktsdrag"
+    },
+    {
+     "namn": "Profhilo",
+     "pris": "",
+     "info": "Injicerbar anti-aging behandling med hyaluronsyra mot slapp hud"
+    },
+    {
+     "namn": "PRX-T33",
+     "pris": "",
+     "info": "Ny generationens TCA-peel för alla hudtyper och åldrar"
+    },
+    {
+     "namn": "Ansiktsbehandlingar med ZO Skin Health",
+     "pris": "",
+     "info": "Klassiska och mer avancerade ansiktsbehandlingar av hudterapeut"
+    },
+    {
+     "namn": "Z lipo",
+     "pris": "",
+     "info": "Fettfrysning"
+    },
+    {
+     "namn": "Cynosure RF",
+     "pris": "",
+     "info": "Radiofrekvensbehandling för skintightening och mot cellulit"
+    },
+    {
+     "namn": "Aquagold fine touch",
+     "pris": "",
+     "info": "Minskar porer, förbättrar hudens struktur och ger glow"
+    }
+   ],
+   "fordelar": [
+    "Legitimerade läkare utför alla injektions- och laserbehandli",
+    "Världsledande Ellipse Nordlys laser",
+    "Gratis konsultation",
+    "Klarna delbetalning eller Klarna faktura"
+   ],
+   "oppettider": [],
+   "bokningslank": ""
+  }
+ },
+ "hud-och-kroppshalsan-norrkoping": {
+  "hittad": true,
+  "namn": "Hud & Kroppshälsan",
+  "stad": "Norrköping",
+  "typ": "hudvard",
+  "adress": "Skolgatan 1 H, 1 Vån, 602 25 Norrköping",
+  "telefon": "0708-96 96 17",
+  "innehall": {
+   "tagline": "Hudvård och kroppsbehandlingar i Norrköping",
+   "om": "Hos oss ska du känna dig sedd och få den uppmärksamhet och service som är viktig för dig. Madelene Hellman är utbildad på en auktoriserad hudterapeutskola och är medlem i Sveriges Hudterapeuters Riksorganisation, SHR.",
+   "tjanster": [
+    {
+     "namn": "Ansiktsbehandlingar",
+     "pris": "",
+     "info": "Bland annat Circadia, Genosys, AlumierMD och Dermalogica"
+    },
+    {
+     "namn": "Kemisk peeling",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Dermapen/microneedling",
+     "pris": "",
+     "info": "Dermapen 4"
+    },
+    {
+     "namn": "Microdermabrasion By Crystal Clear",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Oxygen treatment by Crystal Clear",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Lash Lift",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Frans & Brynfärg",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Vaxning",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Jane Iredale Make Up",
+     "pris": "",
+     "info": ""
+    },
+    {
+     "namn": "Näringsbalans/Frekvensmätning",
+     "pris": "",
+     "info": ""
+    }
+   ],
+   "fordelar": [
+    "Utbildad på auktoriserad hudterapeutskola",
+    "Innehar gesäll",
+    "Behandlingskadeförsäkring",
+    "Medlem i SHR"
+   ],
+   "oppettider": [],
+   "bokningslank": "https://www.hudokroppshalsan.se/boka/"
+  }
+ },
+ "plaza-norrkoping": {
+  "hittad": true,
+  "namn": "Plaza",
+  "stad": "Norrköping",
+  "typ": "lash",
+  "adress": "Gamla Rådstugugatan 52, 602 32 Norrköping",
+  "telefon": "",
+  "innehall": null
+ },
+ "aajt-tattoo-linkoping": {
+  "hittad": true,
+  "namn": "AAJT Tattoo",
+  "stad": "Linköping",
+  "typ": "tatuering",
+  "adress": "Hamngatan 24, 582 26 Linköping",
+  "telefon": "",
+  "innehall": null
+ },
+ "test-partial": {
+  "hittad": true,
+  "namn": "Delvis Salong",
+  "stad": "Umeå",
+  "typ": "nagel",
+  "adress": "",
+  "telefon": "090-11 22 33",
+  "innehall": {
+   "tagline": "",
+   "om": "",
+   "tjanster": [],
+   "fordelar": [],
+   "oppettider": [],
+   "bokningslank": ""
+  }
+ },
+ "test-bare": {
+  "hittad": true,
+  "namn": "Bar Salong",
+  "stad": "",
+  "typ": "massage",
+  "adress": "",
+  "telefon": "",
+  "innehall": {
+   "tagline": "Massage i lugn miljö",
+   "om": "Vi masserar.",
+   "tjanster": [
+    {
+     "namn": "Massage 60 min",
+     "pris": "750 kr",
+     "info": ""
+    }
+   ],
+   "fordelar": [],
+   "oppettider": [],
+   "bokningslank": "http://osaker.example/boka"
+  }
+ },
+ "test-hostile": {
+  "hittad": true,
+  "namn": "<img src=x onerror=alert(1)>",
+  "stad": "<b>Ort</b>",
+  "typ": "frisor",
+  "adress": "<script>alert(1)</script>",
+  "telefon": "javascript:alert(1)",
+  "innehall": {
+   "tagline": "<img src=x onerror=alert(2)>",
+   "om": "<a href=javascript:alert(3)>klick</a>",
+   "tjanster": [
+    {
+     "namn": "T0",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T1",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T2",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T3",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T4",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T5",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T6",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T7",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T8",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T9",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T10",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T11",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T12",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T13",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T14",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T15",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T16",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T17",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T18",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "T19",
+     "pris": "<b>1 kr</b>",
+     "info": "<i>x</i>"
+    },
+    {
+     "namn": "",
+     "pris": "5",
+     "info": ""
+    }
+   ],
+   "fordelar": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f"
+   ],
+   "oppettider": [
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    },
+    {
+     "dag": "Mån",
+     "tid": "9–18"
+    }
+   ],
+   "bokningslank": "javascript:alert(4)"
+  }
+ }
+}
