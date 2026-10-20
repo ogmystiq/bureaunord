@@ -438,4 +438,9 @@
   } else {
     offer.classList.add("is-visible");
   }
+
+  /* ---------- Det som inte gäller den här salongen tas bort helt ----------
+     Dolda delar (exempelpriser, tomma frågor, sektioner utan innehåll) ska inte heller
+     finnas kvar i koden, där Google, skärmläsare och textläsare annars hittar dem. */
+  document.querySelectorAll("body [hidden]").forEach(function (e) { e.remove(); });
 })();

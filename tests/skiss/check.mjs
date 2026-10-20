@@ -87,6 +87,17 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
       hoursTitle: vis(document.getElementById('hours-title')) ? document.getElementById('hours-title').textContent : null,
       hoursText: vis(document.getElementById('hours-text')),
       pitchName: document.querySelector('#fran-oss [data-fill="name"]')?.textContent,
+      hiddenLeft: document.querySelectorAll('body [hidden]').length,
+      priceNoteInDom: !!document.getElementById('price-note'),
+      exampleText: /Exempelpris/i.test(document.body.textContent),
+      // Varje rubrik måste ha innehåll i sitt block: sektionen, eller tider/frågor var för sig (anteckningarna räknas inte)
+      emptyHeadings: [...document.querySelectorAll('body h2')].filter(h => {
+        const box = h.closest('.info__hours, .info__faq, section, aside, footer').cloneNode(true);
+        box.querySelectorAll('h2, .note').forEach(n => n.remove());
+        return !box.textContent.trim() && !box.querySelector('img, iframe');
+      }).map(h => h.textContent.trim()),
+      faqNoAnswer: [...document.querySelectorAll('#faq details')].filter(d => !d.querySelector('p')?.textContent.trim()).map(d => d.querySelector('summary').textContent.trim()),
+      visitSteps: document.getElementById('besok') ? [...document.querySelectorAll('#steps li')].filter(li => li.querySelector('h3')?.textContent.trim() && li.querySelector('p')?.textContent.trim()).length : null,
     };
   });
   const label = LABEL_OVERRIDE[slug] || TYPES[d.typ] || 'Salong';
@@ -110,6 +121,13 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
   ok(slug, w, s.emptySections.length === 0, 'tomma sektioner: ' + s.emptySections.join(','));
   ok(slug, w, s.serpTitle === s.title && s.serpDesc === s.metaDesc, 'Google-förhandsvisningen stämmer inte med title/description');
   ok(slug, w, s.pitchName === s.h1, 'namnet i avslutet');
+  ok(slug, w, s.hiddenLeft === 0, s.hiddenLeft + ' dolda element ligger kvar i koden');
+  ok(slug, w, s.emptyHeadings.length === 0, 'rubrik utan innehåll: ' + s.emptyHeadings.join(' | '));
+  ok(slug, w, s.faqNoAnswer.length === 0, 'fråga utan svar i koden: ' + s.faqNoAnswer.join(' | '));
+  ok(slug, w, s.visitSteps === null || s.visitSteps >= 3, '"Så går ett besök till" utan steg (' + s.visitSteps + ')');
+  // Exempelpriser bara när vi visar branschens exempel, aldrig när salongens egna tjänster finns
+  const ownServices = !!(c && c.tjanster.some(t => t.namn && !/^[\s<>]*$/.test(t.namn)));
+  ok(slug, w, ownServices ? !s.priceNoteInDom && !s.exampleText : s.priceNoteInDom, 'exempelpris-raden fel (egna tjänster=' + ownServices + ')');
   // Rubriken Öppettider får bara stå ensam om det finns tider; annars rubrik + text
   ok(slug, w, s.hoursTitle === null || s.hours > 0 || (s.hoursTitle !== 'Öppettider' && s.hoursText), 'tom öppettidsrubrik');
   ok(slug, w, !s.priceCta || hasBook, 'prisrad pekar inte på en bokning');
@@ -148,7 +166,13 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
 // Reservvarianten för alla tio typer
 for (const typ of Object.keys(TYPES)) for (const w of widths) {
   const { p, ctx, errors } = await open('/skiss/?n=Test&s=Ume%C3%A5&t=' + typ, w);
-  const s = await p.evaluate(() => ({ sw: document.documentElement.scrollWidth, iw: innerWidth, title: document.title, hours: document.querySelectorAll('.hours div').length }));
+  const s = await p.evaluate(() => ({ sw: document.documentElement.scrollWidth, iw: innerWidth, title: document.title, hours: document.querySelectorAll('.hours div').length,
+    hiddenLeft: document.querySelectorAll('body [hidden]').length,
+    faqNoAnswer: [...document.querySelectorAll('#faq details')].filter(d => !d.querySelector('p')?.textContent.trim()).length,
+    emptyHeadings: [...document.querySelectorAll('body h2')].filter(h => { const b = h.closest('.info__hours, .info__faq, section, aside, footer').cloneNode(true); b.querySelectorAll('h2, .note').forEach(n => n.remove()); return !b.textContent.trim() && !b.querySelector('img, iframe'); }).length,
+    priceNote: !!document.getElementById('price-note') }));
+  ok('typ-' + typ, w, s.hiddenLeft === 0 && s.faqNoAnswer === 0 && s.emptyHeadings === 0, 'dolda=' + s.hiddenLeft + ' frågor utan svar=' + s.faqNoAnswer + ' tomma rubriker=' + s.emptyHeadings);
+  ok('typ-' + typ, w, s.priceNote, 'exempelpris-raden saknas utan innehåll');
   ok('typ-' + typ, w, s.sw <= s.iw && errors.length === 0, 'sw ' + s.sw + ' fel ' + errors.join('|'));
   ok('typ-' + typ, w, s.title === 'Test – ' + TYPES[typ] + ' i Umeå', 'title ' + s.title);
   ok('typ-' + typ, w, s.hours === 0, 'påhittade öppettider');
