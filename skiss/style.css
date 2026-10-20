@@ -85,13 +85,21 @@ p { max-width: 60ch; }
 /* ---------- Skiss-banner (alltid överst) ---------- */
 .sketch-bar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 120;
-  padding: 8px 14px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 14px;
+  padding: 7px 14px;
   background: #111418; color: #e6eaee;
   font: 0.8125rem/1.4 var(--sans-fallback);
   text-align: center;
 }
+.sketch-bar__text { max-width: none; }
 .sketch-bar a { color: #fff; text-underline-offset: 3px; }
-.sketch-bar span { font-weight: 600; color: #fff; }
+.sketch-bar [data-fill] { font-weight: 600; color: #fff; }
+.sketch-bar__toggle {
+  min-height: 30px; padding: 0 12px; border: 1px solid rgba(255, 255, 255, 0.45); border-radius: 2px;
+  background: none; color: #fff; font: 600 0.8125rem var(--sans-fallback); cursor: pointer;
+}
+.sketch-bar__toggle:hover { background: rgba(255, 255, 255, 0.1); }
+.sketch-bar__toggle[aria-pressed="true"] { background: #f2c94c; border-color: #f2c94c; color: #111418; }
 
 /* ---------- Knappar och länkar ---------- */
 .btn {
@@ -149,10 +157,6 @@ p { max-width: 60ch; }
 .section--alt { background: var(--alt); }
 
 /* Intro */
-.intro__inner { display: grid; gap: 8px; }
-.intro__title { margin-bottom: 12px; }
-.intro__text p:first-child { font-size: 1.25rem; line-height: 1.5; }
-.intro__text p + p { margin-top: 12px; color: var(--muted); }
 
 /* Priser: alla rader samma grid */
 .services { border-top: 1px solid var(--ink); }
@@ -198,6 +202,67 @@ p { max-width: 60ch; }
 .footer__place { color: var(--muted); }
 .footer__place:empty { display: none; }
 .footer__small { margin-top: 14px; color: var(--muted); font-size: 0.875rem; }
+
+/* ---------- Snabbinfo under hero ---------- */
+.quick { position: relative; border-bottom: 1px solid var(--line); }
+.quick__list { display: grid; }
+.quick__list li { display: grid; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.quick__list li:last-child { border-bottom: 0; }
+.quick__label { font-size: 0.875rem; color: var(--muted); }
+.quick__list a { font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
+.quick__list a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- Om oss: foto och deras egen text ---------- */
+.about__inner { display: grid; gap: 32px; align-items: center; }
+.about__photo { overflow: hidden; background: var(--alt); aspect-ratio: 4 / 5; }
+.about__photo img { width: 100%; height: 100%; object-fit: cover; }
+.fam-massing .about__photo img { filter: grayscale(1) contrast(1.06); }
+.about__text h2 { margin-bottom: 20px; }
+.about__lead { font-size: 1.25rem; line-height: 1.55; }
+.has-content .about__lead { font-family: var(--heading); font-weight: var(--h-weight); font-size: clamp(1.375rem, 3.2vw, 1.875rem); line-height: 1.35; letter-spacing: var(--h-spacing); text-transform: none; }
+.fam-massing.has-content .about__lead, .fam-black.has-content .about__lead { font-family: var(--body); font-weight: 500; font-size: 1.25rem; letter-spacing: 0; }
+.about__more { margin-top: 14px; color: var(--muted); }
+
+/* ---------- Behandlingar ---------- */
+.prices__note { margin-top: 10px; font-size: 0.9375rem; color: var(--muted); }
+.prices__cta { margin-top: 22px; color: var(--muted); }
+.prices__cta .text-link { margin-left: 4px; white-space: nowrap; }
+
+/* ---------- Trygghet: deras egna fakta som stora påståenden ---------- */
+.trust__list { display: grid; gap: 0; border-top: 1px solid var(--ink); }
+.trust__item {
+  padding: 22px 0 22px 22px; border-bottom: 1px solid var(--line); position: relative;
+  font-family: var(--heading); font-weight: var(--h-weight); font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.25; text-transform: none; letter-spacing: var(--h-spacing);
+}
+.trust__item::before { content: ""; position: absolute; left: 0; top: 30px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+.fam-massing .trust__item { font-family: var(--body); font-weight: 500; letter-spacing: 0; font-size: 1.25rem; }
+.fam-black .trust__item { font-family: var(--body); font-weight: 500; letter-spacing: 0; font-size: 1.0625rem; }
+
+/* ---------- Öppettider och vanliga frågor ---------- */
+.info__inner { display: grid; gap: 48px; }
+.info__cta { margin-top: 4px; }
+#faq details { border-bottom: 1px solid var(--line); }
+#faq details:first-of-type { border-top: 1px solid var(--ink); }
+#faq summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 16px 0; cursor: pointer; list-style: none; font-weight: 600; font-size: 1.0625rem;
+}
+#faq summary::-webkit-details-marker { display: none; }
+#faq summary::after { content: "+"; font-size: 1.5rem; line-height: 1; color: var(--accent); }
+.fam-massing #faq summary::after, .fam-black #faq summary::after { color: var(--ink); }
+#faq details[open] summary::after { content: "–"; }
+#faq details p { padding: 0 0 18px; color: var(--muted); }
+
+/* ---------- "Vad vi har tänkt på": små anteckningar, av som standard ---------- */
+.note { display: none; }
+.show-notes .note:not([hidden]) {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 6px 12px 6px 10px;
+  border-radius: 2px; background: #111418; color: #f6f7f8;
+  font: 600 0.8125rem/1.35 var(--sans-fallback); letter-spacing: 0; text-transform: none; max-width: 34ch;
+}
+.show-notes .note:not([hidden])::before { content: ""; flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: #f2c94c; }
+.fam-massing.show-notes .note:not([hidden]), .fam-black.show-notes .note:not([hidden]) { background: #f6f7f8; color: #111418; }
+.show-notes .note--hero { margin-right: 8px; }
 
 /* ---------- "Gillar du skissen?": liten list längst ner, efter hero ---------- */
 .offer {
@@ -254,10 +319,20 @@ p { max-width: 60ch; }
   .fam-massing .hero__kind, .fam-massing .hero__lead, .fam-massing .hero__actions { grid-column: 2; }
 
   .section { padding: 96px 0; }
-  .intro__inner { grid-template-columns: 5fr 6fr; gap: 64px; align-items: start; }
-  .intro__title { margin-bottom: 0; }
   .prices { display: grid; grid-template-columns: 4fr 7fr; gap: 64px; align-items: start; }
   .prices h2 { margin-bottom: 0; }
+  .services--long { columns: 2; column-gap: 40px; border-top: 0; }
+  .services--long .service { break-inside: avoid; }
+  .services--long::before { content: ""; display: block; border-top: 1px solid var(--ink); column-span: all; }
+  .fam-mode .services--long::before, .fam-massing .services--long::before { border-top: 2px solid var(--accent); }
+  .quick__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .quick__list li { border-bottom: 0; padding: 22px 24px 22px 0; }
+  .quick__list li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+  .about__inner { grid-template-columns: 5fr 6fr; gap: 80px; }
+  .fam-mode .about__photo, .fam-black .about__photo { order: 2; }
+  .fam-mode .about__inner, .fam-black .about__inner { grid-template-columns: 6fr 5fr; }
+  .trust__list { grid-template-columns: 1fr 1fr; column-gap: 48px; }
+  .info__inner { grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
   .find--map { grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
   .find__map { aspect-ratio: auto; height: 100%; min-height: 440px; }
 }

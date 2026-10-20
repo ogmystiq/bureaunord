@@ -212,7 +212,10 @@
     a.href = book.href;
     if (book.ext) { a.target = "_blank"; a.rel = "noopener"; }
   });
-  if (!book.ext && phone) setText($("q-book-link"), "Ring och boka");
+  if (!book.ext && phone) {
+    setText($("q-book-link"), "Ring och boka");
+    setText($("hours-cta").querySelector("a"), "Ring och boka");
+  }
 
   /* ---------- Texter (endast textContent) ---------- */
   var place = city ? d.label + " i " + city : d.label;
