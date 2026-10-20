@@ -18,6 +18,8 @@
     if (heroImg && getComputedStyle(heroImg).transform === "none" && window.CSS && CSS.supports("view-timeline-name: --mo")) {
       // Toppen klipper sitt innehåll, så bilden följer sektionens tidslinje i stället för sin egen
       sections[0].style.viewTimelineName = "--mo-hero";
+      // Bilden förstoras lite när den glider, så ramen runt den måste klippa
+      if (heroImg.parentElement !== sections[0]) heroImg.parentElement.style.overflow = "clip";
       heroImg.classList.add("mo-drift");
       heroImg.style.animationTimeline = "--mo-hero";
     }
