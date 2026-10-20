@@ -39,7 +39,11 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 
 ## Skiss-länkarna (viktigt – går ut i säljmejl)
 - Varje salong får en länk som `https://northlinestudio.se/skiss/aajt-tattoo-linkoping`.
-- Adressen finns inte som fil → GitHub Pages visar `404.html`, som känner igen `/skiss/<slug>` och hämtar `https://mystiq.app.n8n.cloud/webhook/skiss?slug=<slug>` → `{hittad, namn, stad, typ, adress, telefon}` (adress och telefon kan vara tomma; då döljs raden/kartan). Sedan renderas skissen med `skiss/`-sidans kod.
+- Adressen finns inte som fil → GitHub Pages visar `404.html`, som känner igen `/skiss/<slug>` och hämtar `https://mystiq.app.n8n.cloud/webhook/skiss?slug=<slug>` → `{hittad, namn, stad, typ, adress, telefon, innehall}`. Sedan renderas skissen med `skiss/`-sidans kod.
+- `innehall` är `null` eller `{tagline, om, tjanster:[{namn, pris, info}], fordelar:[…], oppettider:[{dag, tid}], bokningslank}` – hämtat från salongens egen sida. 404.html tvättar: bara strängar, klippta längder, max 10 tjänster / 4 fördelar / 7 tider, bokningslänk bara om den är https.
+- Med innehåll visar skissen deras texter, tjänster (pris bara om det finns), fördelar, tider och bokning. Utan innehåll: branschtext, priser märkta som exempel och **inga** påhittade öppettider. Adress/telefon som saknas döljs.
+- Om `typ` är nagel/lash/bryn men texten handlar om hår visas frisörstilen (rätta helst typ i n8n).
+- Testa med `node tests/skiss/check.mjs` (riktiga webhook-svar i `tests/skiss/fixtures.json`).
 - `typ` är en av: `frisor, barberare, nagel, lash, skonhet, hudvard, massage, tatuering, fotvard, bryn`.
 - Reservvariant: `/skiss/?n=<namn>&s=<stad>&t=<typ>` (valfritt `&a=<adress>&p=<telefon>`).
 - Ändrar du skissen: behåll båda varianterna, slug-formatet och webhook-anropet, och testa `/skiss/plaza-norrkoping` (ska visa "Plaza", Norrköping, lash).
