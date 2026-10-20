@@ -227,6 +227,7 @@
   setText($("prices-title"), ownText && C.tjanster.length ? (d.pricesTitle === "Priser" ? "Tatueringar" : d.pricesTitle || "Behandlingar") : d.pricesTitle || "Behandlingar och priser");
   if (C && C.om) {
     setText($("about-text"), C.om);
+    $("about-text").classList.toggle("about__lead--long", Array.from(C.om).length > 260);
     show($("about-2"), false);
   } else {
     setText($("about-text"), d.intro);
