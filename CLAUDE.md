@@ -35,6 +35,8 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 
 ## Designskills
 - `.claude/skills/frontend-design/` (Anthropic) och `.claude/skills/no-ui-slop/` (UXKIN) laddas automatiskt i Claude Code i det här repot. Använd dem vid allt design- och layoutarbete.
+- Fler designskills i `.claude/skills/`: `impeccable` (pbakaus, granskning och polering), `taste-skill` (leonxlnx, smak/anti-generiskt), `ui-ux-pro-max` (nextlevelbuilder, stilar, färger, typsnitt – har ett sökskript), samt Emil Kowalskis `emil-design-eng`, `animate`, `improve-animations`, `review-animations`, `find-animation-opportunities`, `animation-performance`, `animation-vocabulary`, `apple-design` och `break-ui`. Läs de som passar uppgiften innan du designar, och använd granskningsskillsen (impeccable, review-animations, break-ui) innan du säger att något är klart.
+- Skillsen är bara instruktioner. Kör inga av deras skript som installerar något eller skickar data utanför repot utan att fråga Jonte.
 - Startsidan ska vara **mörk premium** (Jontes val). Demosidorna och skissen har egna stilar per bransch.
 
 ## Skiss-länkarna (viktigt – går ut i säljmejl)
