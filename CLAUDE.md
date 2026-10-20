@@ -58,7 +58,8 @@ Allt ligger i n8n och styrs därifrån – inte från repot.
   2. Bedöm hemsidor – vardagar 06:37, Firecrawl-skärmdump i mobilläge + Claude Haiku betyg 1–10 (≤6 = mejla).
   3. Mejl och bolagsform – vardagar 07:13, Brave + Claude Haiku. Bara AB/HB mejlas (enskild firma kräver samtycke enligt marknadsföringslagen).
   4. Skriv mejl – vardagar 07:58, Claude Sonnet, kort mejl (max 60 ord) med personlig skiss-länk.
-  5. Skicka mejl – vardagar 08:47, max 10/dag, ren text, 3–7 min mellan mejl, från "Northline Studio <kontakt@northlinestudio.se>".
+  4b. Hämta innehåll till skissen – vardagar 08:20, Firecrawl läser salongens egen sida/bokningssida + Claude Haiku plockar ut tagline, om-text, tjänster, fördelar, tider, bokningslänk och bransch → kolumnen `innehall`.
+  5. Skicka mejl – vardagar 08:47, max 10/dag (räknar redan skickade samma dag), bara om mejlens domän matchar hemsidans eller är gmail/hotmail o.l., ren text, 3–7 min mellan mejl, från "Northline Studio <kontakt@northlinestudio.se>".
   6. Uppföljning – vardagar 10:17, en uppföljning efter 6 dagar, max 5/dag.
   7. Skiss-data – webhook som skiss-sidan anropar.
 - En mejladress får aldrig mer än ett första mejl och en uppföljning.
