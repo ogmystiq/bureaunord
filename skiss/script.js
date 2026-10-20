@@ -238,11 +238,17 @@
   setText($("note-seo"), "Byggd för Google: “" + place + "” i rubrik och kod");
   setText($("footer-place"), [address || city, phone].filter(Boolean).join(", "));
 
-  /* ---------- Foton ---------- */
-  photo($("hero-img"), d.hero, "100vw");
-  photo($("about-img"), d.about || d.gallery[0], "(min-width: 900px) 45vw, 100vw");
+  /* ---------- Foton: branschens bilder, i en ordning som beror på namnet ---------- */
+  /* Två salonger i samma bransch får då olika hero, om-bild och galleri. */
+  var pool = [d.hero, d.about || d.gallery[0]].concat(d.gallery);
+  var hash = 0;
+  Array.from(name).forEach(function (ch) { hash = (hash * 31 + ch.codePointAt(0)) % 9973; });
+  var shift = hash % pool.length;
+  pool = pool.slice(shift).concat(pool.slice(0, shift));
+  photo($("hero-img"), pool[0], "100vw");
+  photo($("about-img"), pool[1], "(min-width: 900px) 45vw, 100vw");
   var gallery = $("gallery");
-  d.gallery.forEach(function (p, i) {
+  pool.slice(2, 5).forEach(function (p, i) {
     var fig = el("figure", "gallery__item gallery__item--" + (i + 1));
     var img = el("img");
     img.width = 1200; img.height = 900;
