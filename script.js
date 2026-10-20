@@ -112,6 +112,19 @@
     new IntersectionObserver(function (e) { contactSeen = e[0].isIntersecting; updateSticky(); }, { threshold: 0.15 }).observe(contact);
   }
 
+  /* Före-illustrationen: en datorsida på 980 px som skalas ner i telefonen */
+  var oldScreen = document.querySelector(".old-screen");
+  if (oldScreen) {
+    var oldPage = oldScreen.querySelector(".old-page");
+    var fitOld = function () {
+      var scale = oldScreen.clientWidth / 980;
+      oldScreen.style.setProperty("--old-scale", scale);
+      oldPage.style.minHeight = Math.ceil(oldScreen.clientHeight / scale) + "px";
+    };
+    fitOld();
+    window.addEventListener("resize", fitOld);
+  }
+
   /* Årtalet i sidfoten */
   var year = document.getElementById("ar");
   if (year) year.textContent = new Date().getFullYear();

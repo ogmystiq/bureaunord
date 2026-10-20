@@ -104,7 +104,7 @@ p { max-width: 62ch; }
 /* ---- Telefon och laptop (ramar runt riktiga skärmdumpar) */
 .phone {
   position: relative; display: block;
-  width: min(300px, 78vw); aspect-ratio: 390 / 844;
+  width: min(270px, 70vw); aspect-ratio: 390 / 844;
   padding: 10px; border-radius: 46px;
   background: #16181c;
   box-shadow: 0 0 0 1px #2c3038, 0 40px 90px -30px rgba(0, 0, 0, 0.8);
@@ -133,25 +133,36 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
 .lead { margin-top: 16px; font-size: 1.125rem; color: var(--muted); }
 
 /* ---- Före och efter */
-.compare { display: grid; gap: 40px; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
 .compare__side { display: grid; justify-items: center; gap: 18px; }
-.compare figcaption { font-size: 0.9375rem; color: var(--muted); max-width: 34ch; text-align: center; }
+.compare figcaption { font-size: 0.875rem; line-height: 1.5; color: var(--muted); max-width: 34ch; }
 .compare figcaption strong { color: var(--ink); }
-.phone--static { width: min(270px, 72vw); }
+.phone--static { width: 100%; max-width: 270px; padding: 6px; border-radius: 26px; }
+.phone--static .phone__screen { border-radius: 21px; }
 
-/* Illustration av en gammal salongssida */
-.old-site {
-  width: min(270px, 72vw); aspect-ratio: 390 / 844; overflow: hidden;
-  padding: 16px 12px; border: 10px solid #2c3038; border-radius: 40px;
-  background: #efe9dc; color: #222; text-align: center;
-  font: 11px/1.35 "Times New Roman", Times, serif;
-  filter: saturate(0.85);
-}
-.old-site__top { margin-top: 26px; padding: 8px 4px; background: #7a3b8f; color: #ffef6b; font: bold 13px "Comic Sans MS", "Trebuchet MS", sans-serif; letter-spacing: 0.02em; }
-.old-site__menu { margin: 8px 0; color: #1d33c7; font-size: 9px; }
-.old-site__img { height: 92px; margin: 10px auto; width: 70%; background: repeating-linear-gradient(45deg, #b7a98d 0 6px, #c7b99d 6px 12px); border: 2px ridge #888; }
-.old-site__p { margin: 8px auto; font-size: 9.5px; color: #333; max-width: none; }
-.old-site__pdf { margin: 12px auto 0; display: inline-block; padding: 4px 8px; border: 1px dashed #999; font: 9px "Courier New", monospace; color: #1d33c7; text-decoration: underline; }
+/* Illustration: äldre datorsida, utzoomad i mobilen (skalas i script.js) */
+.old-screen { background: #e9e4da; }
+.old-page { position: absolute; top: 0; left: 0; display: block; width: 980px; transform-origin: 0 0; transform: scale(var(--old-scale, 0.255)); background: #e9e4da; color: #333; font: 15px/1.5 Verdana, Geneva, sans-serif; text-align: left; }
+.old-page b { font-weight: bold; }
+.old-page__head { display: flex; justify-content: space-between; align-items: center; padding: 30px 40px; background: #5b2340; color: #f3e3c3; }
+.old-page__logo { font: italic 52px Georgia, "Times New Roman", serif; }
+.old-page__tel { font-size: 18px; }
+.old-page__nav { display: flex; background: linear-gradient(#d9d2c4, #b9b0a0); border-bottom: 1px solid #8f8676; }
+.old-page__nav b { padding: 14px 26px; border-right: 1px solid #a49b8b; color: #3b2a32; font-size: 16px; }
+.old-page__body { display: flex; gap: 24px; padding: 24px 40px; }
+.old-page__side { display: block; width: 220px; flex-shrink: 0; padding: 16px; background: #f6f2ea; border: 1px solid #c9bfae; font-size: 14px; }
+.old-page__side b { display: block; color: #5b2340; margin-bottom: 6px; }
+.old-page__main { display: block; flex: 1; font-size: 15px; }
+.old-page__main img { position: static; width: 100%; height: 260px; object-fit: cover; margin-bottom: 18px; border: 4px solid #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); filter: saturate(0.7) contrast(0.9); }
+.old-page__h { display: block; font: 30px Georgia, serif; color: #5b2340; margin-bottom: 10px; }
+.old-page__pdf { display: block; margin-top: 16px; color: #1a3bb3; text-decoration: underline; }
+.old-page__cols { display: flex; gap: 24px; padding: 0 40px 24px; }
+.old-page__cols > span, .old-page__guest, .old-page__map { display: block; flex: 1; padding: 16px; background: #f6f2ea; border: 1px solid #c9bfae; font-size: 14px; }
+.old-page__cols b, .old-page__guest b, .old-page__map b { display: block; font: 22px Georgia, serif; color: #5b2340; margin-bottom: 8px; }
+.old-page__guest, .old-page__map { margin: 0 40px 24px; }
+.old-page__guest u { color: #1a3bb3; }
+.old-page__mapbox { display: block; height: 220px; margin-top: 8px; padding: 90px 20px; background: #d8d2c6; color: #6d665c; text-align: center; }
+.old-page__foot { display: block; margin-top: 20px; padding: 18px 40px; background: #5b2340; color: #d8c6a8; font-size: 13px; }
 
 .gains { display: grid; gap: 28px; margin-top: 64px; }
 .gains li { padding-top: 18px; border-top: 1px solid var(--ink); }
@@ -194,9 +205,8 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
 .plan__price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-top: 26px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
 .plan__amount { font-family: var(--head); font-weight: 600; font-size: 2.75rem; letter-spacing: -0.03em; line-height: 1; }
 .plan__once { color: var(--muted); font-size: 0.9375rem; }
-.plan__list { margin: 22px 0; display: grid; gap: 10px; }
-.plan__list li { position: relative; padding-left: 26px; }
-.plan__list li::before { content: ""; position: absolute; left: 2px; top: 0.5em; width: 12px; height: 7px; border-left: 2px solid var(--glow); border-bottom: 2px solid var(--glow); transform: rotate(-45deg); }
+.plan__list { margin: 8px 0 24px; display: grid; }
+.plan__list li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .plan__monthly { margin-top: auto; padding: 16px 0 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9375rem; display: grid; gap: 2px; }
 .plan__monthly strong { color: var(--ink); font-size: 1.0625rem; }
 .plan__terms { color: var(--glow); font-weight: 600; }

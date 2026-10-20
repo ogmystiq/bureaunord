@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
 
-  <link rel="stylesheet" href="styles.css?v=202610192230">
+  <link rel="stylesheet" href="styles.css?v=202610202000">
 
   <!-- Strukturerad data: hjälper Google förstå att detta är ett företag -->
   <script type="application/ld+json">
@@ -130,15 +130,33 @@
         <div class="compare">
           <figure class="compare__side">
             <!-- Illustration av en typisk äldre salongssida, ritad i HTML -->
-            <div class="old-site" aria-hidden="true">
-              <div class="old-site__top">VÄLKOMMEN TILL SALONGEN!!</div>
-              <div class="old-site__menu"><u>Hem</u> | <u>Om oss</u> | <u>Priser (PDF)</u> | <u>Gästbok</u> | <u>Kontakt</u></div>
-              <div class="old-site__img"></div>
-              <p class="old-site__p">Vi är en salong med lång erfarenhet. Ring oss för att boka tid! Klicka <u>här</u> för att ladda ner vår prislista.</p>
-              <p class="old-site__p">Senast uppdaterad: 2014</p>
-              <div class="old-site__pdf">prislista_2014_ny.pdf</div>
+            <!-- Illustration: en äldre salongssida byggd för dator, som den ser ut i en mobil (utzoomad) -->
+            <div class="phone phone--static" aria-hidden="true">
+              <span class="phone__screen old-screen">
+                <span class="old-page">
+                  <span class="old-page__head"><span class="old-page__logo">Salongen</span><span class="old-page__tel">Tidsbokning: ring 0XX-XX XX XX</span></span>
+                  <span class="old-page__nav"><b>Hem</b><b>Om oss</b><b>Behandlingar</b><b>Prislista</b><b>Galleri</b><b>Kontakt</b></span>
+                  <span class="old-page__body">
+                    <span class="old-page__side"><b>Öppettider</b>Mån–Fre 9.00–18.00<br>Lör 10.00–14.00<br><br><b>Hitta hit</b>Se karta under Kontakt</span>
+                    <span class="old-page__main">
+                      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&h=260&q=55" width="600" height="260" alt="" loading="lazy">
+                      <b class="old-page__h">Välkommen till vår salong!</b>
+                      Hos oss får du en personlig behandling av utbildad personal. Vi erbjuder klippning, färgning, slingor, permanent och uppsättningar för alla tillfällen. Varmt välkomna att boka tid hos oss!
+                      <span class="old-page__pdf">Ladda ner vår prislista (PDF, 2,4 MB)</span>
+                    </span>
+                  </span>
+                  <span class="old-page__cols">
+                    <span><b>Nyheter</b>Nu har vi fått in nya produkter från våra leverantörer. Välkommen in och titta!<br><br><i>Uppdaterad 2016</i></span>
+                    <span><b>Erbjudande</b>Klipp + färg för endast 899:-. Gäller vardagar t.o.m. 31/5. Ring för mer info.</span>
+                    <span><b>Presentkort</b>Köp presentkort i salongen. Passar till alla tillfällen!</span>
+                  </span>
+                  <span class="old-page__guest"><b>Gästbok</b>Skriv en hälsning i vår gästbok! <u>Klicka här</u></span>
+                  <span class="old-page__map"><b>Hitta hit</b><span class="old-page__mapbox">Karta laddas inte. Klicka här för vägbeskrivning.</span></span>
+                  <span class="old-page__foot">&copy; 2014 Salongen | Senast uppdaterad 12/3 2016</span>
+                </span>
+              </span>
             </div>
-            <figcaption><strong>Före.</strong> En typisk äldre salongssida: liten text, prislista som PDF och ingen bokningsknapp. (Illustration)</figcaption>
+            <figcaption><strong>Före.</strong> En äldre sida byggd för dator: i mobilen blir allt pyttelitet, priserna ligger i en PDF och man måste ringa för att boka. (Illustration)</figcaption>
           </figure>
           <figure class="compare__side compare__side--after">
             <div class="phone phone--static" aria-hidden="true">
@@ -146,7 +164,7 @@
                 <img src="assets/demo-ljung-mobil.jpg" width="390" height="844" alt="" loading="lazy">
               </span>
             </div>
-            <figcaption><strong>Efter.</strong> Salong Ljung, vår Bas-demo: namn, adress, öppettider och bokning på första skärmen.</figcaption>
+            <figcaption><strong>Efter.</strong> Salong Ljung, vår Bas-demo: salongen i bild, adressen och en bokningsknapp direkt på första skärmen.</figcaption>
           </figure>
         </div>
 
@@ -334,6 +352,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=202610192230"></script>
+  <script src="script.js?v=202610202000"></script>
 </body>
 </html>
