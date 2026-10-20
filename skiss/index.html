@@ -6,31 +6,33 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Er salong – skiss av Northline Studio</title>
-  <meta name="description" content="En skiss från Northline Studio som visar hur er nya hemsida kan se ut.">
+  <meta name="description" content="En skiss från Northline Studio som visar hur er nya hemsida kan se ut." id="meta-description">
   <meta name="theme-color" content="#fbfbf9" id="theme-color">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
+  <script type="application/ld+json" id="ld">{}</script>
 </head>
 <body class="fam-ljus">
   <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
 
   <!-- Fast banner: visar att detta är en skiss -->
   <div class="sketch-bar" role="note">
-    Skiss från <a href="/">Northline Studio</a> till <span data-fill="name">Er salong</span>. Ett förslag, inte en riktig sida.
+    <p class="sketch-bar__text">Skiss från <a href="/">Northline Studio</a> till <span data-fill="name">Er salong</span>. <span id="from-site" hidden>Texterna kommer från er nuvarande sida.</span></p>
+    <button class="sketch-bar__toggle" id="notes-toggle" type="button" aria-pressed="false">Vad vi har tänkt på</button>
   </div>
 
   <header class="header">
     <div class="wrap header__inner">
       <a class="logo" href="#topp" data-fill="name">Er salong</a>
       <nav class="nav" aria-label="Meny">
-        <a href="#priser">Priser</a>
-        <a href="#bilder">Bilder</a>
+        <a href="#priser">Behandlingar</a>
+        <a href="#om">Om oss</a>
         <a href="#hitta">Hitta hit</a>
       </nav>
-      <a class="btn btn--small header__book" href="#hitta" data-demo>Boka tid</a>
+      <a class="btn btn--small header__book" href="#hitta" data-book>Boka tid</a>
     </div>
   </header>
 
@@ -40,28 +42,60 @@
       <div class="wrap hero__content">
         <p class="hero__kind" id="kind">Salong</p>
         <h1 class="hero__name" data-fill="name">Er salong</h1>
-        <p class="hero__lead" id="lead">Boka tid online när det passar dig.</p>
+        <p class="hero__lead" id="hero-tagline">Boka tid online när det passar dig.</p>
         <div class="hero__actions">
-          <a class="btn btn--hero" href="#hitta" data-demo>Boka tid</a>
-          <a class="hero__link" href="#priser">Se priser</a>
+          <a class="btn btn--hero" href="#hitta" data-book>Boka tid</a>
+          <a class="hero__link" href="#priser">Se behandlingar</a>
         </div>
+        <p class="note note--hero">Bokning direkt på första skärmen</p>
+        <p class="note note--hero" id="note-seo">Byggd för Google</p>
       </div>
     </section>
 
-    <section class="section intro" id="om">
-      <div class="wrap intro__inner">
-        <h2 class="intro__title">Välkommen till <span data-fill="name">Er salong</span></h2>
-        <div class="intro__text">
-          <p id="intro-1">Hos oss får varje besök ta den tid det behöver.</p>
-          <p id="intro-2">Boka tid online, eller hör av er om ni har frågor.</p>
+    <section class="quick" id="snabbinfo" aria-label="Snabbinfo">
+      <div class="wrap">
+        <ul class="quick__list" role="list">
+          <li id="q-address" hidden><span class="quick__label">Adress</span><a id="q-address-link" href="#hitta"></a></li>
+          <li id="q-phone" hidden><span class="quick__label">Telefon</span><a id="q-phone-link" href="#hitta"></a></li>
+          <li id="q-book"><span class="quick__label">Bokning</span><a href="#hitta" data-book id="q-book-link">Boka tid</a></li>
+        </ul>
+        <p class="note">Adress och telefon syns direkt, även i mobilen</p>
+      </div>
+    </section>
+
+    <section class="section about" id="om">
+      <div class="wrap about__inner">
+        <figure class="about__photo">
+          <img id="about-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" sizes="(min-width: 900px) 45vw, 100vw" width="1200" height="1500" loading="lazy" alt="">
+        </figure>
+        <div class="about__text">
+          <h2>Om <span data-fill="name">Er salong</span></h2>
+          <p class="about__lead" id="about-text">Hos oss får varje besök ta den tid det behöver.</p>
+          <p class="about__more" id="about-2"></p>
+          <p class="note" id="note-about">Er egen text, i ert eget tonläge</p>
         </div>
       </div>
     </section>
 
     <section class="section section--alt" id="priser">
       <div class="wrap prices">
-        <h2 id="prices-title">Behandlingar och priser</h2>
-        <ul class="services" id="services" role="list"></ul>
+        <div class="prices__head">
+          <h2 id="prices-title">Behandlingar</h2>
+          <p class="prices__note" id="price-note" hidden>Exempelpriser. Era egna behandlingar och priser läggs in när sidan byggs.</p>
+          <p class="note">Varje behandling på egen rad, så förstår både kunder och Google vad ni gör</p>
+        </div>
+        <div class="prices__body">
+          <ul class="services" id="services" role="list"></ul>
+          <p class="prices__cta" id="price-cta" hidden>Priser och lediga tider ser du i bokningen. <a class="text-link" href="#hitta" data-book>Se priser och tider</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust" id="trust" hidden>
+      <div class="wrap">
+        <h2>Bra att veta om <span data-fill="name">Er salong</span></h2>
+        <ul class="trust__list" id="trust-list" role="list"></ul>
+        <p class="note">Era meriter lyfts fram och skapar trygghet före första besöket</p>
       </div>
     </section>
 
@@ -71,14 +105,31 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="besok">
+    <section class="section section--alt" id="besok" hidden>
       <div class="wrap visit">
         <h2>Så går ett besök till</h2>
         <ol class="steps" id="steps" role="list"></ol>
       </div>
     </section>
 
-    <section class="section" id="hitta">
+    <section class="section info" id="tider">
+      <div class="wrap info__inner">
+        <div class="info__hours">
+          <h2>Öppettider</h2>
+          <dl class="hours" id="hours" hidden></dl>
+          <p class="info__cta" id="hours-cta"><a class="btn" href="#hitta" data-book>Se lediga tider</a></p>
+        </div>
+        <div class="info__faq" id="faq">
+          <h2>Vanliga frågor</h2>
+          <details id="faq-address" hidden><summary>Var ligger ni?</summary><p></p></details>
+          <details id="faq-book" hidden><summary>Hur bokar jag?</summary><p></p></details>
+          <details id="faq-hours" hidden><summary>När har ni öppet?</summary><p></p></details>
+          <p class="note">Svar på det kunder undrar mest</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="hitta">
       <div class="wrap find">
         <div class="find__info">
           <h2>Hitta hit</h2>
@@ -89,15 +140,8 @@
           <div class="find__block" id="phone-block" hidden>
             <p><a class="find__phone" id="phone" href="#hitta"></a></p>
           </div>
-          <div class="find__block">
-            <h3>Öppettider</h3>
-            <dl class="hours">
-              <div><dt>Måndag–fredag</dt><dd>10–18</dd></div>
-              <div><dt>Lördag</dt><dd>10–15</dd></div>
-              <div><dt>Söndag</dt><dd>Stängt</dd></div>
-            </dl>
-          </div>
-          <p class="find__book"><a class="btn" href="#hitta" data-demo>Boka tid online</a></p>
+          <p class="find__book"><a class="btn" href="#hitta" data-book>Boka tid</a></p>
+          <p class="note">Adress och karta ger lokal synlighet på Google</p>
         </div>
         <div class="find__map" id="map-wrap" hidden>
           <iframe id="map" title="Karta" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -111,6 +155,7 @@
       <p class="footer__name" data-fill="name">Er salong</p>
       <p class="footer__place" id="footer-place"></p>
       <p class="footer__small">Skiss gjord av <a href="/">Northline Studio</a>. Innehållet är ett förslag och kan ändras helt efter era önskemål.</p>
+      <p class="note">Snabb och byggd för mobilen</p>
     </div>
   </footer>
 
@@ -122,6 +167,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
