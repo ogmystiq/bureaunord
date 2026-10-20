@@ -9,7 +9,7 @@
   --powder: #f5ecee;
   --line: #e2d9dc;
 
-  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
   --body: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
   --wrap: 1280px;
@@ -108,7 +108,7 @@ body.menu-open { overflow: hidden; }
 .hero__grid { display: grid; padding: 0; }
 .hero__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .hero__plate { background: var(--cherry); color: #fff; padding: 32px 24px 38px; }
-.hero__lead { font-family: var(--display); font-size: clamp(1.375rem, 4.6vw, 2.125rem); line-height: 1.15; max-width: 22ch; }
+.hero__lead { font-family: var(--display); font-size: clamp(1.375rem, 3.6vw, 2.125rem); line-height: 1.15; max-width: 22ch; }
 .hero__sub { margin-top: 16px; color: #f6e3e7; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 26px; }
 
