@@ -126,6 +126,7 @@
       scripts.forEach(function (src) {
         if (!src) return;
         var s = document.createElement("script");
+        s.async = false; // behåll ordningen: skissens skript före rörelselagret
         s.src = src;
         document.body.appendChild(s);
       });
