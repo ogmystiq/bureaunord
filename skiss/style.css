@@ -34,7 +34,7 @@
   --h-weight: 800; --h-transform: uppercase; --h-spacing: 0; --name-size: clamp(4rem, 22vw, 12rem);
 }
 .fam-black {
-  --bg: #121212; --alt: #1b1b1a; --ink: #f2f1ed; --muted: #b5b3ac; --accent: #d9482c; --accent-ink: #121212; --line: rgba(242, 241, 237, 0.18);
+  --bg: #121212; --alt: #1b1b1a; --ink: #f2f1ed; --muted: #b5b3ac; --accent: #f0603f; --accent-ink: #121212; --line: rgba(242, 241, 237, 0.18);
   --heading: "Anybody", "Arial Black", var(--sans-fallback); --body: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
   --h-weight: 900; --h-transform: uppercase; --h-spacing: -0.01em; --name-size: clamp(2.4rem, 11vw, 7.5rem);
 }

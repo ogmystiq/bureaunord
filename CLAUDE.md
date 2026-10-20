@@ -39,9 +39,9 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 
 ## Skiss-länkarna (viktigt – går ut i säljmejl)
 - Varje salong får en länk som `https://northlinestudio.se/skiss/aajt-tattoo-linkoping`.
-- Adressen finns inte som fil → GitHub Pages visar `404.html`, som känner igen `/skiss/<slug>` och hämtar `https://mystiq.app.n8n.cloud/webhook/skiss?slug=<slug>` → `{hittad, namn, stad, typ}`. Sedan renderas skissen med `skiss/`-sidans kod.
+- Adressen finns inte som fil → GitHub Pages visar `404.html`, som känner igen `/skiss/<slug>` och hämtar `https://mystiq.app.n8n.cloud/webhook/skiss?slug=<slug>` → `{hittad, namn, stad, typ, adress, telefon}` (adress och telefon kan vara tomma; då döljs raden/kartan). Sedan renderas skissen med `skiss/`-sidans kod.
 - `typ` är en av: `frisor, barberare, nagel, lash, skonhet, hudvard, massage, tatuering, fotvard, bryn`.
-- Reservvariant: `/skiss/?n=<namn>&s=<stad>&t=<typ>`.
+- Reservvariant: `/skiss/?n=<namn>&s=<stad>&t=<typ>` (valfritt `&a=<adress>&p=<telefon>`).
 - Ändrar du skissen: behåll båda varianterna, slug-formatet och webhook-anropet, och testa `/skiss/plaza-norrkoping` (ska visa "Plaza", Norrköping, lash).
 
 ## Automationen (n8n, mystiq.app.n8n.cloud)
