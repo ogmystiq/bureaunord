@@ -89,6 +89,7 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
       pitchName: document.querySelector('#fran-oss [data-fill="name"]')?.textContent,
       hiddenLeft: document.querySelectorAll('body [hidden]').length,
       priceNoteInDom: !!document.getElementById('price-note'),
+      quickNoteText: document.querySelector('#snabbinfo .note')?.textContent || '',
       exampleText: /Exempelpris/i.test(document.body.textContent),
       // Varje rubrik måste ha innehåll i sitt block: sektionen, eller tider/frågor var för sig (anteckningarna räknas inte)
       emptyHeadings: [...document.querySelectorAll('body h2')].filter(h => {
@@ -122,6 +123,7 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
   ok(slug, w, s.serpTitle === s.title && s.serpDesc === s.metaDesc, 'Google-förhandsvisningen stämmer inte med title/description');
   ok(slug, w, s.pitchName === s.h1, 'namnet i avslutet');
   ok(slug, w, s.hiddenLeft === 0, s.hiddenLeft + ' dolda element ligger kvar i koden');
+  ok(slug, w, /telefon/i.test(s.quickNoteText) === validTel && (!s.quickNoteText || /adress/i.test(s.quickNoteText) === !!d.adress), 'anteckningen om snabbinfo nämner något som saknas: ' + s.quickNoteText);
   ok(slug, w, s.emptyHeadings.length === 0, 'rubrik utan innehåll: ' + s.emptyHeadings.join(' | '));
   ok(slug, w, s.faqNoAnswer.length === 0, 'fråga utan svar i koden: ' + s.faqNoAnswer.join(' | '));
   ok(slug, w, s.visitSteps === null || s.visitSteps >= 3, '"Så går ett besök till" utan steg (' + s.visitSteps + ')');

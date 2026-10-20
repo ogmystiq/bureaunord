@@ -331,6 +331,7 @@
   if ($("faq").querySelectorAll("details:not([hidden])").length === 0) show($("faq"), false);
   if ($("faq").hidden && $("tider").querySelector(".info__hours").hidden) show($("tider"), false);
   document.querySelector("#snabbinfo .note").hidden = !(address || phone);
+  setText(document.querySelector("#snabbinfo .note"), (address && phone ? "Adress och telefon syns" : address ? "Adressen syns" : "Telefonnumret syns") + " direkt, även i mobilen");
   document.querySelector("#hitta .note").hidden = !address;
 
   /* ---------- Adress, karta och telefon (döljs helt om de saknas) ---------- */
