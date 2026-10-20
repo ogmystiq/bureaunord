@@ -52,6 +52,7 @@ h2 { font-size: clamp(2rem, 6.4vw, 3.5rem); max-width: 18ch; }
 h3 { font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.2; }
 p { max-width: 62ch; }
 :focus-visible { outline: 2px solid var(--glow); outline-offset: 3px; }
+::selection { background: var(--glow); color: var(--on-accent); }
 .site-footer :focus-visible { outline-color: #fff; }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
@@ -119,7 +120,7 @@ p { max-width: 62ch; }
 a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35), 0 40px 90px -30px rgba(0, 0, 0, 0.8); }
 
 .phone-tabs { display: flex; gap: 6px; padding: 4px; border: 1px solid var(--line-strong); border-radius: 6px; }
-.phone-tab { min-height: 40px; padding: 0 16px; border: 0; border-radius: 3px; background: none; color: var(--ink); font: 500 0.9375rem var(--sans); cursor: pointer; }
+.phone-tab { min-height: 44px; padding: 0 16px; border: 0; border-radius: 3px; background: none; color: var(--ink); font: 500 0.9375rem var(--sans); cursor: pointer; }
 .phone-tab:hover { background: rgba(238, 241, 244, 0.08); }
 .phone-tab.is-active { background: var(--ink); color: var(--paper); }
 
@@ -285,19 +286,6 @@ a.phone:hover { box-shadow: 0 0 0 1px #2a2d33, 0 0 0 5px rgba(95, 212, 189, 0.35
 .legal ul + p { margin-top: 14px; }
 .legal a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .grain { display: none; }
-
-/* Sektionerna glider in när de kommer i bild. Bara i webbläsare som stöder
-   scroll-styrda animationer; övriga visar allt direkt. */
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .section__head, .compare, .gains, .showroom, .demo-list, .steps, .about, .plans, .faq, .contact__inner {
-      animation: nl-in linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 35%;
-    }
-    @keyframes nl-in { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
