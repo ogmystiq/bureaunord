@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap">
 
-  <link rel="stylesheet" href="styles.css?v=202610211100">
+  <link rel="stylesheet" href="styles.css?v=202610211200">
 
   <!-- Strukturerad data: hjälper Google förstå att detta är ett företag -->
   <script type="application/ld+json">
@@ -154,7 +154,6 @@
       </a>
       <nav class="site-nav" aria-label="Huvudmeny">
         <a href="#demosidor">Demosidor</a>
-        <a href="#din-skiss">Din skiss</a>
         <a href="#priser">Priser</a>
         <a href="#fragor">Frågor</a>
       </nav>
@@ -166,17 +165,6 @@
 
     <!-- HERO: en mosaik av våra egna demosidor, rubriken på axeln vid 42 % -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="mosaic" aria-hidden="true">
-        <span class="mosaic__cell mosaic__cell--a" style="--i:0"><img src="assets/demo-opal-dator.jpg" width="1440" height="900" alt="" fetchpriority="high"></span>
-        <span class="mosaic__cell mosaic__cell--b" style="--i:1"><img src="assets/demo-opal-mobil.jpg" width="390" height="844" alt=""></span>
-        <span class="mosaic__cell mosaic__cell--c" style="--i:2"><img src="assets/demo-kvarn-dator.jpg" width="1440" height="900" alt=""></span>
-        <span class="mosaic__cell mosaic__cell--d tile tile--gold" style="--i:3"></span>
-        <span class="mosaic__cell mosaic__cell--e tile tile--linen" style="--i:4"></span>
-        <span class="mosaic__cell mosaic__cell--f" style="--i:5"><img src="assets/demo-ljung-mobil.jpg?v=2" width="390" height="844" alt=""></span>
-        <span class="mosaic__cell mosaic__cell--g tile tile--opal" style="--i:6"></span>
-        <span class="mosaic__cell mosaic__cell--h" style="--i:7"><img src="assets/demo-ljung-dator.jpg" width="1440" height="900" alt=""></span>
-      </div>
-
       <div class="wrap hero__body">
         <p class="hero__standfirst" data-load style="--d:380ms">Vi bygger hemsidor åt frisörer, barberare, nagel-, frans- och hudvårdssalonger. Snygga i mobilen, med priser och bokning direkt.</p>
         <div class="hero__main">
@@ -186,9 +174,14 @@
           </h1>
           <div class="hero__actions" data-load style="--d:460ms">
             <a class="btn" href="#kontakt">Beställ gratis demo</a>
-            <a class="textlink" href="#din-skiss">Se din salong som skiss</a>
+            <a class="textlink" href="#demosidor">Se demosidorna</a>
           </div>
         </div>
+      </div>
+
+      <div class="wrap hero__show" data-load style="--d:520ms">
+        <div class="screen screen--desk hero__desk"><img src="assets/demo-opal-dator.jpg" width="1440" height="900" alt="Demosidan Opal Nails i dator" fetchpriority="high"></div>
+        <div class="screen screen--phone hero__phone"><span class="screen__inner"><img src="assets/demo-opal-mobil.jpg" width="390" height="844" alt="Opal Nails i mobilen"></span></div>
       </div>
 
       <dl class="wrap facts" data-load style="--d:540ms">
@@ -314,48 +307,6 @@
       </section>
     </div>
 
-    <!-- DIN SKISS: besökaren skriver sin salong och öppnar en egen skiss (fungerar utan JavaScript) -->
-    <section class="chapter chapter--teal sketch" id="din-skiss" aria-labelledby="skiss-title">
-      <div class="wrap sketch__inner">
-        <div class="sketch__text">
-          <h2 class="chapter__title" id="skiss-title" data-reveal>Se din salong som skiss</h2>
-          <p class="chapter__lead" data-reveal style="--i:1">Skriv salongens namn och ort och välj bransch. Skissen öppnas direkt i en ny flik, i samma stil som vi bygger för riktiga salonger.</p>
-          <form class="sketch-form" action="/skiss/" method="get" target="_blank" data-reveal style="--i:2">
-            <div class="field">
-              <label for="sk-n">Salongens namn</label>
-              <input id="sk-n" name="n" type="text" maxlength="60" required autocomplete="organization" placeholder="Till exempel Salong Norr">
-            </div>
-            <div class="field">
-              <label for="sk-s">Ort</label>
-              <input id="sk-s" name="s" type="text" maxlength="60" required autocomplete="address-level2" placeholder="Till exempel Linköping">
-            </div>
-            <div class="field">
-              <label for="sk-t">Bransch</label>
-              <select id="sk-t" name="t">
-                <option value="frisor">Frisör</option>
-                <option value="barberare">Barbershop</option>
-                <option value="nagel">Nagelstudio</option>
-                <option value="lash">Fransstudio</option>
-                <option value="bryn">Brynstudio</option>
-                <option value="hudvard">Hudvård</option>
-                <option value="skonhet">Skönhetssalong</option>
-                <option value="massage">Massage</option>
-                <option value="fotvard">Fotvård</option>
-                <option value="tatuering">Tatueringsstudio</option>
-              </select>
-            </div>
-            <button class="btn btn--light" type="submit">Visa min skiss<span class="sr-only"> (öppnas i ny flik)</span></button>
-          </form>
-          <p class="sketch__note">Inget sparas. Skissen visar branschtexter och exempelpriser; din riktiga sida byggs med ditt eget innehåll.</p>
-        </div>
-        <div class="sketch__media">
-          <div class="screen screen--phone" data-reveal="shutter">
-            <span class="screen__inner"><img src="assets/skiss-mobil.jpg" width="390" height="844" alt="Exempel på en skiss för en hudvårdssalong i mobilen" loading="lazy"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- SÅ GÅR DET TILL: fyra steg, mörkt till ljust -->
     <section class="chapter chapter--night process" id="sa-gar-det-till" aria-labelledby="process-title">
       <div class="wrap">
@@ -446,7 +397,6 @@
           <img src="assets/demo-opal-dator.jpg" width="1440" height="900" alt="" loading="lazy">
           <img src="assets/demo-ljung-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy">
           <img src="assets/demo-kvarn-dator.jpg" width="1440" height="900" alt="" loading="lazy">
-          <img src="assets/skiss-mobil.jpg" width="390" height="844" alt="" loading="lazy">
           <img src="assets/demo-ljung-dator.jpg" width="1440" height="900" alt="" loading="lazy">
           <img src="assets/demo-opal-galleri-mobil.jpg" width="390" height="844" alt="" loading="lazy">
           <img src="assets/demo-kvarn-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy">
@@ -508,8 +458,7 @@
         <nav class="site-footer__nav" aria-label="Snabblänkar">
           <p class="site-footer__heading">Snabblänkar</p>
           <a href="#demosidor">Demosidor</a>
-          <a href="#din-skiss">Din skiss</a>
-          <a href="#priser">Priser</a>
+            <a href="#priser">Priser</a>
           <a href="#fragor">Vanliga frågor</a>
           <a href="#kontakt">Beställ demo</a>
         </nav>

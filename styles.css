@@ -98,25 +98,14 @@ p { max-width: 62ch; }
 
 /* ---- Hero: mosaik av våra demosidor, rubriken på axeln */
 .hero { background: var(--night); padding-bottom: 56px; }
-.mosaic {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr));
-  height: 38svh; min-height: 260px; max-height: 560px;
-}
-.mosaic__cell { position: relative; display: block; min-height: 0; overflow: clip; background: #1a1d22; }
-.mosaic__cell img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.mosaic__cell--a { grid-area: 1 / 1 / 2 / 3; }
-.mosaic__cell--b { grid-area: 1 / 3 / 3 / 4; }
-.mosaic__cell--d { grid-area: 2 / 1 / 3 / 2; }
-.mosaic__cell--f { grid-area: 2 / 2 / 3 / 3; }
-.mosaic__cell--c, .mosaic__cell--e, .mosaic__cell--g, .mosaic__cell--h { display: none; }
-.tile--gold { background: var(--kvarn-gold); }
-.tile--linen { background: var(--linen); }
-.tile--opal { background: var(--opal); }
-
 .hero__body { display: grid; gap: 22px; padding-top: 40px; }
 .hero__standfirst { order: 2; font-size: var(--step-lead); line-height: 1.35; letter-spacing: -0.015em; max-width: 30ch; }
 .hero__title { font-size: var(--step-display); letter-spacing: -0.06em; line-height: 0.9; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 28px; }
+/* En ren bild under rubriken: Opal Nails i dator och mobil */
+.hero__show { position: relative; margin-top: 48px; padding-bottom: 28px; }
+.hero__desk { width: 88%; }
+.hero__show .hero__phone { position: absolute; right: var(--gutter); bottom: 0; width: 28%; max-width: 230px; border-width: 5px; }
 .facts { display: grid; gap: 8px; margin-top: 40px; }
 .facts div { padding: 18px 20px; border-radius: var(--radius); background: var(--night-2); }
 .facts dt { font-weight: 600; font-size: 1.1875rem; letter-spacing: -0.02em; }
@@ -196,25 +185,6 @@ p { max-width: 62ch; }
 .demo__note { margin-top: 16px; font-size: var(--step-small); }
 .demo__media { position: relative; padding-bottom: 40px; }
 .demo__phone { position: absolute; right: 0; bottom: 0; width: 30%; max-width: 200px; border-width: 5px; }
-
-/* ---- Din skiss */
-.sketch__inner { display: grid; gap: 48px; align-items: center; }
-.sketch .chapter__lead { margin-top: 18px; color: var(--teal-soft); }
-.sketch-form { display: grid; gap: 12px; margin-top: 32px; max-width: 560px; }
-.field { display: grid; gap: 6px; }
-.field label { font-weight: 500; font-size: var(--step-small); }
-.field input, .field select {
-  width: 100%; min-height: 56px; padding: 0 18px; border: 0; border-radius: var(--radius);
-  background: #164a43; color: #fff; font: 400 1.0625rem var(--font);
-  transition: background-color var(--t-hover) ease;
-}
-.field input::placeholder { color: #a9cfc7; }
-.field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 18px center; background-size: 12px; }
-.field input:focus, .field select:focus { background-color: #1f6158; outline: 2px solid #fff; outline-offset: 2px; }
-.sketch-form .btn { margin-top: 8px; justify-self: start; }
-.sketch__note { margin-top: 18px; font-size: var(--step-small); color: var(--teal-soft); max-width: 46ch; }
-.sketch__media { display: grid; justify-items: center; }
-.sketch__media .screen--phone { max-width: 300px; }
 
 /* ---- Så går det till: fyra steg, mörkt till ljust (färgen bär ordningen) */
 .stages { display: grid; gap: 0; border-radius: var(--radius); overflow: clip; }
@@ -330,8 +300,6 @@ p { max-width: 62ch; }
   /* Signaturen: rubriken reser sig rad för rad, mosaiken öppnar sig ruta för ruta */
   .js .hero [data-line] { transform: translateY(105%); animation: nl-up 900ms var(--ease-expo) forwards; animation-delay: calc(150ms + var(--i) * 110ms); }
   .js .hero [data-load] { opacity: 0; transform: translateY(14px); animation: nl-rise 600ms var(--ease-out) forwards; animation-delay: var(--d); }
-  .js .mosaic__cell { clip-path: inset(0 0 100% 0); animation: nl-open 900ms var(--ease-in-out) forwards; animation-delay: calc(var(--i) * 60ms); }
-  .js .mosaic__cell img { transform: scale(1.08); animation: nl-settle 1200ms var(--ease-expo) forwards; animation-delay: calc(var(--i) * 60ms); }
 
   /* När ett kapitel kommer i bild: rubrik, text, bild i läsordning, en gång */
   .js [data-reveal]:not([data-reveal="shutter"]):not([data-reveal="rows"]):not([data-reveal="lines"]) {
@@ -374,8 +342,6 @@ p { max-width: 62ch; }
 }
 @keyframes nl-up { to { transform: none; } }
 @keyframes nl-rise { to { opacity: 1; transform: none; } }
-@keyframes nl-open { to { clip-path: inset(0); } }
-@keyframes nl-settle { to { transform: none; } }
 @keyframes nl-marquee { to { transform: translateX(-50%); } }
 @keyframes nl-scroll { from { transform: translateY(0); } to { transform: translateY(calc(-100% + 62.5cqw)); } }
 
@@ -400,18 +366,11 @@ p { max-width: 62ch; }
   .site-nav { display: flex; }
   .sticky-cta { display: none; }
 
-  .mosaic { grid-template-columns: repeat(6, minmax(0, 1fr)); height: 46vh; }
-  .mosaic__cell--a { grid-area: 1 / 1 / 2 / 3; }
-  .mosaic__cell--b { grid-area: 1 / 3 / 3 / 4; }
-  .mosaic__cell--c { display: block; grid-area: 1 / 4 / 2 / 6; }
-  .mosaic__cell--d { grid-area: 1 / 6 / 2 / 7; }
-  .mosaic__cell--e { display: block; grid-area: 2 / 1 / 3 / 2; }
-  .mosaic__cell--f { grid-area: 2 / 2 / 3 / 3; }
-  .mosaic__cell--g { display: block; grid-area: 2 / 4 / 3 / 5; }
-  .mosaic__cell--h { display: block; grid-area: 2 / 5 / 3 / 7; }
-
   .hero { padding-bottom: 72px; }
-  .hero__body { grid-template-columns: 42% 1fr; gap: 0; padding-top: 72px; align-items: start; }
+  .hero__body { grid-template-columns: 42% 1fr; gap: 0; padding-top: 96px; align-items: start; }
+  .hero__show { margin-top: 80px; padding-bottom: 48px; }
+  .hero__desk { width: 74%; }
+  .hero__show .hero__phone { right: calc(var(--gutter) + 6%); width: 17%; }
   .hero__standfirst { order: 0; padding-top: 0.9rem; padding-right: 40px; }
   .hero__title { font-size: clamp(4rem, 8.3vw, 8rem); }
   .facts { margin-top: 64px; }
@@ -427,10 +386,6 @@ p { max-width: 62ch; }
   .demo--flip .demo__media { padding-right: 0; padding-left: 56px; }
   .demo--flip .demo__phone { right: auto; left: 0; }
   .demo__phone { width: 24%; }
-
-  .sketch__inner { grid-template-columns: 7fr 5fr; gap: 64px; }
-  .sketch-form { grid-template-columns: 1fr 1fr; max-width: none; }
-  .sketch-form .field:nth-child(3) { grid-column: 1 / -1; }
 
   .stages { display: flex; height: 460px; }
   .stage { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; }
