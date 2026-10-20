@@ -34,11 +34,11 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <!-- Typsnitt -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap">
 
-  <link rel="stylesheet" href="styles.css?v=202610202300">
+  <link rel="stylesheet" href="styles.css?v=202610211000">
 
   <!-- Strukturerad data: hjälper Google förstå att detta är ett företag -->
   <script type="application/ld+json">
@@ -140,6 +140,7 @@
     ]
   }
   </script>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body id="topp">
 
@@ -153,7 +154,7 @@
       </a>
       <nav class="site-nav" aria-label="Huvudmeny">
         <a href="#demosidor">Demosidor</a>
-        <a href="#sa-gar-det-till">Så går det till</a>
+        <a href="#din-skiss">Din skiss</a>
         <a href="#priser">Priser</a>
         <a href="#fragor">Frågor</a>
       </nav>
@@ -163,65 +164,53 @@
 
   <main id="innehall">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero__inner">
-        <div class="hero__text">
-          <h1 class="hero__title">Hemsidor för frisörer och salonger</h1>
-          <p class="hero__lead">
-            Snygga i mobilen, med priser och bokning direkt på första skärmen.
-            För frisörer, barberare, nagel-, frans- och hudvårdsstudios, massörer och tatuerare.
-          </p>
-          <ul class="hero__facts" role="list">
-            <li><strong>Från 2&nbsp;995&nbsp;kr</strong> engångspris</li>
-            <li><strong>Klar inom en vecka</strong> efter ditt ja</li>
-            <li><strong>Ingen bindningstid</strong> på 199&nbsp;kr/mån</li>
-          </ul>
-          <div class="hero__actions">
-            <a class="btn" href="#kontakt">Beställ gratis demo</a>
-            <a class="textlink" href="#priser">Se vad som ingår</a>
-          </div>
-          <p class="hero__note">Du ser din demo innan du betalar något.</p>
-        </div>
+    <!-- HERO: en mosaik av våra egna demosidor, rubriken på axeln vid 42 % -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="mosaic" aria-hidden="true">
+        <span class="mosaic__cell mosaic__cell--a" style="--i:0"><img src="assets/demo-opal-dator.jpg" width="1440" height="900" alt="" fetchpriority="high"></span>
+        <span class="mosaic__cell mosaic__cell--b" style="--i:1"><img src="assets/demo-opal-mobil.jpg" width="390" height="844" alt=""></span>
+        <span class="mosaic__cell mosaic__cell--c" style="--i:2"><img src="assets/demo-kvarn-dator.jpg" width="1440" height="900" alt=""></span>
+        <span class="mosaic__cell mosaic__cell--d tile tile--gold" style="--i:3"></span>
+        <span class="mosaic__cell mosaic__cell--e tile tile--linen" style="--i:4"></span>
+        <span class="mosaic__cell mosaic__cell--f" style="--i:5"><img src="assets/demo-ljung-mobil.jpg?v=2" width="390" height="844" alt=""></span>
+        <span class="mosaic__cell mosaic__cell--g tile tile--opal" style="--i:6"></span>
+        <span class="mosaic__cell mosaic__cell--h" style="--i:7"><img src="assets/demo-ljung-dator.jpg" width="1440" height="900" alt=""></span>
+      </div>
 
-        <!--
-          Telefon som visar riktiga skärmdumpar av våra tre demosidor, en i taget.
-          Skärmarna byts automatiskt (script.js) och går att välja med knapparna under.
-          Klick på telefonen öppnar demon som syns just då, i ny flik.
-        -->
-        <div class="hero__visual">
-          <div class="phone-wrap" id="phone-showcase">
-            <a class="phone" id="phone-link" href="/demo/nagel/" target="_blank" rel="noopener" aria-label="Öppna demosidan för Opal Nails, Premium-paketet (öppnas i ny flik)">
-              <span class="phone__screen">
-                <img class="ps is-active" src="assets/demo-opal-mobil.jpg" width="390" height="844" alt="" fetchpriority="high">
-                <img class="ps" src="assets/demo-ljung-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy">
-                <img class="ps" src="assets/demo-kvarn-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy">
-              </span>
-            </a>
-          </div>
-          <div class="phone-tabs" role="group" aria-label="Välj demosida i telefonen">
-            <button class="phone-tab is-active" type="button" data-index="0" aria-pressed="true">Nagel</button>
-            <button class="phone-tab" type="button" data-index="1" aria-pressed="false">Frisör</button>
-            <button class="phone-tab" type="button" data-index="2" aria-pressed="false">Barber</button>
+      <div class="wrap hero__body">
+        <p class="hero__standfirst" data-load style="--d:380ms">Vi bygger hemsidor åt frisörer, barberare, nagel-, frans- och hudvårdssalonger. Snygga i mobilen, med priser och bokning direkt.</p>
+        <div class="hero__main">
+          <h1 class="hero__title lines" id="hero-title">
+            <span class="line"><span data-line style="--i:0">Hemsidor för</span></span>
+            <span class="line"><span data-line style="--i:1">salonger</span></span>
+          </h1>
+          <div class="hero__actions" data-load style="--d:460ms">
+            <a class="btn" href="#kontakt">Beställ gratis demo</a>
+            <a class="textlink" href="#din-skiss">Se din salong som skiss</a>
           </div>
         </div>
       </div>
+
+      <dl class="wrap facts" data-load style="--d:540ms">
+        <div><dt>Från 2&nbsp;995&nbsp;kr</dt><dd>engångspris, sedan 199&nbsp;kr/mån</dd></div>
+        <div><dt>Klar inom en vecka</dt><dd>efter att du godkänt demon</dd></div>
+        <div><dt>Ingen bindningstid</dt><dd>du ser din demo innan du betalar</dd></div>
+      </dl>
     </section>
 
-    <!-- FÖRE OCH EFTER -->
-    <section class="section section--white" id="fore-efter">
-      <div class="wrap">
-        <div class="section__head">
-          <h2>Dina kunder googlar innan de bokar.</h2>
-          <p class="lead">De bestämmer sig på några sekunder. Så här kan skillnaden se ut i mobilen.</p>
+    <!-- FÖRE OCH EFTER (ljust kapitel) -->
+    <section class="chapter chapter--ice" id="fore-efter" aria-labelledby="fore-title">
+      <div class="wrap compare-chapter">
+        <div class="chapter__head">
+          <h2 class="chapter__title" id="fore-title" data-reveal>Kunderna googlar först</h2>
+          <p class="chapter__lead" data-reveal style="--i:1">De bestämmer sig på några sekunder, i mobilen. Så här kan skillnaden se ut för samma salong.</p>
         </div>
 
         <div class="compare">
-          <figure class="compare__side">
-            <!-- Illustration av en typisk äldre salongssida, ritad i HTML -->
+          <figure class="compare__side" data-reveal="shutter">
             <!-- Illustration: en äldre salongssida byggd för dator, som den ser ut i en mobil (utzoomad) -->
-            <div class="phone phone--static" aria-hidden="true">
-              <span class="phone__screen old-screen">
+            <div class="screen screen--phone" aria-hidden="true">
+              <span class="screen__inner old-screen">
                 <span class="old-page">
                   <span class="old-page__head"><span class="old-page__logo">Salongen</span><span class="old-page__tel">Tidsbokning: ring 0XX-XX XX XX</span></span>
                   <span class="old-page__nav"><b>Hem</b><b>Om oss</b><b>Behandlingar</b><b>Prislista</b><b>Galleri</b><b>Kontakt</b></span>
@@ -241,199 +230,234 @@
                   </span>
                   <span class="old-page__guest"><b>Gästbok</b>Skriv en hälsning i vår gästbok! <u>Klicka här</u></span>
                   <span class="old-page__map"><b>Hitta hit</b><span class="old-page__mapbox">Karta laddas inte. Klicka här för vägbeskrivning.</span></span>
-                  <span class="old-page__foot">&copy; 2014 Salongen | Senast uppdaterad 12/3 2016</span>
-                </span>
+                  <span class="old-page__foot">&copy; 2014 Salongen | Senast uppdaterad 12/3 2016</span></span>
               </span>
             </div>
-            <figcaption><strong>Före.</strong> En äldre sida byggd för dator: i mobilen blir allt pyttelitet, priserna ligger i en PDF och man måste ringa för att boka. (Illustration)</figcaption>
+            <figcaption><strong>Före.</strong> En äldre sida byggd för dator. I mobilen blir allt pyttelitet, priserna ligger i en PDF och man måste ringa för att boka. (Illustration)</figcaption>
           </figure>
-          <figure class="compare__side compare__side--after">
-            <div class="phone phone--static" aria-hidden="true">
-              <span class="phone__screen">
-                <img src="assets/demo-ljung-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy">
-              </span>
+          <figure class="compare__side" data-reveal="shutter" style="--i:1">
+            <div class="screen screen--phone" aria-hidden="true">
+              <span class="screen__inner"><img src="assets/demo-ljung-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy"></span>
             </div>
-            <figcaption><strong>Efter.</strong> Salong Ljung, vår Bas-demo: salongen i bild, adressen och en bokningsknapp direkt på första skärmen.</figcaption>
+            <figcaption><strong>Efter.</strong> Salong Ljung, vår Bas-demo. Salongen i bild, var den ligger och en bokningsknapp direkt på första skärmen.</figcaption>
           </figure>
         </div>
 
         <ul class="gains" role="list">
-          <li><h3>Priserna syns direkt</h3><p>En riktig prislista på sidan, inte en PDF som måste laddas ner.</p></li>
-          <li><h3>Bokning med en tumme</h3><p>Knappen följer med i mobilen och leder till ert bokningssystem, till exempel Bokadirekt.</p></li>
-          <li><h3>Syns på Google</h3><p>Rätt struktur och snabb laddning, så att ni dyker upp när någon söker i närheten.</p></li>
+          <li data-reveal style="--i:0"><h3>Priserna syns direkt</h3><p>En riktig prislista på sidan, inte en PDF som måste laddas ner.</p></li>
+          <li data-reveal style="--i:1"><h3>Bokning med en tumme</h3><p>Knappen följer med i mobilen och leder till ert bokningssystem, till exempel Bokadirekt.</p></li>
+          <li data-reveal style="--i:2"><h3>Syns på Google</h3><p>Rätt struktur och snabb laddning, så att ni dyker upp när någon söker i närheten.</p></li>
         </ul>
       </div>
     </section>
 
-    <!-- DEMOSIDOR -->
-    <section class="section" id="demosidor">
-      <div class="wrap">
-        <div class="section__head">
-          <h2>Tre demosidor, tre helt olika salonger.</h2>
-          <p class="lead">En i Bas-paketet och två i Premium. Salongerna är påhittade, din sida byggs helt efter er.</p>
+    <!-- DEMOSIDOR: tre kapitel i salongernas egna färger -->
+    <div id="demosidor">
+      <section class="chapter chapter--opal demo" aria-labelledby="opal-title" style="view-timeline-name: --opal">
+        <div class="wrap demo__inner">
+          <div class="demo__text">
+            <h2 class="demo__name lines" id="opal-title" data-reveal="lines"><span class="line"><span data-line-view>Opal Nails</span></span></h2>
+            <p class="demo__kind" data-reveal>Nagelstudio i Premium-paketet: fem sidor med galleri, kontaktformulär och karta.</p>
+            <p class="demo__desc" data-reveal style="--i:1">Ett namn i stor egen typografi, mjuka bilder och en bokningsknapp som alltid finns till hands.</p>
+            <p class="demo__actions" data-reveal style="--i:2"><a class="btn btn--light" href="/demo/nagel/" target="_blank" rel="noopener">Öppna Opal Nails<span class="sr-only"> (ny flik)</span></a></p>
+            <p class="demo__note">Påhittad salong, byggd som exempel.</p>
+          </div>
+          <div class="demo__media">
+            <div class="screen screen--desk scroller" data-reveal="shutter">
+              <img class="scroller__img" style="animation-timeline: --opal" src="assets/demo-opal-hel.jpg" width="900" height="2163" alt="Startsidan för demosidan Opal Nails i dator" loading="lazy">
+            </div>
+            <div class="screen screen--phone demo__phone" data-reveal="shutter" style="--i:2">
+              <span class="screen__inner"><img src="assets/demo-opal-galleri-mobil.jpg" width="390" height="844" alt="Galleriet på Opal Nails i mobilen" loading="lazy"></span>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="showroom">
-          <a class="laptop" href="/demo/nagel/" target="_blank" rel="noopener" aria-label="Öppna demosidan för Opal Nails, Premium-paketet (öppnas i ny flik)">
-            <span class="laptop__screen">
-              <img src="assets/demo-opal-dator.jpg" width="1440" height="900" alt="" loading="lazy">
-            </span>
-            <span class="laptop__base" aria-hidden="true"></span>
-          </a>
-          <a class="phone phone--side" href="/demo/barber/" target="_blank" rel="noopener" aria-label="Öppna demosidan för Kvarn Barbershop, Premium-paketet (öppnas i ny flik)">
-            <span class="phone__screen">
-              <img src="assets/demo-kvarn-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy">
-            </span>
-          </a>
+      <section class="chapter chapter--linen demo demo--flip" aria-labelledby="ljung-title" style="view-timeline-name: --ljung">
+        <div class="wrap demo__inner">
+          <div class="demo__text">
+            <h2 class="demo__name lines" id="ljung-title" data-reveal="lines"><span class="line"><span data-line-view>Salong Ljung</span></span></h2>
+            <p class="demo__kind" data-reveal>Frisör i Bas-paketet: allt på en sida.</p>
+            <p class="demo__desc" data-reveal style="--i:1">Priser med tid för varje behandling, öppettider och vägbeskrivning. Allt en ny kund behöver, utan att leta.</p>
+            <p class="demo__actions" data-reveal style="--i:2"><a class="btn btn--ink" href="/demo/frisor/" target="_blank" rel="noopener">Öppna Salong Ljung<span class="sr-only"> (ny flik)</span></a></p>
+            <p class="demo__note">Påhittad salong, byggd som exempel.</p>
+          </div>
+          <div class="demo__media">
+            <div class="screen screen--desk scroller" data-reveal="shutter">
+              <img class="scroller__img" style="animation-timeline: --ljung" src="assets/demo-ljung-hel.jpg" width="900" height="2792" alt="Demosidan Salong Ljung i dator, med prislista och öppettider" loading="lazy">
+            </div>
+            <div class="screen screen--phone demo__phone" data-reveal="shutter" style="--i:2">
+              <span class="screen__inner"><img src="assets/demo-ljung-mobil.jpg?v=2" width="390" height="844" alt="Salong Ljung i mobilen" loading="lazy"></span>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <ul class="demo-list" role="list">
-          <li>
-            <a href="/demo/frisor/" target="_blank" rel="noopener">
-              <span class="demo-list__name">Salong Ljung</span>
-              <span class="demo-list__kind">Frisör i Linköping, en sida</span>
-              <span class="demo-list__tag demo-list__tag--bas">Bas-paketet</span>
-            </a>
-          </li>
-          <li>
-            <a href="/demo/nagel/" target="_blank" rel="noopener">
-              <span class="demo-list__name">Opal Nails</span>
-              <span class="demo-list__kind">Nagelstudio, fem sidor med galleri</span>
-              <span class="demo-list__tag">Premium-paketet</span>
-            </a>
-          </li>
-          <li>
-            <a href="/demo/barber/" target="_blank" rel="noopener">
-              <span class="demo-list__name">Kvarn Barbershop</span>
-              <span class="demo-list__kind">Barbershop, fem sidor med karta</span>
-              <span class="demo-list__tag">Premium-paketet</span>
-            </a>
-          </li>
-        </ul>
+      <section class="chapter chapter--kvarn demo" aria-labelledby="kvarn-title" style="view-timeline-name: --kvarn">
+        <div class="wrap demo__inner">
+          <div class="demo__text">
+            <h2 class="demo__name lines" id="kvarn-title" data-reveal="lines"><span class="line"><span data-line-view>Kvarn Barbershop</span></span></h2>
+            <p class="demo__kind" data-reveal>Barbershop i Premium-paketet: fem sidor med karta.</p>
+            <p class="demo__desc" data-reveal style="--i:1">Svartvita bilder, kraftig typografi och priser som syns på håll.</p>
+            <p class="demo__actions" data-reveal style="--i:2"><a class="btn btn--gold" href="/demo/barber/" target="_blank" rel="noopener">Öppna Kvarn<span class="sr-only"> (ny flik)</span></a></p>
+            <p class="demo__note">Påhittad salong, byggd som exempel.</p>
+          </div>
+          <div class="demo__media">
+            <div class="screen screen--desk scroller" data-reveal="shutter">
+              <img class="scroller__img" style="animation-timeline: --kvarn" src="assets/demo-kvarn-hel.jpg" width="900" height="2171" alt="Demosidan Kvarn Barbershop i dator, med priser och bilder" loading="lazy">
+            </div>
+            <div class="screen screen--phone demo__phone" data-reveal="shutter" style="--i:2">
+              <span class="screen__inner"><img src="assets/demo-kvarn-mobil.jpg?v=2" width="390" height="844" alt="Kvarn Barbershop i mobilen" loading="lazy"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- DIN SKISS: besökaren skriver sin salong och öppnar en egen skiss (fungerar utan JavaScript) -->
+    <section class="chapter chapter--teal sketch" id="din-skiss" aria-labelledby="skiss-title">
+      <div class="wrap sketch__inner">
+        <div class="sketch__text">
+          <h2 class="chapter__title" id="skiss-title" data-reveal>Se din salong som skiss</h2>
+          <p class="chapter__lead" data-reveal style="--i:1">Skriv salongens namn och ort och välj bransch. Skissen öppnas direkt i en ny flik, i samma stil som vi bygger för riktiga salonger.</p>
+          <form class="sketch-form" action="/skiss/" method="get" target="_blank" data-reveal style="--i:2">
+            <div class="field">
+              <label for="sk-n">Salongens namn</label>
+              <input id="sk-n" name="n" type="text" maxlength="60" required autocomplete="organization" placeholder="Till exempel Salong Norr">
+            </div>
+            <div class="field">
+              <label for="sk-s">Ort</label>
+              <input id="sk-s" name="s" type="text" maxlength="60" required autocomplete="address-level2" placeholder="Till exempel Linköping">
+            </div>
+            <div class="field">
+              <label for="sk-t">Bransch</label>
+              <select id="sk-t" name="t">
+                <option value="frisor">Frisör</option>
+                <option value="barberare">Barbershop</option>
+                <option value="nagel">Nagelstudio</option>
+                <option value="lash">Fransstudio</option>
+                <option value="bryn">Brynstudio</option>
+                <option value="hudvard">Hudvård</option>
+                <option value="skonhet">Skönhetssalong</option>
+                <option value="massage">Massage</option>
+                <option value="fotvard">Fotvård</option>
+                <option value="tatuering">Tatueringsstudio</option>
+              </select>
+            </div>
+            <button class="btn btn--light" type="submit">Visa min skiss<span class="sr-only"> (öppnas i ny flik)</span></button>
+          </form>
+          <p class="sketch__note">Inget sparas. Skissen visar branschtexter och exempelpriser; din riktiga sida byggs med ditt eget innehåll.</p>
+        </div>
+        <div class="sketch__media">
+          <div class="screen screen--phone" data-reveal="shutter">
+            <span class="screen__inner"><img src="assets/skiss-mobil.jpg" width="390" height="844" alt="Exempel på en skiss för en hudvårdssalong i mobilen" loading="lazy"></span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SÅ GÅR DET TILL -->
-    <section class="section section--white" id="sa-gar-det-till">
+    <!-- SÅ GÅR DET TILL: fyra steg, mörkt till ljust -->
+    <section class="chapter chapter--night process" id="sa-gar-det-till" aria-labelledby="process-title">
       <div class="wrap">
-        <div class="section__head">
-          <h2>Från första kontakt till live på en vecka.</h2>
-          <p class="lead">Du behöver inte kunna något om hemsidor. Vi sköter tekniken, du berättar om verksamheten.</p>
+        <div class="chapter__head">
+          <h2 class="chapter__title" id="process-title" data-reveal>Klart på en vecka</h2>
+          <p class="chapter__lead" data-reveal style="--i:1">Du behöver inte kunna något om hemsidor. Du berättar om salongen, vi sköter tekniken.</p>
         </div>
-        <ol class="steps" role="list">
-          <li><span class="steps__n">1</span><h3>Hör av dig</h3><p>Fyll i formuläret längst ner och berätta kort om din verksamhet.</p></li>
-          <li><span class="steps__n">2</span><h3>Gratis demo</h3><p>Vi bygger en demo av din hemsida utan kostnad. Du ser resultatet innan du bestämmer dig.</p></li>
-          <li><span class="steps__n">3</span><h3>Du godkänner</h3><p>Gillar du designen? Perfekt. Vill du justera något? Vi fixar det.</p></li>
-          <li><span class="steps__n">4</span><h3>Live inom en vecka</h3><p>När du ger klartecken är hemsidan live inom en vecka, kopplad till din domän.</p></li>
+        <ol class="stages" role="list" data-reveal="rows">
+          <li class="stage is-open" style="--i:0">
+            <button class="stage__toggle" type="button" aria-expanded="true" aria-controls="stage-1"><span class="stage__name">Hör av dig</span></button>
+            <div class="stage__body" id="stage-1"><p>Fyll i formuläret längst ner eller mejla. Berätta kort om salongen och vad du vill ha.</p></div>
+          </li>
+          <li class="stage" style="--i:1">
+            <button class="stage__toggle" type="button" aria-expanded="false" aria-controls="stage-2"><span class="stage__name">Gratis demo</span></button>
+            <div class="stage__body" id="stage-2"><p>Vi bygger en demo av din hemsida utan kostnad. Du ser resultatet innan du bestämmer dig.</p></div>
+          </li>
+          <li class="stage" style="--i:2">
+            <button class="stage__toggle" type="button" aria-expanded="false" aria-controls="stage-3"><span class="stage__name">Du godkänner</span></button>
+            <div class="stage__body" id="stage-3"><p>Gillar du designen? Perfekt. Vill du justera något fixar vi det.</p></div>
+          </li>
+          <li class="stage" style="--i:3">
+            <button class="stage__toggle" type="button" aria-expanded="false" aria-controls="stage-4"><span class="stage__name">Live</span></button>
+            <div class="stage__body" id="stage-4"><p>Inom en vecka efter ditt ja ligger hemsidan uppe, kopplad till din domän.</p></div>
+          </li>
         </ol>
       </div>
     </section>
 
+    <!-- PRISER: två fält som möts i en hård kant -->
+    <section class="pricing" id="priser" aria-label="Priser">
+      <article class="plan plan--bas">
+        <h2 class="plan__name" data-reveal>Bas</h2>
+        <p class="plan__for" data-reveal style="--i:1">För dig som vill ha en snygg sida med det viktigaste.</p>
+        <p class="plan__incl" data-reveal style="--i:2">En sida med presentation, tjänster och priser, bokningsknapp och kontaktuppgifter. Mobilanpassad och klar inom en vecka.</p>
+        <div class="plan__foot">
+          <p class="plan__price"><span class="plan__amount">2&nbsp;995&nbsp;kr</span><span class="plan__terms">engångspris + 199&nbsp;kr/mån för hosting, domän och support. Ingen bindningstid.</span></p>
+          <a class="btn btn--ink" href="#kontakt">Beställ Bas</a>
+        </div>
+      </article>
+      <article class="plan plan--premium">
+        <h2 class="plan__name" data-reveal>Premium</h2>
+        <p class="plan__for" data-reveal style="--i:1">För dig som vill synas mer och ha fler sidor.</p>
+        <p class="plan__incl" data-reveal style="--i:2">Allt i Bas, plus upp till fem sidor, bildgalleri, kontaktformulär, Google Maps, SEO-grundoptimering och en unik design med animationer.</p>
+        <div class="plan__foot">
+          <p class="plan__price"><span class="plan__amount">4&nbsp;995&nbsp;kr</span><span class="plan__terms">engångspris + 199&nbsp;kr/mån för hosting, domän och support. Ingen bindningstid.</span></p>
+          <a class="btn btn--light" href="#kontakt">Beställ Premium</a>
+        </div>
+      </article>
+    </section>
+
     <!-- VEM STÅR BAKOM -->
-    <section class="section" id="om-oss">
-      <div class="wrap about">
-        <h2 class="about__title">En person, från demo till färdig sida.</h2>
-        <div class="about__body">
-          <p class="about__lead">Northline Studio drivs av mig, Jonathan Heimdahl. Jag bygger bara hemsidor för skönhet och välmående.</p>
-          <p>Du pratar med samma person hela vägen: när vi går igenom demon, när sidan går live och när något behöver ändras efteråt. Inga säljare, inga mellanhänder.</p>
-          <dl class="about__facts">
-            <div><dt>Du pratar med</dt><dd>Jonathan Heimdahl, grundare</dd></div>
-            <div><dt>Mejl</dt><dd><a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a></dd></div>
-            <div><dt>Svar</dt><dd>Inom ett dygn</dd></div>
+    <section class="chapter chapter--night about" id="om-oss" aria-labelledby="om-title">
+      <div class="wrap about__inner">
+        <div class="about__text">
+          <h2 class="chapter__title" id="om-title" data-reveal>En person hela vägen</h2>
+          <p class="about__lead" data-reveal style="--i:1">Northline Studio drivs av mig, Jonathan Heimdahl. Jag bygger bara hemsidor för skönhet och välmående.</p>
+          <p class="about__more" data-reveal style="--i:2">Du pratar med samma person när vi går igenom demon, när sidan går live och när något behöver ändras efteråt. Inga säljare, inga mellanhänder.</p>
+          <dl class="about__facts" data-reveal="rows">
+            <div style="--i:0"><dt>Du pratar med</dt><dd>Jonathan Heimdahl, grundare</dd></div>
+            <div style="--i:1"><dt>Mejl</dt><dd><a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a></dd></div>
+            <div style="--i:2"><dt>Svar</dt><dd>Inom ett dygn</dd></div>
           </dl>
         </div>
-      </div>
-    </section>
-
-    <!-- PRISER -->
-    <section class="section section--white" id="priser">
-      <div class="wrap">
-        <div class="section__head">
-          <h2>Enkla priser. Två paket.</h2>
-          <p class="lead">Välj det som passar dig. Osäker? Hör av dig så går vi igenom det tillsammans.</p>
-        </div>
-
-        <div class="plans">
-          <article class="plan">
-            <h3 class="plan__name">Bas</h3>
-            <p class="plan__desc">En snygg one-page hemsida som får verksamheten att se professionell ut.</p>
-            <p class="plan__price"><span class="plan__amount">2&nbsp;995 kr</span><span class="plan__once">Engångspris</span></p>
-            <ul class="plan__list" role="list">
-              <li>One-page hemsida</li>
-              <li>Presentation, tjänster och priser</li>
-              <li>Mobilanpassad design</li>
-              <li>Bokningsknapp</li>
-              <li>Kontaktuppgifter</li>
-              <li>Klar inom en vecka</li>
-            </ul>
-            <p class="plan__monthly"><strong>+ 199 kr/mån</strong>Hosting, domän &amp; löpande support<span class="plan__terms">Ingen bindningstid</span></p>
-            <a class="btn btn--ghost" href="#kontakt">Beställ demo</a>
-          </article>
-
-          <article class="plan plan--featured">
-            <h3 class="plan__name">Premium</h3>
-            <p class="plan__desc">För dig som vill synas mer och ha fler sidor.</p>
-            <p class="plan__price"><span class="plan__amount">4&nbsp;995 kr</span><span class="plan__once">Engångspris</span></p>
-            <ul class="plan__list" role="list">
-              <li>Allt i Bas-paketet</li>
-              <li>Upp till 5 sidor</li>
-              <li>Bildgalleri</li>
-              <li>Kontaktformulär</li>
-              <li>Google Maps</li>
-              <li>SEO-grundoptimering</li>
-              <li>Unik design med animationer</li>
-            </ul>
-            <p class="plan__monthly"><strong>+ 199 kr/mån</strong>Hosting, domän &amp; löpande support<span class="plan__terms">Ingen bindningstid</span></p>
-            <a class="btn" href="#kontakt">Beställ demo</a>
-          </article>
+        <div class="about__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false"><defs><linearGradient id="nl-big" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#39d1b4"/><stop offset="1" stop-color="#6f7cff"/></linearGradient></defs><circle class="mark__ring" cx="32" cy="32" r="27" fill="none" stroke="url(#nl-big)" stroke-width="1.2" pathLength="1"/><path class="mark__line" d="M2 43 H18.5 M45.5 43 H62" fill="none" stroke="url(#nl-big)" stroke-width="1.2" stroke-linecap="round" pathLength="1"/><path class="mark__n" d="M22.5 43 V21 L41.5 43 V21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg>
         </div>
       </div>
     </section>
 
-    <!-- VANLIGA FRÅGOR -->
-    <section class="section" id="fragor">
-      <div class="wrap faq">
-        <h2>Vanliga frågor</h2>
-        <div class="faq__list">
-          <details>
-            <summary>Vad kostar en hemsida för en salong?</summary>
-            <p>Bas kostar 2&nbsp;995 kr och är en sida. Premium kostar 4&nbsp;995 kr och har upp till fem sidor. Båda är engångspriser, och sedan betalar du 199 kr/mån för hosting, domän och support.</p>
-          </details>
-          <details>
-            <summary>Måste jag betala för demon?</summary>
-            <p>Nej. Vi bygger en demo av din hemsida utan kostnad. Du betalar först när du sett den och vill gå vidare.</p>
-          </details>
-          <details>
-            <summary>Hur lång tid tar det?</summary>
-            <p>När du godkänt demon är hemsidan live inom en vecka, kopplad till din domän.</p>
-          </details>
-          <details>
-            <summary>Fungerar det med mitt bokningssystem?</summary>
-            <p>Ja. Bokningsknappen leder till det bokningssystem du redan använder, till exempel Bokadirekt.</p>
-          </details>
-          <details>
-            <summary>Vad ingår i 199 kr/mån?</summary>
-            <p>Hosting, domän och löpande support. Det finns ingen bindningstid.</p>
-          </details>
-          <details>
-            <summary>Vad är skillnaden mellan Bas och Premium?</summary>
-            <p>Bas är en sida med presentation, tjänster och priser, bokningsknapp och kontaktuppgifter. Premium har upp till fem sidor, bildgalleri, kontaktformulär, Google Maps, SEO-grundoptimering och en unik design med animationer.</p>
-          </details>
-          <details>
-            <summary>Vad behöver jag göra själv?</summary>
-            <p>Berätta om verksamheten: vad ni gör, priser och var ni finns. Tekniken sköter vi.</p>
-          </details>
-        </div>
+    <!-- VANLIGA FRÅGOR: ett band per fråga, alla svar synliga -->
+    <section class="faq" id="fragor" aria-labelledby="fragor-title">
+      <div class="faq__head">
+        <div class="wrap"><h2 class="faq__title" id="fragor-title" data-reveal>Vanliga frågor</h2></div>
       </div>
+      <div class="faq__band"><div class="wrap faq__row" data-reveal><h3>Vad kostar en hemsida för en salong?</h3><p>Bas kostar 2&nbsp;995 kr och är en sida. Premium kostar 4&nbsp;995 kr och har upp till fem sidor. Båda är engångspriser, och sedan betalar du 199 kr/mån för hosting, domän och support.</p></div></div>
+      <div class="faq__band"><div class="wrap faq__row" data-reveal><h3>Måste jag betala för demon?</h3><p>Nej. Vi bygger en demo av din hemsida utan kostnad. Du betalar först när du sett den och vill gå vidare.</p></div></div>
+      <div class="faq__band"><div class="wrap faq__row" data-reveal><h3>Hur lång tid tar det?</h3><p>När du godkänt demon är hemsidan live inom en vecka, kopplad till din domän.</p></div></div>
+      <div class="faq__band"><div class="wrap faq__row" data-reveal><h3>Fungerar det med mitt bokningssystem?</h3><p>Ja. Bokningsknappen leder till det bokningssystem du redan använder, till exempel Bokadirekt.</p></div></div>
+      <div class="faq__band"><div class="wrap faq__row" data-reveal><h3>Vad ingår i 199 kr/mån?</h3><p>Hosting, domän och löpande support. Det finns ingen bindningstid.</p></div></div>
+      <div class="faq__band"><div class="wrap faq__row" data-reveal><h3>Vad är skillnaden mellan Bas och Premium?</h3><p>Bas är en sida med presentation, tjänster och priser, bokningsknapp och kontaktuppgifter. Premium har upp till fem sidor, bildgalleri, kontaktformulär, Google Maps, SEO-grundoptimering och en unik design med animationer.</p></div></div>
+      <div class="faq__band"><div class="wrap faq__row" data-reveal><h3>Vad behöver jag göra själv?</h3><p>Berätta om verksamheten: vad ni gör, priser och var ni finns. Tekniken sköter vi.</p></div></div>
     </section>
 
-    <!-- KONTAKT -->
-    <section class="contact" id="kontakt">
+    <!-- KONTAKT: ljus yta så att Tallys ljusa formulär smälter in -->
+    <section class="contact" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="strip" aria-hidden="true">
+        <div class="strip__track">
+          <img src="assets/demo-opal-dator.jpg" width="1440" height="900" alt="" loading="lazy">
+          <img src="assets/demo-ljung-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy">
+          <img src="assets/demo-kvarn-dator.jpg" width="1440" height="900" alt="" loading="lazy">
+          <img src="assets/skiss-mobil.jpg" width="390" height="844" alt="" loading="lazy">
+          <img src="assets/demo-ljung-dator.jpg" width="1440" height="900" alt="" loading="lazy">
+          <img src="assets/demo-opal-galleri-mobil.jpg" width="390" height="844" alt="" loading="lazy">
+          <img src="assets/demo-kvarn-mobil.jpg?v=2" width="390" height="844" alt="" loading="lazy">
+          <img src="assets/demo-opal-mobil.jpg" width="390" height="844" alt="" loading="lazy">
+        </div>
+      </div>
       <div class="wrap contact__inner">
         <div class="contact__head">
-          <h2>Beställ din gratis demo.</h2>
-          <p class="lead">Berätta kort om din salong eller studio så hör vi av oss. Du bestämmer dig först när du sett resultatet.</p>
-          <p class="contact__mail">Hellre mejl? <a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a></p>
+          <h2 class="chapter__title" id="kontakt-title" data-reveal>Beställ din gratis demo</h2>
+          <p class="chapter__lead" data-reveal style="--i:1">Berätta kort om din salong eller studio så hör vi av oss inom ett dygn. Du bestämmer dig först när du sett resultatet.</p>
+          <p class="contact__mail" data-reveal style="--i:2">Hellre mejl? <a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a></p>
         </div>
 
         <!--
@@ -468,32 +492,36 @@
     <a class="btn" href="#kontakt" tabindex="-1">Beställ gratis demo</a>
   </div>
 
-  <!-- SIDFOT -->
+  <!-- SIDFOT: namnet tillbaka i full bredd -->
   <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <div class="site-footer__brand">
-        <a class="wordmark" href="#topp">
-          <svg class="wordmark__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="nl-bottom" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#39d1b4"/><stop offset="1" stop-color="#6f7cff"/></linearGradient></defs><circle cx="32" cy="32" r="27" fill="none" stroke="url(#nl-bottom)" stroke-width="2.4"/><path d="M2 43 H18.5 M45.5 43 H62" fill="none" stroke="url(#nl-bottom)" stroke-width="2.4" stroke-linecap="round"/><path d="M22.5 43 V21 L41.5 43 V21" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="wordmark__name">Northline Studio</span>
-        </a>
-        <p class="site-footer__tagline">Premiumhemsidor för skönhet och välmående.</p>
-        <p class="site-footer__founder">Jonathan Heimdahl, grundare</p>
-      </div>
-      <nav class="site-footer__nav" aria-label="Snabblänkar">
-        <p class="site-footer__heading">Snabblänkar</p>
-        <a href="#demosidor">Demosidor</a>
-        <a href="#priser">Priser</a>
-        <a href="#fragor">Vanliga frågor</a>
-        <a href="#kontakt">Beställ demo</a>
-      </nav>
-      <div class="site-footer__links">
-        <a class="site-footer__email" href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a>
-        <p class="site-footer__copy">&copy; <span id="ar">2026</span> Northline Studio, Sverige</p>
-        <a class="site-footer__policy" href="integritetspolicy.html">Integritetspolicy</a>
+    <div class="wrap">
+      <p class="site-footer__mast" aria-hidden="true">Northline Studio</p>
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="wordmark" href="#topp">
+            <svg class="wordmark__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="nl-bottom" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#39d1b4"/><stop offset="1" stop-color="#6f7cff"/></linearGradient></defs><circle cx="32" cy="32" r="27" fill="none" stroke="url(#nl-bottom)" stroke-width="2.4"/><path d="M2 43 H18.5 M45.5 43 H62" fill="none" stroke="url(#nl-bottom)" stroke-width="2.4" stroke-linecap="round"/><path d="M22.5 43 V21 L41.5 43 V21" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="wordmark__name">Northline Studio</span>
+          </a>
+          <p class="site-footer__tagline">Premiumhemsidor för skönhet och välmående.</p>
+          <p class="site-footer__founder">Jonathan Heimdahl, grundare</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Snabblänkar">
+          <p class="site-footer__heading">Snabblänkar</p>
+          <a href="#demosidor">Demosidor</a>
+          <a href="#din-skiss">Din skiss</a>
+          <a href="#priser">Priser</a>
+          <a href="#fragor">Vanliga frågor</a>
+          <a href="#kontakt">Beställ demo</a>
+        </nav>
+        <div class="site-footer__links">
+          <a class="site-footer__email" href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a>
+          <p class="site-footer__copy">&copy; <span id="ar">2026</span> Northline Studio, Sverige</p>
+          <a class="site-footer__policy" href="integritetspolicy.html">Integritetspolicy</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=202610202300"></script>
+  <script src="script.js?v=202610211000"></script>
 </body>
 </html>
