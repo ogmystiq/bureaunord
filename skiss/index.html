@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
   <script type="application/ld+json" id="ld">{}</script>
 </head>
 <body class="fam-ljus">
@@ -115,8 +115,9 @@
     <section class="section info" id="tider">
       <div class="wrap info__inner">
         <div class="info__hours">
-          <h2>Öppettider</h2>
+          <h2 id="hours-title">Öppettider</h2>
           <dl class="hours" id="hours" hidden></dl>
+          <p class="info__text" id="hours-text" hidden></p>
           <p class="info__cta" id="hours-cta"><a class="btn" href="#hitta" data-book>Se lediga tider</a></p>
         </div>
         <div class="info__faq" id="faq">
@@ -159,6 +160,30 @@
     </div>
   </footer>
 
+  <!-- Från Northline Studio: hur sidan syns på Google och vad som händer om man säger ja -->
+  <section class="pitch" id="fran-oss" aria-labelledby="pitch-title">
+    <div class="wrap pitch__inner">
+      <div class="pitch__text">
+        <h2 class="pitch__title" id="pitch-title">Så kan <span data-fill="name">Er salong</span> synas på Google</h2>
+        <p>Skissen är gjord av Northline Studio. Titeln och beskrivningen är skrivna så att Google förstår vad ni gör och var ni finns, och era uppgifter ligger dessutom i kod som sökmotorer läser.</p>
+      </div>
+      <figure class="serp" aria-label="Förhandsvisning av ett sökresultat på Google">
+        <p class="serp__site"><span class="serp__icon" aria-hidden="true"></span><span data-fill="name">Er salong</span></p>
+        <p class="serp__title" id="serp-title">Er salong</p>
+        <p class="serp__desc" id="serp-desc"></p>
+      </figure>
+      <ul class="pitch__facts" role="list">
+        <li><strong>Du ser allt innan du betalar.</strong> Skissen byggs om efter era önskemål.</li>
+        <li><strong>Klar inom en vecka</strong> efter ert ja, kopplad till er domän.</li>
+        <li><strong>Ingen bindningstid.</strong> En person, Jonathan Heimdahl, hela vägen.</li>
+      </ul>
+      <p class="pitch__actions">
+        <a class="pitch__btn" href="https://northlinestudio.se/#kontakt">Gör den till er sida</a>
+        <a class="pitch__link" href="https://northlinestudio.se/#priser">Se priser och paket</a>
+      </p>
+    </div>
+  </section>
+
   <!-- Liten list längst ner, visas när man scrollat förbi första skärmen -->
   <aside class="offer" id="offer" aria-label="Om skissen">
     <p class="offer__text">Gillar du skissen? <span class="offer__long">Svara på mejlet eller skriv till <a href="mailto:kontakt@northlinestudio.se">kontakt@northlinestudio.se</a>.</span></p>
@@ -167,6 +192,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>

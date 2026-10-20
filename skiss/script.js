@@ -222,6 +222,10 @@
   /* ---------- Texter (endast textContent) ---------- */
   var place = city ? d.label + " i " + city : d.label;
   document.querySelectorAll('[data-fill="name"]').forEach(function (e) { setText(e, name); });
+  var longestWord = Math.max.apply(null, name.split(/\s+/).map(function (w) { return Array.from(w).length; }));
+  var heroName = document.querySelector(".hero__name");
+  if (longestWord > 13) heroName.classList.add("name--xlong");
+  else if (longestWord > 8) heroName.classList.add("name--long");
   setText($("kind"), place);
   setText($("hero-tagline"), C && C.tagline ? C.tagline : d.lead);
   setText($("prices-title"), ownText && C.tjanster.length ? (d.pricesTitle === "Priser" ? "Tatueringar" : d.pricesTitle || "Behandlingar") : d.pricesTitle || "Behandlingar och priser");
@@ -307,6 +311,11 @@
     show($("hours-cta"), false);
   } else if (!book.ext && !phone) {
     show($("tider").querySelector(".info__hours"), false);
+  } else {
+    // Inga tider från dem: visa vägen till en tid i stället för en tom rubrik
+    setText($("hours-title"), book.ext ? "Lediga tider" : "Boka tid");
+    setText($("hours-text"), book.ext ? "Se lediga tider och boka direkt online, när det passar dig." : "Ring oss på " + phone + " så hittar vi en tid som passar.");
+    show($("hours-text"), true);
   }
 
   /* ---------- Vanliga frågor: bara de vi kan svara på ---------- */
@@ -382,6 +391,10 @@
   if (spec.length) ld.openingHoursSpecification = spec;
   $("ld").textContent = JSON.stringify(ld);
 
+  /* ---------- Förhandsvisning av sökresultatet: samma titel och beskrivning som sidan har ---------- */
+  setText($("serp-title"), document.title);
+  setText($("serp-desc"), $("meta-description").getAttribute("content"));
+
   /* ---------- Ingen bokningslänk och inget telefonnummer: visa vad som kopplas in ---------- */
   if (!book.ext && !phone) {
     var toast = $("toast"), timer;
@@ -417,9 +430,11 @@
   window.addEventListener("resize", measure);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
   if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function (entries) {
-      offer.classList.toggle("is-visible", !entries[0].isIntersecting);
-    }, { threshold: 0 }).observe(hero);
+    // Listen visas efter hero och döljs när avslutet från oss är i bild (där finns samma knapp)
+    var heroIn = true, pitchIn = false;
+    var updateOffer = function () { offer.classList.toggle("is-visible", !heroIn && !pitchIn); };
+    new IntersectionObserver(function (entries) { heroIn = entries[0].isIntersecting; updateOffer(); }, { threshold: 0 }).observe(hero);
+    new IntersectionObserver(function (entries) { pitchIn = entries[0].isIntersecting; updateOffer(); }, { threshold: 0 }).observe($("fran-oss"));
   } else {
     offer.classList.add("is-visible");
   }

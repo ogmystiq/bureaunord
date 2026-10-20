@@ -81,6 +81,12 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
       emptySections: [...document.querySelectorAll('main > section')].filter(sec => vis(sec) && !sec.innerText.trim() && !sec.querySelector('img')).map(sec => sec.id),
       quickNote: !!document.querySelector('#snabbinfo .note:not([hidden])'),
       findNote: !!document.querySelector('#hitta .note:not([hidden])'),
+      serpTitle: document.getElementById('serp-title')?.textContent,
+      serpDesc: document.getElementById('serp-desc')?.textContent,
+      metaDesc: document.getElementById('meta-description')?.getAttribute('content'),
+      hoursTitle: vis(document.getElementById('hours-title')) ? document.getElementById('hours-title').textContent : null,
+      hoursText: vis(document.getElementById('hours-text')),
+      pitchName: document.querySelector('#fran-oss [data-fill="name"]')?.textContent,
     };
   });
   const label = LABEL_OVERRIDE[slug] || TYPES[d.typ] || 'Salong';
@@ -102,6 +108,10 @@ for (const slug of Object.keys(FIX)) for (const w of widths) {
   ok(slug, w, s.book.length >= 2, 'för få boka-knappar');
   ok(slug, w, !s.faqEmpty, 'fråga utan svar');
   ok(slug, w, s.emptySections.length === 0, 'tomma sektioner: ' + s.emptySections.join(','));
+  ok(slug, w, s.serpTitle === s.title && s.serpDesc === s.metaDesc, 'Google-förhandsvisningen stämmer inte med title/description');
+  ok(slug, w, s.pitchName === s.h1, 'namnet i avslutet');
+  // Rubriken Öppettider får bara stå ensam om det finns tider; annars rubrik + text
+  ok(slug, w, s.hoursTitle === null || s.hours > 0 || (s.hoursTitle !== 'Öppettider' && s.hoursText), 'tom öppettidsrubrik');
   ok(slug, w, !s.priceCta || hasBook, 'prisrad pekar inte på en bokning');
   ok(slug, w, s.quickNote === !!(d.adress || validTel), 'anteckning om snabbinfo fel');
   ok(slug, w, s.findNote === !!(d.adress && !/[<>]/.test(d.adress)) || slug === 'test-hostile', 'anteckning om karta fel');
