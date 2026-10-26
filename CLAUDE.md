@@ -54,12 +54,12 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 Allt ligger i n8n och styrs därifrån – inte från repot.
 - Datatabeller: **bn_leads** (alla salonger, status, mejltext, slug m.m.) och **bn_stader** (städer i sökordning).
 - Flöden (alla med namnet "Northline – …"):
-  1. Hitta salonger – mån+tor 06:07, nästa stad ur bn_stader, 10 branscher via Brave.
-  2. Bedöm hemsidor – vardagar 06:37, Firecrawl-skärmdump i mobilläge + Claude Haiku betyg 1–10 (≤6 = mejla).
+  1. Hitta salonger – vardagar 05:37 och 06:07 (två städer per dag), nästa stad ur bn_stader, 10 branscher via Brave.
+  2. Bedöm hemsidor – vardagar 06:37, Firecrawl-skärmdump i mobilläge + Claude Haiku betyg 1–10 (≤4 = mejla; olämpliga som fel bransch/stängda/kedjor skippas).
   3. Mejl och bolagsform – vardagar 07:13, Brave + Claude Haiku. Bara AB/HB mejlas (enskild firma kräver samtycke enligt marknadsföringslagen).
   4. Skriv mejl – vardagar 07:58, Claude Sonnet, kort mejl (max 60 ord) med personlig skiss-länk.
   4b. Hämta innehåll till skissen – vardagar 08:20, Firecrawl läser salongens egen sida/bokningssida + Claude Haiku plockar ut tagline, om-text, tjänster, fördelar, tider, bokningslänk och bransch → kolumnen `innehall`.
-  5. Skicka mejl – vardagar 08:47, max 10/dag (räknar redan skickade samma dag), bara om mejlens domän matchar hemsidans eller är gmail/hotmail o.l., ren text, 3–7 min mellan mejl, från "Northline Studio <kontakt@northlinestudio.se>".
+  5. Skicka mejl – vardagar 08:47, max 10/dag (räknar redan skickade samma dag), bara till de med störst behov (ingen egen sida, eller egen sida med betyg ≤4), bara om mejlens domän matchar hemsidans eller är gmail/hotmail o.l., och aldrig till plattformsadresser (elfsight, wix, bokadirekt m.fl.), ren text, 3–7 min mellan mejl, från "Northline Studio <kontakt@northlinestudio.se>".
   6. Uppföljning – vardagar 10:17, en uppföljning efter 6 dagar, max 5/dag.
   7. Skiss-data – webhook som skiss-sidan anropar.
 - En mejladress får aldrig mer än ett första mejl och en uppföljning.
