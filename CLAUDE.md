@@ -41,7 +41,7 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 
 ## Skiss-länkarna (viktigt – går ut i säljmejl)
 - Varje salong får en länk som `https://northlinestudio.se/skiss/aajt-tattoo-linkoping`.
-- Adressen finns inte som fil → GitHub Pages visar `404.html`, som känner igen `/skiss/<slug>` och hämtar `https://mystiq.app.n8n.cloud/webhook/skiss?slug=<slug>` → `{hittad, namn, stad, typ, adress, telefon, innehall}`. Sedan renderas skissen med `skiss/`-sidans kod.
+- Adressen finns inte som fil → GitHub Pages visar `404.html`, som känner igen `/skiss/<slug>` och hämtar `/skiss/data/<slug>.json` (publiceras av northline-motor; den gamla n8n-webhooken är bara reserv) → `{hittad, namn, stad, typ, adress, telefon, innehall}`. Sedan renderas skissen med `skiss/`-sidans kod.
 - `innehall` är `null` eller `{tagline, om, tjanster:[{namn, pris, info}], fordelar:[…], oppettider:[{dag, tid}], bokningslank}` – hämtat från salongens egen sida. 404.html tvättar: bara strängar, klippta längder, max 10 tjänster / 4 fördelar / 7 tider, bokningslänk bara om den är https.
 - Med innehåll visar skissen deras texter, tjänster (pris bara om det finns), fördelar, tider och bokning. Utan innehåll: branschtext, priser märkta som exempel och **inga** påhittade öppettider. Adress/telefon som saknas döljs.
 - Om `typ` är nagel/lash/bryn men texten handlar om hår visas frisörstilen (rätta helst typ i n8n).
@@ -50,23 +50,25 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 - Reservvariant: `/skiss/?n=<namn>&s=<stad>&t=<typ>` (valfritt `&a=<adress>&p=<telefon>`).
 - Ändrar du skissen: behåll båda varianterna, slug-formatet och webhook-anropet, och testa `/skiss/plaza-norrkoping` (ska visa "Plaza", Norrköping, lash).
 
-## Automationen (n8n, mystiq.app.n8n.cloud)
-Allt ligger i n8n och styrs därifrån – inte från repot.
-- Datatabeller: **bn_leads** (alla salonger, status, mejltext, slug m.m.) och **bn_stader** (städer i sökordning).
-- Flöden (alla med namnet "Northline – …"):
-  1. Hitta salonger – vardagar 05:37 och 06:07 (två städer per dag), nästa stad ur bn_stader, 10 branscher via Brave.
-  2. Bedöm hemsidor – vardagar 06:37, Firecrawl-skärmdump i mobilläge + Claude Haiku betyg 1–10 (≤4 = mejla; olämpliga som fel bransch/stängda/kedjor skippas).
-  3. Mejl och bolagsform – vardagar 07:13, Brave + Claude Haiku. Bara AB/HB mejlas (enskild firma kräver samtycke enligt marknadsföringslagen).
-  4. Skriv mejl – vardagar 07:58, Claude Sonnet, kort mejl (max 60 ord) med personlig skiss-länk.
-  4b. Hämta innehåll till skissen – vardagar 08:20, Firecrawl läser salongens egen sida/bokningssida + Claude Haiku plockar ut tagline, om-text, tjänster, fördelar, tider, bokningslänk och bransch → kolumnen `innehall`.
-  5. Skicka mejl – vardagar 08:47, max 10/dag (räknar redan skickade samma dag), bara till de med störst behov (ingen egen sida, eller egen sida med betyg ≤4), bara om mejlens domän matchar hemsidans eller är gmail/hotmail o.l., och aldrig till plattformsadresser (elfsight, wix, bokadirekt m.fl.), ren text, 3–7 min mellan mejl, från "Northline Studio <kontakt@northlinestudio.se>".
-  6. Uppföljning – vardagar 10:17, en uppföljning efter 6 dagar, max 5/dag.
-  7. Skiss-data – webhook som skiss-sidan anropar.
+## Automationen (northline-motor, GitHub Actions)
+Säljautomationen ligger i det **privata** repot `ogmystiq/northline-motor` (flyttad från n8n i okt 2026 – n8n ska stängas av). Den körs gratis som ett schemalagt GitHub-flöde (`.github/workflows/daglig.yml`) vardagar 06:20 UTC.
+- Data: `data/leads.json` (alla salonger, status, mejltext, slug, variant m.m.) och `data/stader.json` (städer i sökordning). `LANKAR.md` listar alla skickade mejl med skisslänk.
+- Steg i ordning (`src/`):
+  1. Hitta salonger – två nya städer per körning, 10 branscher via Braves platssökning.
+  2. Bedöm hemsidor – Firecrawl-skärmdump i mobilläge + Claude Haiku betyg 1–10 (≤4 = mejla; olämpliga som fel bransch/stängda/kedjor skippas).
+  3. Mejl och bolagsform – Brave + Claude Haiku. Bara AB/HB mejlas (enskild firma kräver samtycke enligt marknadsföringslagen).
+  4. Skriv mejl – fast mall; Claude Sonnet skriver bara kortnamn och (för egen sida) en ödmjuk iakttagelse. A/B-test: variant B har länken direkt, variant C frågar först (länken kommer i uppföljningen).
+  4b. Hämta innehåll till skissen – Firecrawl läser deras sida/bokningssida, Haiku plockar ut tagline, om-text, tjänster, fördelar, tider, bokningslänk och bransch.
+  7. Publicera – skriver `skiss/data/<slug>.json` i det här repot (bara offentliga företagsuppgifter, aldrig mejl) och pushar.
+  5. Skicka mejl – max 10/dag, 2–4 min mellan, bara störst behov (ingen egen sida eller betyg ≤4), bara om mejlens domän matchar hemsidans eller är gmail/hotmail o.l., aldrig plattformsadresser, och bara om skissfilen finns.
+  6. Uppföljning – en efter minst 6 dagar, max 5/dag, alltid med länk.
 - En mejladress får aldrig mer än ett första mejl och en uppföljning.
-- API-nycklar ligger som credentials i n8n (Anthropic, Brave, Firecrawl, SMTP via Zoho). Skriv aldrig in nycklar i repot.
+- Hemligheter ligger som GitHub Secrets i northline-motor (ANTHROPIC_API_KEY, BRAVE_API_KEY, FIRECRAWL_API_KEY, SMTP_USER, SMTP_PASS, SITE_TOKEN). Skriv aldrig in nycklar i något repo.
+- Besöksstatistik: GoatCounter (`northlinestudio.goatcounter.com`, cookiefri) på startsidan och exempelsidorna.
 
 ## Mejlstil (säljmejl)
 - Ren text, kort, mänsklig ton, "Hej!" som hälsning.
-- Hitta aldrig på saker om mottagaren (t.ex. att man följer dem eller varit där).
-- Inga priser, inga "gratis"/"erbjudande", aldrig "svara bara på det här mejlet", ingen "nej tack"-rad.
-- Signatur: Med vänliga hälsningar / Jonathan Heimdahl / Northline Studio / kontakt@northlinestudio.se
+- Kalla det ett **exempel**, inte "en skiss på er nya sida": designen är en mall och bilderna är exempelbilder. Säg det i mejlet och på sidan.
+- Hitta aldrig på saker om mottagaren (t.ex. att man följer dem eller varit där). Påstå aldrig att något saknas helt på deras sida.
+- Inga priser, inga "gratis"/"erbjudande".
+- Signatur: Med vänliga hälsningar / Jonathan Heimdahl / Northline Studio / kontakt@northlinestudio.se, följt av raden "Jag hittade er adress offentligt på nätet. Så hanterar jag uppgifter: northlinestudio.se/integritetspolicy" (GDPR art. 14 och MFL 20 §).

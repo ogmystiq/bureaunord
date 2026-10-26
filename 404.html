@@ -25,12 +25,14 @@
     [hidden] { display: none !important; }
     @media (prefers-reduced-motion: reduce) { .nl-loading .nl-mark, .nl-bar::after { animation: none; } }
   </style>
+  <!-- Besöksstatistik utan cookies (GoatCounter) -->
+  <script data-goatcounter="https://northlinestudio.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
   <!-- Laddning (visas bara för skiss-länkar) -->
   <div class="nl-screen nl-loading" id="nl-loading" hidden role="status" aria-live="polite">
     <svg class="nl-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#39d1b4"/><stop offset="1" stop-color="#6f7cff"/></linearGradient></defs><circle cx="32" cy="32" r="27" fill="none" stroke="url(#g1)" stroke-width="2"/><path d="M2 43 H18.5 M45.5 43 H62" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/><path d="M22.5 43 V21 L41.5 43 V21" fill="none" stroke="#eef1f4" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <p>Förbereder er skiss</p>
+    <p>Förbereder ert exempel</p>
     <div class="nl-bar" aria-hidden="true"></div>
   </div>
 
@@ -47,7 +49,8 @@
 
   <script>
   /* Northline Studio – 404 och korta skiss-länkar.
-     /skiss/<slug> hämtar salongens uppgifter från n8n och visar skissen på
+     /skiss/<slug> hämtar salongens uppgifter från /skiss/data/<slug>.json (publiceras av northline-motor)
+     med n8n-webhooken som reserv, och visar skissen på
      samma adress med skiss-sidans egen HTML, CSS och JS (en enda design).
      Namn, stad, adress, telefon och salongens innehåll tvättas här och sätts in med textContent av skiss/script.js. */
   (function () {
@@ -86,10 +89,16 @@
       };
     }
 
+    function getJson(url, opts) {
+      return fetch(url, opts).then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); });
+    }
+    // Först den statiska filen som motorn (GitHub) publicerar, annars den gamla webhooken som reserv
     var lookup = withTimeout(
-      fetch(WEBHOOK + encodeURIComponent(slug), { headers: { Accept: "application/json" }, credentials: "omit", referrerPolicy: "no-referrer" })
-        .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); }),
-      7000
+      getJson("/skiss/data/" + encodeURIComponent(slug) + ".json", { credentials: "same-origin" })
+        .catch(function () {
+          return getJson(WEBHOOK + encodeURIComponent(slug), { headers: { Accept: "application/json" }, credentials: "omit", referrerPolicy: "no-referrer" });
+        }),
+      8000
     ).then(function (d) {
       if (d && d.hittad === true) return { namn: cut(d.namn, 60), stad: cut(d.stad, 60), typ: cut(d.typ, 20), adress: cut(d.adress, 120), telefon: cut(d.telefon, 30), innehall: cleanInnehall(d.innehall) };
       return null;

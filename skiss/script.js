@@ -402,7 +402,7 @@
     document.querySelectorAll("[data-book]").forEach(function (b) {
       b.addEventListener("click", function (e) {
         e.preventDefault();
-        toast.textContent = "Det här är en skiss. Här kopplas ert bokningssystem in, till exempel Bokadirekt.";
+        toast.textContent = "Det här är ett exempel. Här kopplas ert bokningssystem in, till exempel Bokadirekt.";
         toast.classList.add("is-visible");
         clearTimeout(timer);
         timer = setTimeout(function () { toast.classList.remove("is-visible"); }, 3400);
