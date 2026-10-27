@@ -51,7 +51,7 @@ Läs den här filen först i varje ny chatt/session. Den beskriver hela verksamh
 - Ändrar du skissen: behåll båda varianterna, slug-formatet och webhook-anropet, och testa `/skiss/plaza-norrkoping` (ska visa "Plaza", Norrköping, lash).
 
 ## Automationen (northline-motor, GitHub Actions)
-Säljautomationen ligger i det **privata** repot `ogmystiq/northline-motor` (flyttad från n8n i okt 2026 – n8n ska stängas av). Den körs gratis som ett schemalagt GitHub-flöde (`.github/workflows/daglig.yml`) vardagar 06:20 UTC.
+Säljautomationen ligger i det **privata** repot `ogmystiq/northline-motor` (flyttad från n8n i okt 2026 – n8n ska stängas av). Den körs gratis i GitHub Actions: `daglig.yml` förbereder (steg 1–4b och 7) vardagar 03:13 UTC, och `skicka.yml` skickar (steg 5–6) vid flera tillfällen under dagen. Mejl går bara ut vardagar 08–17 svensk tid, eftersom GitHub kan starta schemalagda körningar flera timmar sent.
 - Data: `data/leads.json` (alla salonger, status, mejltext, slug, variant m.m.) och `data/stader.json` (städer i sökordning). `LANKAR.md` listar alla skickade mejl med skisslänk.
 - Steg i ordning (`src/`):
   1. Hitta salonger – två nya städer per körning, 10 branscher via Braves platssökning.
